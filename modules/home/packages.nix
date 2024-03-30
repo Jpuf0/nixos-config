@@ -45,5 +45,9 @@
     unzip
     wget
     xdg-utils
+    # runelite
+    jq
+    bluez
+    telegram-desktop
   ];
 }

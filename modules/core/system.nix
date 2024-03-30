@@ -26,6 +26,7 @@
     krita
     inputs.alejandra.defaultPackage.${pkgs.system}
     git
+    brightnessctl
   ];
 
   time.timeZone = "Europe/London";

@@ -13,6 +13,8 @@
       ms-vscode.cpptools
       # OCaml
       ocamllabs.ocaml-platform
+      # Discord Presence
+      # leonardssh.vscord
 
       # Color theme
       catppuccin.catppuccin-vsc

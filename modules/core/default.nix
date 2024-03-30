@@ -31,6 +31,8 @@ in {
       ++ [(import ./wayland.nix)]
       # ++ [(import ./cloudflare-warp.nix)]
       # ++ [(import ./virtualization.nix)]
+      ++ [(import ./bluetooth.nix)]
+      ++ [(import ./fwupd.nix)]
       ++ [(import ./../../hosts/nixos/hardware-configuration.nix)];
   };
 }
