@@ -49,5 +49,7 @@
     jq
     bluez
     telegram-desktop
+    pywal
+    # nvtop
   ];
 }

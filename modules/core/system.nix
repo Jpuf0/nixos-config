@@ -27,6 +27,8 @@
     inputs.alejandra.defaultPackage.${pkgs.system}
     git
     brightnessctl
+    thermald
+    powertop
   ];
 
   time.timeZone = "Europe/London";

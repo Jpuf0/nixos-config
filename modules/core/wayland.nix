@@ -4,6 +4,7 @@
   ...
 }: {
   programs.hyprland.enable = true;
+  services.xserver.videoDrivers = ["nvidia"];
   xdg.portal = {
     enable = true;
     wlr.enable = true;

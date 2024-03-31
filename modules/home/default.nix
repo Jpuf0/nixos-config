@@ -14,7 +14,7 @@
     ++ [(import ./git.nix)]
     ++ [(import ./direnv.nix)]
     ++ [(import ./gtk.nix)]
-    ++ [(import ./hyprland)]
+    ++ [(import ./hypr)]
     ++ [(import ./kitty.nix)]
     ++ [(import ./mako.nix)] # notification deamon
     # ++ [(import ./micro)] # nano replacement
@@ -24,7 +24,7 @@
     ++ [(import ./scripts)]
     # personal scripts
     ++ [(import ./starship.nix)]
-    ++ [(import ./swaylock.nix)]
+    # ++ [(import ./swaylock.nix)]
     # ++ [(import ./unity)]
     ++ [(import ./vscodium.nix)]
     ++ [(import ./waybar)]
