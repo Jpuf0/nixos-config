@@ -7,7 +7,7 @@ if [[ -f $wallpapers_folder/$wallpaper_name ]]; then
     find ~/Pictures/wallpapers -maxdepth 1 -type f -delete
     cp $wallpapers_folder/$wallpaper_name $wallpaper_path/.current_wallpaper
     wall-change $wallpaper_path/.current_wallpaper
-    wal -i $wallpaper_path/.current_wallpaper -s -t
+    wal -i $wallpaper_path/.current_wallpaper -s -t -n
 else
     exit 1
 fi

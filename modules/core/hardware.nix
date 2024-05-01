@@ -21,9 +21,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  hardware.firmware = [
-    pkgs.broadcom-bt-firmware
-  ];
+  # hardware.firmware = [
+  #   pkgs.broadcom-bt-firmware
+  # ];
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
 

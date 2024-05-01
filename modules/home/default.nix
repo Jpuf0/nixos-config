@@ -16,6 +16,7 @@
     ++ [(import ./gtk.nix)]
     ++ [(import ./hypr)]
     ++ [(import ./kitty.nix)]
+    ++ [(import ./alacritty.nix)]
     ++ [(import ./mako.nix)] # notification deamon
     # ++ [(import ./micro)] # nano replacement
     ++ [(import ./nvim.nix)]

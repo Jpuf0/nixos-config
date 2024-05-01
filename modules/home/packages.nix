@@ -51,5 +51,7 @@
     telegram-desktop
     pywal
     # nvtop
+    dnsutils
+    audacious-plugins
   ];
 }
