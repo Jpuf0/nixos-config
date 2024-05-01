@@ -53,5 +53,6 @@
     # nvtop
     dnsutils
     audacious-plugins
+    alacritty
   ];
 }
