@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   networking = {
-    hostName = "ghost";
+    hostName = "noctis";
     networkmanager.enable = true;
     nameservers = ["1.1.1.1"];
     firewall = {

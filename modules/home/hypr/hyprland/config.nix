@@ -3,7 +3,9 @@
     extraConfig = "
 $mainMod = SUPER
 
-monitor=eDP-1,preferred,auto,2
+monitor=DP-2,1920x1080@60,0x0,1
+monitor=HDMI-A-1,1920x1080@60,1920x0,1
+# monitor=eDP-1,preferred,auto,2
 
 # autostart
 exec-once = systemctl --user import-environment &
@@ -12,8 +14,9 @@ exec-once = dbus-update-activation-environment --systemd &
 exec-once = nm-applet &
 exec-once = hypridle
 exec-once = wl-paste --primary --watch wl-copy --primary --clear
-exec-once = swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &
+# exec-once = swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &
 # exec-once = sleep 1 && hyprlock
+exec-once = background-changer &
 exec-once = hyprctl setcursor Nordzy-cursors 22 &
 exec-once = waybar &
 exec-once = mako &
@@ -21,7 +24,7 @@ exec-once = mako &
 input {
   kb_layout = us
   numlock_by_default = true
-  follow_mouse = 0
+  follow_mouse = 1
   sensitivity = 0
 }
 
@@ -165,7 +168,7 @@ bind = $mainMod SHIFT, W, exec, floorp
 # screenshot
 # bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
 # bind = ,Print, exec, grimblast --notify --cursor  copy area
-bind = ALT+SHIFT,s,exec, grimblast --notify --freeze --cursor copy area
+bind = ALT+SHIFT,s,exec, grimblast --notify --freeze --cursor copysave area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
 
 # switch focus
 bind = $mainMod, left, movefocus, l

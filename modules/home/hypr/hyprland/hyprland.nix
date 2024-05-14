@@ -4,8 +4,8 @@
   ...
 }: {
   home.packages = with pkgs; [
-    # swww
-    swaybg
+    swww
+    # swaybg
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     hyprpicker
     wofi

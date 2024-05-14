@@ -2,6 +2,8 @@
   wall-change = pkgs.writeShellScriptBin "wall-change" ''swaybg -m fill -i $1'';
   wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
 
+  background-changer = pkgs.writeShellScriptBin "background-changer" (builtins.readFile ./scripts/background-changer.sh);
+
   runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
   music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
   lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ./scripts/lofi.sh);
@@ -21,6 +23,8 @@ in {
   home.packages = with pkgs; [
     wall-change
     wallpaper-picker
+
+    background-changer
 
     runbg
     music
