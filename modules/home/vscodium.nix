@@ -8,7 +8,8 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+    vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system}; 
+    extensions = with vscode-extensions.vscode-marketplace; [
       # nix language
       bbenoist.nix
       # nix-shell suport
@@ -19,18 +20,16 @@
       ms-vscode.cpptools
       # OCaml
       ocamllabs.ocaml-platform
-
       # Discord Presence
-      # leonardssh.vscord
-
+      leonardssh.vscord
       # Comment Anchors
-      # exodiusstudios.comment-anchors
+      exodiusstudios.comment-anchors
       # TailwindCSS
       bradlc.vscode-tailwindcss
       # CSS Variables
-      # vunguyentuan.vscode-css-variables
+      vunguyentuan.vscode-css-variables
       # PostCSS
-      # vunguyentuan.vscode-postcss
+      vunguyentuan.vscode-postcss
       # Liveserver
       ritwickdey.liveserver
       # Prettier
