@@ -1,14 +1,14 @@
 {inputs, pkgs, ...}: {
-  nixpkgs = {
-    overlays = [
-      inputs.nix-vscode-extensions.overlays.default
-    ];
-  };
+  # nixpkgs = {
+  #   overlays = [
+  #     inputs.nix-vscode-extensions.overlays.default
+  #   ];
+  # };
 
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with pkgs.vscode-marketplace; [
+    extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
       # nix language
       bbenoist.nix
       # nix-shell suport
