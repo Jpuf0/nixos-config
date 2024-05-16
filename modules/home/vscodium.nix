@@ -2,7 +2,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [
+    extensions = with pkgs.vscode-marketplace; [
       # nix language
       bbenoist.nix
       # nix-shell suport
