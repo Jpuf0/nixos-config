@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   # General Editor Settings
   accessibility = {
-    "accessibility.singals.save"."sound" = "userGesture";
+    "accessibility.signals.save"."sound" = "userGesture";
   };
 
   editor = {
