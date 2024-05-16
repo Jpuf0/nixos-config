@@ -22,9 +22,9 @@
       # TailwindCSS
       bradlc.vscode-tailwindcss
       # CSS Variables
-      vunguyentuan.vscode-css-variables
+      # vunguyentuan.vscode-css-variables
       # PostCSS
-      vunguyentuan.vscode-postcss
+      # vunguyentuan.vscode-postcss
       # Liveserver
       ritwickdey.liveserver
       # Prettier
