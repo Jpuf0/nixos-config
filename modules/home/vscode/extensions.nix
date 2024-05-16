@@ -3,9 +3,12 @@
   pkgs,
   lib,
   ...
-}: let 
-  code-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system}; 
-  plugins = (import ./external-extensions.nix) { pkgs = pkgs; lib = lib; };
+}: let
+  code-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
+  plugins = (import ./external-extensions.nix) {
+    pkgs = pkgs;
+    lib = lib;
+  };
 in {
   programs.vscode = {
     extensions = with code-extensions.vscode-marketplace; [
@@ -41,7 +44,6 @@ in {
       prisma.prisma
       # Editor Config
       editorconfig.editorconfig
-
 
       # Color theme
       catppuccin.catppuccin-vsc
