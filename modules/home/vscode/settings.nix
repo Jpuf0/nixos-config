@@ -30,7 +30,7 @@
   };
 
   terminal = {
-    "terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font', 'SymbolsNerdFont'";
+    "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont'";
   };
 
   workbench = {
