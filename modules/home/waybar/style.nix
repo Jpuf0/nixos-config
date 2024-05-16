@@ -91,11 +91,11 @@ in {
     }
 
     #custom-media {
-        font-size: 20px;
+        font-size: ${custom.font_size};
         color: #b4befe;
         font-weight: ${custom.font_weight};
         padding-left: 15px;
-        padding-right: 15px;
+        padding-right: 30px;
     }
   '';
 }

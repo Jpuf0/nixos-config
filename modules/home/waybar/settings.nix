@@ -10,9 +10,9 @@
     modules-left = [
       "custom/launcher"
       "hyprland/workspaces"
-      "custom/media"
     ];
     modules-center = [
+      "custom/media"
       "clock"
     ];
     modules-right = [
