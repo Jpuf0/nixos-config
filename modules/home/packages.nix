@@ -1,4 +1,4 @@
-  {
+{
   inputs,
   pkgs,
   ...
@@ -30,6 +30,8 @@
     python3
 
     nil
+
+    ollama
 
     bleachbit # cache cleaner
     cmatrix
