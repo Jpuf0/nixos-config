@@ -1,5 +1,5 @@
 {
-  description = "otterpip's nixos configuration";
+  description = "jpufs's nixos configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

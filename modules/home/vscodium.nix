@@ -13,12 +13,12 @@
       ms-vscode.cpptools
       # OCaml
       ocamllabs.ocaml-platform
-      
+
       # Discord Presence
       # leonardssh.vscord
 
       # Comment Anchors
-      exodiusstudios.comment-anchors
+      # exodiusstudios.comment-anchors
       # TailwindCSS
       bradlc.vscode-tailwindcss
       # CSS Variables
