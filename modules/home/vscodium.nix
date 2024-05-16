@@ -13,8 +13,10 @@
       ms-vscode.cpptools
       # OCaml
       ocamllabs.ocaml-platform
+      
       # Discord Presence
-      leonardssh.vscord
+      # leonardssh.vscord
+
       # Comment Anchors
       exodiusstudios.comment-anchors
       # TailwindCSS
