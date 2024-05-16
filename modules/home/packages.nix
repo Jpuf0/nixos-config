@@ -54,5 +54,6 @@
     dnsutils
     audacious-plugins
     alacritty
+    gimp
   ];
 }
