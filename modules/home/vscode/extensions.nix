@@ -1,10 +1,11 @@
 {
   inputs,
   pkgs,
+  lib,
   ...
 }: let 
   code-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system}; 
-
+  plugins = (import ./external-extensions.nix) { pkgs = pkgs; lib = lib; };
 in {
   programs.vscode = {
     extensions = with code-extensions.vscode-marketplace; [
@@ -45,6 +46,12 @@ in {
       # Color theme
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+
+      # External Extensions from [nix4vscode](https://github.com/nix-community/nix4vscode)
+      # Continue.dev use local llm for code
+      plugins.continue.continue
+      # SuperMaven Github Copilor but better??
+      plugins.supermaven.supermaven
     ];
   };
 }
