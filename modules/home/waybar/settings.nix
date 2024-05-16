@@ -10,6 +10,7 @@
     modules-left = [
       "custom/launcher"
       "hyprland/workspaces"
+      "custom/media"
     ];
     modules-center = [
       "clock"
@@ -123,13 +124,22 @@
         default = [" "];
       };
       scroll-step = 5;
-      on-click = "pamixer -t";
+      # on-click = "pamixer -t";
     };
     "custom/launcher" = {
       format = "";
       on-click = "pkill wofi || wofi --show drun";
       on-click-right = "pkill wofi || wallpaper-picker";
       tooltip = "false";
+    };
+    "custom/media" = {
+      interval = 5;
+      format = "{}";
+      exec = "playerctl metadata -f '{{ uc(status)}}: {{artist}} - {{title}}'";
+      on-click = "playerctl play-pause";
+      enable-bar-scroll = true;
+      max-length = "4";
+      escape = true;
     };
   };
 }
