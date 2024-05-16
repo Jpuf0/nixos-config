@@ -12,5 +12,5 @@
       key = "ctrl+s";
       command = "workbench.action.files.saveFiles";
     }
-  ]
+  ];
 }
