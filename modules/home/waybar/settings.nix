@@ -28,7 +28,7 @@
         format = " {:%H:%M}";
         tooltip= "true";
         tooltip-format= "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt= " {:%d/%m}";
+        format-alt= " {:%a %d %B %Y}";
     };
     "hyprland/workspaces"= {
         active-only= false;
