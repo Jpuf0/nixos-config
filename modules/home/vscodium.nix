@@ -1,8 +1,14 @@
-{inputs, pkgs, ...}: {
+{
+  inputs, 
+  pkgs,
+  ...
+}: let
+  code-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system}; 
+in {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-extensions.vscode-marketplace; [
+    extensions = with code-extensions.vscode-marketplace; [
       # nix language
       bbenoist.nix
       # nix-shell suport
