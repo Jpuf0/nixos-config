@@ -28,11 +28,15 @@
         format = " {:%H:%M}";
         tooltip= "true";
         tooltip-format= "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt= " {:%a %d %B %Y}";
+        format-alt= " {:%d/%m}";
         calendar= {
             format = {
                 today="<span color='#ff6699'><b><u>{}</u></b></span>";
             };
+        };
+        actions= {
+            on-scroll-up= "tz_up";
+            on-scroll-down= "tz_down";
         };
     };
     "hyprland/workspaces"= {

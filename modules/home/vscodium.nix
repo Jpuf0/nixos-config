@@ -14,7 +14,23 @@
       # OCaml
       ocamllabs.ocaml-platform
       # Discord Presence
-      # leonardssh.vscord
+      leonardssh.vscord
+      # Comment Anchors
+      exodiusstudios.comment-anchors
+      # TailwindCSS
+      bradlc.vscode-tailwindcss
+      # CSS Variables
+      vunguyentuan.vscode-css-variables
+      # PostCSS
+      vunguyentuan.vscode-postcss
+      # Liveserver
+      ritwickdey.liveserver
+      # Prettier
+      esbenp.prettier-vscode
+      # Typescript Error Translator
+      mattpocock.ts-error-translator
+      # Prisma
+      prisma.prisma
 
       # Color theme
       catppuccin.catppuccin-vsc
@@ -25,6 +41,27 @@
       "extensions.autoUpdate" = false; # This stuff fixes vscode freaking out when theres an update
       "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
 
+      "git.enableSmartCommit" = true;
+
+      "accessibility.signals.save" = {
+        "sound"= "userGesture";
+      };
+
+      "[typescript]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.codeActionsOnSave" = {
+          "source.organiseImports" = "explicit";
+        };
+        "editor.formatOnSave" = true;
+      };
+
+      "[typescriptreact]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.codeActionsOnSave" = {
+          "source.organiseImports" = "explicit";
+        };
+        "editor.formatOnSave" = true;
+      };
 
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont', 'monospace', monospace";
       "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont'";
@@ -36,8 +73,6 @@
       "editor.fontLigatures" = true;
       "editor.minimap.enabled" = false;
       "workbench.startupEditor" = "none";
-
-      "editor.formatOnType" = true;
 
       "workbench.layoutControl.type" = "menu";
       "workbench.editor.limit.enabled" = true;
