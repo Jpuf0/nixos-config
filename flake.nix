@@ -37,6 +37,8 @@
       url = "github:kamadorueda/alejandra/3.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
