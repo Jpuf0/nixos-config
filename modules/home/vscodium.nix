@@ -30,7 +30,7 @@
       # Prettier
       esbenp.prettier-vscode
       # Typescript Error Translator
-      mattpocock.ts-error-translator
+      # mattpocock.ts-error-translator
       # Prisma
       prisma.prisma
 
