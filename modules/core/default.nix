@@ -6,13 +6,10 @@
   ...
 }: let
   system = "x86_64-linux";
-  nixpkgs.overlays = [
-    inputs.nix-vscode-extensions.overlays.default
-  ];
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    
+
   };
   lib = nixpkgs.lib;
 in {
