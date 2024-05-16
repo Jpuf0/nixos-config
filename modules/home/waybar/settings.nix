@@ -30,8 +30,8 @@
         tooltip-format= "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>";
         format-alt= " {:%a %d %B %Y}";
         calendar= {
-            today="<span color='#ff6699'><b><u>{}</u></b></span>"
-        }
+            today="<span color='#ff6699'><b><u>{}</u></b></span>";
+        };
     };
     "hyprland/workspaces"= {
         active-only= false;
