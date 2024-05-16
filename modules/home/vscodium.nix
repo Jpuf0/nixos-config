@@ -13,6 +13,8 @@ in {
       bbenoist.nix
       # nix-shell suport
       arrterian.nix-env-selector
+      # nix formatter
+      jnoortheen.nix-ide
       # python
       ms-python.python
       # C/C++

@@ -27,7 +27,8 @@
     ++ [(import ./starship.nix)]
     # ++ [(import ./swaylock.nix)]
     # ++ [(import ./unity)]
-    ++ [(import ./vscodium.nix)]
+    # ++ [(import ./vscodium.nix)]
+    ++ [(import ./vscode)]
     ++ [(import ./waybar)]
     ++ [(import ./wofi)]
     ++ [(import ./zsh.nix)];
