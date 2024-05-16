@@ -33,8 +33,14 @@
     "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont'";
   };
 
+  window = {
+    "window.dialogStyle" = "native";
+    "window.titleBarStyle" = "custom";
+  };
+
   workbench = {
     "workbench.colorTheme" = "Catppuccin Mocha";
+    "workbench.editor.showTabs" = "multiple";
     "workbench.iconTheme" = "catppuccin-mocha";
     "workbench.panel.defaultLocation" = "bottom";
     "workbench.sideBar.location" = "right";
@@ -111,6 +117,7 @@ in {
   // editor
   // files
   // terminal
+  // window
   // workbench
   # Git
   // git
