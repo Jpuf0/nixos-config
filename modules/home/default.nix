@@ -24,7 +24,7 @@
     # ++ [(import ./rider)] # C# JetBrain editor
     # personal scripts
     ++ [(import ./scripts)]
-    ++ [(import ./ollama.nix)]
+    # ++ [(import ./ollama.nix)]
     ++ [(import ./starship.nix)]
     # ++ [(import ./swaylock.nix)]
     # ++ [(import ./unity)]
