@@ -25,7 +25,7 @@
     clock = {
       format = " {:%H:%M (%Z)}";
       tooltip = "true";
-      tooltip-format = "<big>{:%a %d %B %Y\n%H:%M (%Z)}</big>\n<tt><small>{calendar}</small></tt>";
+      tooltip-format = "<big>{:%a %d %B %Y}</big>\n<span>{%H:%M (%Z)}</span>\n<tt><small>{calendar}</small></tt>";
       format-alt = " {:%d/%m}";
       timezones = [
         "Europe/London"
