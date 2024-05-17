@@ -32,14 +32,15 @@
       flake = false;
     };
 
-
     alejandra = {
       url = "github:kamadorueda/alejandra/3.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    
+
+    nur.url = "github:nix-community/NUR";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 

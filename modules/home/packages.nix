@@ -59,5 +59,10 @@
     audacious-plugins
     alacritty
     gimp
+    usbmuxd
+    libimobiledevice
+    ifuse
+    usbutils
+    docker
   ];
 }

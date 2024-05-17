@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   services.hypridle = {
     enable = true;
 
@@ -18,11 +15,7 @@
       {
         timeout = 330;
         onTimeout = "hyprctl dispatch dpms off";
-        onResume = "hyprctl dispatch dpms on" ;
-      }
-      {
-        timeout = 3000;
-        onTimeout = "systemctl suspend";
+        onResume = "hyprctl dispatch dpms on";
       }
     ];
   };
