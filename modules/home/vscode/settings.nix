@@ -106,26 +106,31 @@
     "python.analysis.autoFormalStrings" = true;
   };
 
+  misc = {
+    # tell prisma to fuck off
+    "prisma.showPrismaDataPlatformNotification" = false;
+  };
 in {
-  programs.vscode.userSettings = {
-    "extensions.autoCheckUpdates" = false;
-    "extensions.autoUpdate" = false;
-    "update.mode" = "none";
-  }
-  #General Settings
-  // accessibility
-  // editor
-  // files
-  // terminal
-  // window
-  // workbench
-  # Git
-  // git
-  # Language Specific
-  // formatter
-  // cpp
-  // nix
-  // typescript
-  // typescriptreact
-  // python;
+  programs.vscode.userSettings =
+    {
+      "extensions.autoCheckUpdates" = false;
+      "extensions.autoUpdate" = false;
+      "update.mode" = "none";
+    }
+    #General Settings
+    // accessibility
+    // editor
+    // files
+    // terminal
+    // window
+    // workbench
+    # Git
+    // git
+    # Language Specific
+    // formatter
+    // cpp
+    // nix
+    // typescript
+    // typescriptreact
+    // python;
 }
