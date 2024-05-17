@@ -1,5 +1,5 @@
 {
-  description = "otterpip's nixos configuration";
+  description = "jpuf's nixos configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -32,12 +32,13 @@
       flake = false;
     };
 
-
     alejandra = {
       url = "github:kamadorueda/alejandra/3.0.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
