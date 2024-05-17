@@ -31,6 +31,9 @@
 
     nil
 
+    # Node
+    nodejs
+
     ollama
 
     bleachbit # cache cleaner
