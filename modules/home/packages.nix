@@ -29,6 +29,8 @@
     # Python
     python3
 
+    nil
+
     bleachbit # cache cleaner
     cmatrix
     gparted # partition manager

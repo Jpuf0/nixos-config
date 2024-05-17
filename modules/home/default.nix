@@ -22,8 +22,8 @@
     ++ [(import ./nvim.nix)]
     ++ [(import ./packages.nix)]
     # ++ [(import ./rider)] # C# JetBrain editor
-    ++ [(import ./scripts)]
     # personal scripts
+    ++ [(import ./scripts)]
     ++ [(import ./starship.nix)]
     # ++ [(import ./swaylock.nix)]
     # ++ [(import ./unity)]

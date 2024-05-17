@@ -90,5 +90,13 @@ in
         padding-left: 10px;
         padding-right: 15px;
     }
+
+    #custom-media {
+        font-size: ${custom.font_size};
+        color: #b4befe;
+        font-weight: ${custom.font_weight};
+        padding-left: 15px;
+        padding-right: 15px;
+    }
   '';
 }

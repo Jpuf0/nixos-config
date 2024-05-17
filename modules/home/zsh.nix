@@ -29,6 +29,7 @@
       dsize = "du -hs";
       findw = "grep -rl";
       q = "exit";
+      code = "codium";
       
 
       l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
