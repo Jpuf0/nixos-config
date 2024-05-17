@@ -31,6 +31,9 @@
 
     nil
 
+    # Node
+    nodejs
+
     bleachbit # cache cleaner
     cmatrix
     gparted # partition manager
