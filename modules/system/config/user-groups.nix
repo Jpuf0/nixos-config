@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   users.users.jpuf = {
     isNormalUser = true;
-    description = ":3";
+    description = "i cant have colon 3";
     initialPassword = "nixos";
     shell = pkgs.zsh;
     extraGroups = [
