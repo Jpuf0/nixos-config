@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
     ./kde/polkit-kde.nix
-    ./networking
-    ./pipewire
+    ./networking.nix
+    ./pipewire.nix
   ];
 
   services = {
