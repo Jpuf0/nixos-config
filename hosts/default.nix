@@ -10,6 +10,7 @@
 
   commonModules = [
     "${modules}/config"
+    "${modules}/programs"
     "${modules}/security"
     "${modules}/services"
     "${hardware}/bluetooth.nix"
