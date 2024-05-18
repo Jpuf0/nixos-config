@@ -5,7 +5,7 @@
 }: {
   imports = [
     ./nixpkgs.nix
-    ./substitutors.nix
+    ./substituters.nix
   ];
 
   environment.systemPackages = with pkgs; [
