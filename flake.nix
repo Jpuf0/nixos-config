@@ -52,6 +52,10 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+    };
+
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
