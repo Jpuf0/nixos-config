@@ -6,7 +6,7 @@
   inherit (inputs.nixpkgs.lib) nixosSystem;
 
   modules = "${self}/modules/system";
-  hardware = modules + "hardware";
+  hardware = modules + "hardware/";
 
   commonModules = [
     "${modules}/config"
