@@ -32,5 +32,6 @@
     ++ [(import ./vscode)]
     ++ [(import ./waybar)]
     ++ [(import ./wofi)]
-    ++ [(import ./zsh.nix)];
+    ++ [(import ./zsh.nix)]
+    ++ [(import ./prismlauncher.nix)];
 }

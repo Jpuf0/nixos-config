@@ -67,5 +67,15 @@
     ifuse
     usbutils
     docker
+    bottles
+    steamtinkerlaunch
+    wine64
+    winetricks
+    gamemode
+    gamescope
+    nvtop
+    r2modman
+    ryujinx
+    gallery-dl
   ];
 }
