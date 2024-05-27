@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  prismlauncher.override = with pkgs; {
+  programs.prismlauncher.override = with pkgs; {
     glfw = let
       mcWaylandPatchRepo = fetchFromGitHub {
         owner = "Admicos";
