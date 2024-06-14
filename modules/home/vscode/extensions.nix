@@ -12,6 +12,7 @@
 in {
   programs.vscode = {
     extensions = with code-extensions.vscode-marketplace; [
+      oven.bun-vscode
       # nix language
       bbenoist.nix
       # nix-shell suport
@@ -54,6 +55,8 @@ in {
       plugins.continue.continue
       # SuperMaven Github Copilor but better??
       plugins.supermaven.supermaven
+
+      gleam.gleam
     ];
   };
 }

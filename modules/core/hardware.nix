@@ -1,4 +1,9 @@
-{config, pkgs, inputs, ...}: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   #imports = [inputs.nixos-hardware.nixosModules.dell-xps-15-9500-nvidia];
   hardware.opengl = {
     enable = true;
@@ -26,6 +31,8 @@
   # ];
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
+
+  hardware.keyboard.qmk.enable = true;
 
   powerManagement.cpuFreqGovernor = "performance";
   powerManagement.powertop.enable = true;

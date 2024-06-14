@@ -23,7 +23,6 @@ in {
       ++ [(import ./network.nix)]
       ++ [(import ./pipewire.nix)]
       ++ [(import ./programs.nix)]
-      ++ [(import ./prismlauncher.nix)]
       ++ [(import ./security.nix)]
       ++ [(import ./services.nix)]
       ++ [(import ./system.nix)]

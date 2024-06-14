@@ -9,7 +9,7 @@
     entr # perform action when file change
     file # Show file information
     fzf # fuzzy finder
-    jdk17 # java
+    jdk
     libreoffice
     nitch # systhem fetch util
     nix-prefetch-github
@@ -25,6 +25,7 @@
     # C / C++
     gcc
     gnumake
+    gdb
 
     # Python
     python3
@@ -33,6 +34,9 @@
 
     # Node
     nodejs
+    bun
+
+    dotnet-sdk_8
 
     ollama
 
@@ -77,5 +81,18 @@
     r2modman
     ryujinx
     gallery-dl
+
+    maliit-keyboard
+    maliit-framework
+    wvkbd
+    qbittorrent
+    easyeffects
+    carla
+    yabridge
+    yabridgectl
+    mullvad
+    gleam
+    erlang
+    rebar3
   ];
 }
