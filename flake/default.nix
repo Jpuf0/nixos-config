@@ -1,6 +1,7 @@
 {
   imports = [
     ./pre-commit.nix
+    ../home
     ../hosts
   ];
 

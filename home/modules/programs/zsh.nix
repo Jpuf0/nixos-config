@@ -9,7 +9,11 @@
   programs.zsh = {
     enable = true;
 
-    enableAutosuggestions = true;
+    dotDir = ".config/zsh";
+
+    # enableAutosuggestions = true;
+    autosuggestion.enable = true;
+
     enableCompletion = true;
 
     syntaxHighlighting = {

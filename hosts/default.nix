@@ -1,4 +1,5 @@
 {
+  homeImports,
   inputs,
   self,
   ...
@@ -26,7 +27,15 @@ in {
 
       modules =
         commonModules
-        ++ [./ghost];
+        ++ [./ghost]
+        ++ [
+          {
+            home-manager = {
+              users.jpuf.imports = homeImports."jpuf";
+              extraSpecialArgs = specialArgs;
+            };
+          }
+        ];
     };
 
     noctis = nixosSystem {

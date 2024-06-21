@@ -1,3 +1,5 @@
 .direnv
 .vscode
 .pre-commit-config.yaml
+ghost.qcow2
+result
