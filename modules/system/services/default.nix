@@ -3,6 +3,7 @@
     ./kde/polkit-kde.nix
     ./networking.nix
     ./pipewire.nix
+    ./wayland.nix
   ];
 
   services = {

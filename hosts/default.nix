@@ -43,7 +43,15 @@ in {
 
       modules =
         commonModules
-        ++ [./noctis];
+        ++ [./noctis]
+        ++ [
+          {
+            home-manager = {
+              users.jpuf.imports = homeImports."jpuf";
+              extraSpecialArgs = specialArgs;
+            };
+          }
+        ];
     };
   };
 }
