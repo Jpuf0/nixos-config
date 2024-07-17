@@ -24,6 +24,7 @@ in {
 
   users.users.${username} = {
     isNormalUser = true;
+    initialPassword = "nixos";
     description = "${username}";
     extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;

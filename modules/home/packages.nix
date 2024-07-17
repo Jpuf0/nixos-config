@@ -38,8 +38,6 @@
 
     dotnet-sdk_8
 
-    ollama
-
     bleachbit # cache cleaner
     cmatrix
     gparted # partition manager
@@ -61,7 +59,6 @@
     bluez
     telegram-desktop
     pywal
-    # nvtop
     dnsutils
     audacious-plugins
     alacritty
@@ -81,7 +78,6 @@
     r2modman
     ryujinx
     gallery-dl
-
     maliit-keyboard
     maliit-framework
     wvkbd
@@ -94,5 +90,11 @@
     gleam
     erlang
     rebar3
+    obs-studio
+    syncthing
+    lightspark
+    gargoyle
+    remmina
+    prisma-engines
   ];
 }

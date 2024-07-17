@@ -7,5 +7,14 @@
       via
       vial
     ];
+    spotifyd = {
+      enable = true;
+      settings = {
+        global = {
+          username = "jasper_puffett";
+          use_keyring = true;
+        };
+      };
+    };
   };
 }

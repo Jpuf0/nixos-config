@@ -126,6 +126,14 @@
       scroll-step = 5;
       # on-click = "pamixer -t";
     };
+    mpris = {
+      format = "{status}: {artist} - {title}";
+      status-icons = {
+        playing = "";
+        paused = "";
+        stopped = "";
+      };
+    };
     "custom/launcher" = {
       format = "";
       on-click = "pkill wofi || wofi --show drun";

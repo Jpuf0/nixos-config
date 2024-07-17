@@ -32,6 +32,7 @@
   hardware.enableAllFirmware = true;
   hardware.enableRedistributableFirmware = true;
 
+  hardware.opentabletdriver.enable = true;
   hardware.keyboard.qmk.enable = true;
 
   powerManagement.cpuFreqGovernor = "performance";

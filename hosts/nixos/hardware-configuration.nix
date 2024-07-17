@@ -14,9 +14,11 @@
 
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
   boot.initrd.kernelModules = [];
-  boot.kernelModules = ["kvm-intel" "wl"];
-  boot.extraModulePackages = [config.boot.kernelPackages.broadcom_sta];
-
+  boot.kernelModules = ["kvm-intel" "wl" "v4l2loopback"];
+  boot.extraModulePackages = with config.boot.kernelPackages; [broadcom_sta v4l2loopback];
+  boot.extraModprobeConfig = ''
+    options nvidia NVreg_RegistryDwords="PowerMizerEnable=0x1; PerfLevelSrc=0x2222; PowerMizerLevel=0x3; PowerMizerDefault=0x3; PowerMizerDefaultAC=0x3"
+  '';
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c89d2e3c-4d7d-43ab-9e14-82ee5aa8340c";
     fsType = "ext4";
