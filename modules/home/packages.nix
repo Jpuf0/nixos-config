@@ -96,5 +96,6 @@
     gargoyle
     remmina
     prisma-engines
+    spotify-player
   ];
 }

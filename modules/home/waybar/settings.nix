@@ -10,7 +10,7 @@
     modules-left = [
       "custom/launcher"
       "hyprland/workspaces"
-      "custom/media"
+      "mpris"
     ];
     modules-center = [
       "clock"
@@ -127,10 +127,16 @@
       # on-click = "pamixer -t";
     };
     mpris = {
-      format = "{status}: {artist} - {title}";
+      format = "{status_icon} | {dynamic}";
+      title-len = 45;
+      dynamic-order = [
+        "artist"
+        "title"
+      ];
+      on-click-middle = "spotify_player like";
       status-icons = {
-        playing = "";
-        paused = "";
+        playing = "";
+        paused = "";
         stopped = "";
       };
     };

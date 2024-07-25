@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  hostname,
+  ...
+}: {
   services = {
     gvfs.enable = true;
     gnome.gnome-keyring.enable = true;
@@ -11,8 +15,9 @@
       enable = true;
       settings = {
         global = {
-          username = "jasper_puffett";
-          use_keyring = true;
+          username_cmd = "keyring get spotifyd username";
+          password_cmd = "keyring get spotifyd password";
+          device_name = "noctis";
         };
       };
     };

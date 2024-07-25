@@ -56,8 +56,6 @@
   # Language Specific
   # Language Formatters
   formatter = {
-    "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
-    "[typescriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
     "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
     "[css]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
     "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
@@ -93,10 +91,12 @@
 
   typescript = {
     "[typescript]"."editor.codeActionsOnSave"."source.organiseImports" = "explicit";
+    "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
   };
 
   typescriptreact = {
     "[typescriptreact]"."editor.codeActionsOnSave"."source.organiseImports" = "explicit";
+    "[typescriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
   };
 
   python = {
@@ -108,6 +108,7 @@
 
   misc = {
     "prisma.showPrismaDataPlatformNotification" = false;
+    "totalTypeScript.hideBasicTips" = true;
   };
 in {
   programs.vscode.userSettings =
