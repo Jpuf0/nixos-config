@@ -1,6 +1,6 @@
 {inputs, ...}: {
-  imports = 
+  imports =
     [(import ./hyprlock.nix)]
     ++ [(import ./config.nix)]
-    ++ [inputs.hyprlock.homeManagerModules.hyprlock];
+    ++ [inputs.hyprlock.homeManagerModules.default];
 }

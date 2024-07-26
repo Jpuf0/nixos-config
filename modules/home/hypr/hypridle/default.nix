@@ -1,6 +1,6 @@
 {inputs, ...}: {
   imports = [
-    inputs.hypridle.homeManagerModules.hypridle
+    inputs.hypridle.homeManagerModules.default
     (import ./hypridle.nix)
   ];
 }
