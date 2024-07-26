@@ -2,21 +2,25 @@
   services.hypridle = {
     enable = true;
 
-    lockCmd = "pidof hyprlock || hyprlock";
-    beforeSleepCmd = "loginctl lock-session";
-    afterSleepCmd = "hyprctl dispatch dpms on";
-    ignoreDbusInhibit = true;
+    settings = {
+      general = {
+        ignore_dbus_inhibit = true;
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        before_sleep_cmd = "loginctl lock-session";
+        lock_cmd = "pidof hyprlock || hyprlock";
+      };
 
-    listeners = [
-      {
-        timeout = 300;
-        onTimeout = "loginctl lock-session";
-      }
-      {
-        timeout = 330;
-        onTimeout = "hyprctl dispatch dpms off";
-        onResume = "hyprctl dispatch dpms on";
-      }
-    ];
+      listeners = [
+        {
+          timeout = 300;
+          on-timeout = "loginctl lock-session";
+        }
+        {
+          timeout = 330;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+      ];
+    };
   };
 }

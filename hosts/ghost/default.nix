@@ -7,6 +7,8 @@
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 10;
     };
   };
 
@@ -20,10 +22,9 @@
       nvidiaBusId = "PCI:1:0:0";
     };
 
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
   };
 

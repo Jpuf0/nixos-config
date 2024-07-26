@@ -4,40 +4,39 @@
   ...
 }: let
   sharedModules = [
-    ./modules/programs/alacritty.nix
-    ./modules/programs/bat.nix
-    ./modules/programs/btop.nix
-    ./modules/programs/git.nix
-    ./modules/programs/kitty.nix
-    ./modules/programs/mako.nix
-    ./modules/programs/nvim.nix
-    ./modules/programs/swaylock.nix
-    ./modules/programs/zsh.nix
-    ./modules/programs/wofi
-    ./modules/programs/waybar
-    ./modules/programs/vscode
-    ./modules/programs/hypr
-    ./modules/programs/discord
+    # ./modules/programs/alacritty.nix
+    (import ./modules/programs/bat.nix)
+    (import ./modules/programs/btop.nix)
+    (import ./modules/programs/git.nix)
+    (import ./modules/programs/kitty.nix)
+    (import ./modules/programs/mako.nix)
+    (import ./modules/programs/nvim.nix)
+    (import ./modules/programs/zsh.nix)
+    (import ./modules/programs/wofi)
+    (import ./modules/programs/waybar)
+    (import ./modules/programs/vscode)
+    (import ./modules/programs/hypr)
+    (import ./modules/programs/discord)
   ];
 
   homeImports = {
     "jpuf" =
-      [
-        ./home.nix
-      ]
-      ++ lib.concatLists [sharedModules];
+      [(import ./home.nix)]
+      ++ sharedModules;
   };
 
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
   pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
 in {
-  _module.args = {inherit homeImports;};
+  imports = [
+    {_module.args = {inherit homeImports;};}
+  ];
 
   flake = {
     homeConfigurations = {
       "jpuf" = homeManagerConfiguration {
-        inherit pkgs;
         modules = homeImports."jpuf";
+        inherit pkgs;
       };
     };
   };

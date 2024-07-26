@@ -7,6 +7,8 @@
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi.canTouchEfiVariables = true;
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 10;
     };
   };
 
@@ -15,10 +17,9 @@
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
 
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
   };
 

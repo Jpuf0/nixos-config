@@ -1,19 +1,20 @@
 {...}: {
   programs.hyprlock = {
-    general = {
-      disable_loading_bar = true;
-      grace = 3;
-      hide_cursor = true;
-      no_fade_in = false;
-      no_fade_out = false;
-      ignore_empty_input = false;
-    };
-    backgrounds = [];
-    input-fields = [];
-    sources = [
-      "$HOME/.cache/wal/colors-sway"
-    ];
-    extraConfig = "
+    settings = {
+      general = {
+        disable_loading_bar = true;
+        grace = 3;
+        hide_cursor = true;
+        no_fade_in = false;
+        no_fade_out = false;
+        ignore_empty_input = false;
+      };
+      backgrounds = [];
+      input-fields = [];
+      sources = [
+        "$HOME/.cache/wal/colors-sway"
+      ];
+      extraConfig = "
 background {
   monitor =
   path = $HOME/.current_wallpaper
@@ -83,6 +84,7 @@ label {
   halign = center
   valign = bottom
 }
-    ";
+        ";
+    };
   };
 }

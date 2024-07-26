@@ -14,6 +14,7 @@
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
     home-manager = {
@@ -25,20 +26,20 @@
       url = "github:hyprwm/contrib";
     };
 
-    hypridle = {
-      url = "github:hyprwm/Hypridle";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hypridle = {
+    #   url = "github:hyprwm/Hypridle";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprlock = {
-      url = "github:hyprwm/Hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprlock = {
+    #   url = "github:hyprwm/Hyprlock";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
@@ -48,17 +49,16 @@
       url = "github:NixOS/nixos-hardware/master";
     };
 
+    # nixpkgs = {
+    #   url = "github:NixOS/nixpkgs/nixos-23.11";
+    # };
+
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
+      url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
 
     nur = {
       url = "github:nix-community/NUR";
-    };
-
-    pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

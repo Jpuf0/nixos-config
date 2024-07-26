@@ -26,8 +26,10 @@ in {
       inherit specialArgs;
 
       modules =
-        commonModules
-        ++ [./ghost]
+        [
+          ./ghost
+        ]
+        ++ commonModules
         ++ [
           {
             home-manager = {
@@ -42,8 +44,10 @@ in {
       inherit specialArgs;
 
       modules =
-        commonModules
-        ++ [./noctis]
+        [
+          ./noctis
+        ]
+        ++ commonModules
         ++ [
           {
             home-manager = {

@@ -4,6 +4,7 @@
     ./networking.nix
     ./pipewire.nix
     ./wayland.nix
+    ./misc.nix
   ];
 
   services = {
@@ -12,6 +13,7 @@
     gvfs.enable = true;
     udisks2.enable = true;
     tumbler.enable = true;
+    fwupd.enable = true;
 
     dbus = {
       enable = true;
