@@ -4,19 +4,23 @@
   ...
 }: let
   sharedModules = [
-    # ./modules/programs/alacritty.nix
+    (import ./modules/programs/discord)
+    (import ./modules/programs/floorp)
+    (import ./modules/programs/hypr)
+    (import ./modules/programs/scripts)
+    (import ./modules/programs/vscode)
+    (import ./modules/programs/waybar)
+    (import ./modules/programs/wofi)
     (import ./modules/programs/bat.nix)
     (import ./modules/programs/btop.nix)
+    (import ./modules/programs/direnv.nix)
     (import ./modules/programs/git.nix)
+    (import ./modules/programs/gtk.nix)
     (import ./modules/programs/kitty.nix)
     (import ./modules/programs/mako.nix)
     (import ./modules/programs/nvim.nix)
     (import ./modules/programs/zsh.nix)
-    (import ./modules/programs/wofi)
-    (import ./modules/programs/waybar)
-    (import ./modules/programs/vscode)
-    (import ./modules/programs/hypr)
-    (import ./modules/programs/discord)
+    (import ./modules/programs/packages.nix)
   ];
 
   homeImports = {

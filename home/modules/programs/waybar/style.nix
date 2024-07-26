@@ -90,6 +90,14 @@ in {
         padding-right: 15px;
     }
 
+    #mpris {
+        font-size: 15px;
+        color: #b4befe;
+        font-weight: bold;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     #custom-media {
         font-size: ${custom.font_size};
         color: #b4befe;

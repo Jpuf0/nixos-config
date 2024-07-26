@@ -12,6 +12,7 @@
 in {
   programs.vscode = {
     extensions = with code-extensions.vscode-marketplace; [
+      # bun
       oven.bun-vscode
       # nix language
       bbenoist.nix
@@ -45,6 +46,9 @@ in {
       prisma.prisma
       # Editor Config
       editorconfig.editorconfig
+      # GitHub Readme Preview
+      bierner.markdown-preview-github-styles
+      bierner.github-markdown-preview
 
       # Color theme
       catppuccin.catppuccin-vsc

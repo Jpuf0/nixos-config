@@ -5,8 +5,6 @@
   pkgs,
   ...
 }: {
-  imports = [];
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -54,8 +52,9 @@
 
       # Nixos
       cdnix = "cd ~/.nixos && codium ~/.nixos";
-      rebuild = "sudo nixos-rebuild switch --impure --flake ~/.nixos#";
-      rebuildu = "sudo nixos-rebuild switch --upgrade --impure --flake ~/.nixos#";
+      nix-switch = "sudo nixos-rebuild switch --impure --flake ~/.nixos#nixos";
+      nix-switchu = "sudo nixos-rebuild switch --upgrade --impure --flake ~/.nixos#nixos";
+      nix-flake-update = "sudo nix flake update ~/.nixos#";
 
       # Git
       ga = "git add";
