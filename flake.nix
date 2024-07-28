@@ -32,8 +32,10 @@
     # };
 
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
+      submodules = true;
     };
 
     # hyprlock = {

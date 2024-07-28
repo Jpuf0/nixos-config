@@ -14,10 +14,10 @@ exec-once = dbus-update-activation-environment --systemd &
 exec-once = nm-applet &
 exec-once = hypridle
 exec-once = wl-paste --primary --watch wl-copy --primary --clear
-# exec-once = swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &
 # exec-once = sleep 1 && hyprlock
 exec-once = background-changer &
 exec-once = hyprctl setcursor Nordzy-cursors 22 &
+exec-once = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 exec-once = waybar &
 exec-once = mako &
 
@@ -72,7 +72,7 @@ dwindle {
 }
 
 master {
-  new_is_master = true
+  new_status = master
   special_scale_factor = 1
   no_gaps_when_only = false
 }

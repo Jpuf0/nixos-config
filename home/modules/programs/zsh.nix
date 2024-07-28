@@ -1,4 +1,5 @@
 {
+  osConfig,
   config,
   lib,
   inputs,
@@ -52,8 +53,8 @@
 
       # Nixos
       cdnix = "cd ~/.nixos && codium ~/.nixos";
-      nix-switch = "sudo nixos-rebuild switch --impure --flake ~/.nixos#nixos";
-      nix-switchu = "sudo nixos-rebuild switch --upgrade --impure --flake ~/.nixos#nixos";
+      nix-switch = "sudo nixos-rebuild switch --impure --flake ~/.nixos#${osConfig.networking.hostName}";
+      nix-switchu = "sudo nixos-rebuild switch --upgrade --impure --flake ~/.nixos#nixo${osConfig.networking.hostName}";
       nix-flake-update = "sudo nix flake update ~/.nixos#";
 
       # Git
