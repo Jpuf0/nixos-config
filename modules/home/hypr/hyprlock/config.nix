@@ -8,8 +8,8 @@
       no_fade_out = false;
       ignore_empty_input = false;
     };
-    backgrounds = [];
-    input-fields = [];
+    # backgrounds = [];
+    # input-fields = [];
     sources = [
       "$HOME/.cache/wal/colors-sway"
     ];
