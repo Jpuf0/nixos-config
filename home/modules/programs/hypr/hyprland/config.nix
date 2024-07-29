@@ -13,11 +13,12 @@ exec-once = hash dbus-update-activation-environment 2>/dev/null &
 exec-once = dbus-update-activation-environment --systemd &
 exec-once = nm-applet &
 exec-once = hypridle
-exec-once = wl-paste --primary --watch wl-copy --primary --clear
+# exec-once = wl-paste --primary --watch wl-copy --primary --clear
+exec-once = wl-paste --type text --watch cliphist store
+exec-once = wl-paste --type image --watch cliphist store
 # exec-once = sleep 1 && hyprlock
 exec-once = background-changer &
 exec-once = hyprctl setcursor Nordzy-cursors 22 &
-exec-once = gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 exec-once = waybar &
 exec-once = mako &
 
@@ -154,16 +155,17 @@ bind = $mainMod SHIFT, F, fullscreen, 1
 bind = $mainMod, Space, togglefloating,
 bind = $mainMod, D, exec, pkill wofi || wofi --show drun
 bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] vesktop'
-bind = $mainMod, Escape, exec, hyprlock
+# bind = $mainMod, Escape, exec, hyprlock
 bind = $mainMod SHIFT, Escape, exec, shutdown-script
 bind = $mainMod, P, pseudo,
 bind = $mainMod, J, togglesplit,
 bind = $mainMod, E, exec, nemo
 bind = $mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped
 # bind = $mainMod, C ,exec, hyprpicker -a
-bind = $mainMod, G,exec, $HOME/.local/bin/toggle_layout
-bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
+# bind = $mainMod, G,exec, $HOME/.local/bin/toggle_layout
+# bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
 bind = $mainMod SHIFT, W, exec, floorp
+bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
 # screenshot
 # bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
