@@ -12,9 +12,6 @@
       };
       backgrounds = [];
       input-fields = [];
-      sources = [
-        "$HOME/.cache/wal/colors-sway"
-      ];
       extraConfig = "
 background {
   monitor =

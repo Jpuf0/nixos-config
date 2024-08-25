@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export wallpapers_path="$HOME/Pictures/wallpapers"
+export wallpapers_path="$HOME/Pictures/backgrounds"
 export SWWW_TRANSITION_FPS=120
 export SWWW_TRANSITION_STEP=20
 export SWWW_TRANSITION=wipe

@@ -97,5 +97,9 @@
     remmina
     prisma-engines
     spotify-player
+    ollama
+    simplex-chat-desktop
+    blender
+    nix-ld
   ];
 }

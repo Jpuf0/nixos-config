@@ -5,6 +5,8 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = ["quiet"];
+    consoleLogLevel = 0;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;

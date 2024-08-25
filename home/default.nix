@@ -18,9 +18,10 @@
     (import ./modules/programs/gtk.nix)
     (import ./modules/programs/kitty.nix)
     (import ./modules/programs/mako.nix)
+    (import ./modules/programs/nix-ld.nix)
     (import ./modules/programs/nvim.nix)
-    (import ./modules/programs/zsh.nix)
     (import ./modules/programs/packages.nix)
+    (import ./modules/programs/zsh.nix)
   ];
 
   homeImports = {

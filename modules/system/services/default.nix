@@ -5,6 +5,7 @@
     ./pipewire.nix
     ./wayland.nix
     ./misc.nix
+    ./ollama.nix
   ];
 
   services = {

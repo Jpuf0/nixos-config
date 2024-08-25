@@ -8,5 +8,6 @@
         vial
       ];
     };
+    usbmuxd.enable = true;
   };
 }
