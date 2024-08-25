@@ -21,6 +21,7 @@
     # (import ./modules/programs/nix-ld.nix)
     (import ./modules/programs/nvim.nix)
     (import ./modules/programs/packages.nix)
+    (import ./modules/programs/zen)
     (import ./modules/programs/zsh.nix)
   ];
 
