@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-wallpaper_path=$HOME/Pictures/backgrounds
-backgrounds_folder=$HOME/Pictures/backgrounds/others
+wallpaper_path=$HOME
+backgrounds_folder=$HOME/Pictures/backgrounds
 wallpaper_name="$(ls $backgrounds_folder | wofi --show dmenu --sort-order=alphabetical)"
 if [[ -f $backgrounds_folder/$wallpaper_name ]]; then
     find ~/Pictures/backgrounds -maxdepth 1 -type f -delete
