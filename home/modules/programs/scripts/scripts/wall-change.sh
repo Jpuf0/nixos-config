@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+hyprctl hyprpaper preload $1
+hyprctl hyprpaper wallpaper $1
