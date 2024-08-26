@@ -163,7 +163,7 @@ bind = $mainMod, E, exec, nemo
 bind = $mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped
 # bind = $mainMod, C ,exec, hyprpicker -a
 # bind = $mainMod, G,exec, $HOME/.local/bin/toggle_layout
-# bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
+bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
 bind = $mainMod SHIFT, W, exec, floorp
 bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
