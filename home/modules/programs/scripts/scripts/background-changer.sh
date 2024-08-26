@@ -7,9 +7,6 @@ export SWWW_TRANSITION_ANGLE=30
 export INTERVAL=300
 
 while true; do
-  paper = find $wallpapers_path -type f | shuf -n 1
-  hyprctl hyprpaper preload $paper
-  hyprctl hyprpaper wallpaper $paper
+  swww img $(find $wallpapers_path -type f | shuf -n 1)
   sleep $INTERVAL
-  hyprctl hyprpaper unload unused
 done

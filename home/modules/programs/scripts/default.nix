@@ -1,6 +1,5 @@
 {pkgs, ...}: let
-  wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
-
+  wall-change = pkgs.writeShellScriptBin "wall-change" ''swaybg -m fill -i $1'';
   wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
 
   background-changer = pkgs.writeShellScriptBin "background-changer" (builtins.readFile ./scripts/background-changer.sh);
