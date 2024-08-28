@@ -14,7 +14,6 @@
     (import ./modules/programs/bat.nix)
     (import ./modules/programs/btop.nix)
     (import ./modules/programs/direnv.nix)
-    (import ./modules/programs/games)
     (import ./modules/programs/git.nix)
     (import ./modules/programs/gtk.nix)
     (import ./modules/programs/kitty.nix)
