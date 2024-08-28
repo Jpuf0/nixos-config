@@ -5,7 +5,6 @@
     overlays = with inputs; [
       nix-vscode-extensions.overlays.default
       nur.overlay
-      zen-browser.overlays.default
     ];
   };
 }

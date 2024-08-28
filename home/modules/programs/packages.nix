@@ -101,5 +101,7 @@
     simplex-chat-desktop
     blender
     nix-ld
+    sunshine
+    moonlight-qt
   ];
 }
