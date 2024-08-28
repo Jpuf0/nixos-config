@@ -49,7 +49,7 @@
           color = "$color0";
           font_size = 64;
           font_family = "JetBrains Mono Nerd Font 10";
-          position = "0, 12";
+          position = "0, 10";
           halign = "center";
           valign = "center";
         }
