@@ -8,6 +8,7 @@
     (import ./modules/programs/floorp)
     (import ./modules/programs/hypr)
     (import ./modules/programs/scripts)
+    (import ./modules/programs/streamdeck.nix)
     (import ./modules/programs/vscode)
     (import ./modules/programs/waybar)
     (import ./modules/programs/wofi)

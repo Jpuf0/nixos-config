@@ -103,5 +103,6 @@
     nix-ld
     sunshine
     moonlight-qt
+    firefox
   ];
 }
