@@ -104,5 +104,6 @@
     sunshine
     moonlight-qt
     firefox
+    streamdeck-ui
   ];
 }

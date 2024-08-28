@@ -3,6 +3,7 @@
     ./zsh.nix
     ./home-manager.nix
     ./steam.nix
+    ./streamdeck.nix
   ];
 
   programs = {
