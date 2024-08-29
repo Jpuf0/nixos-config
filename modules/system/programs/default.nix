@@ -4,6 +4,7 @@
     ./home-manager.nix
     ./steam.nix
     ./streamdeck.nix
+    ./regreet.nix
   ];
 
   programs = {
