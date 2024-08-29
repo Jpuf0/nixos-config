@@ -56,7 +56,8 @@
     # };
 
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixpkgs-unstable";
+      # url = "github:nixos/nixpkgs/nixpkgs-unstable";
+      url = "github:nixos/nixpkgs/master";
     };
 
     nur = {

@@ -1,6 +1,5 @@
-{}: {
-  programs.streamdeck-ui = {
+{pkgs, ...}: {
+  programs.streamcontroller = {
     enable = true;
-    autoStart = true; # optional
   };
 }
