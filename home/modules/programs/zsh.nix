@@ -36,10 +36,12 @@
     shellAliases = with lib;
     with pkgs; {
       cat = "${getExe bat}";
+      grep = "${getExe bat-extras.batgrep}";
 
       # Utils
       c = "clear";
       cd = "z";
+      fcd = "cd $(find -type d | fzf)";
       vim = "nvim";
       icat = "kitten icat";
       dsize = "du -hs";
@@ -53,6 +55,7 @@
 
       # Nixos
       cdnix = "cd ~/.nixos && codium ~/.nixos";
+      nix-shell = "nix-shell --run zsh";
       nix-switch = "sudo nixos-rebuild switch --impure --flake ~/.nixos#${osConfig.networking.hostName}";
       nix-switchu = "sudo nixos-rebuild switch --upgrade --impure --flake ~/.nixos#${osConfig.networking.hostName}";
       nix-flake-update = "sudo nix flake update ~/.nixos#";
