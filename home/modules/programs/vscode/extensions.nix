@@ -3,15 +3,9 @@
   pkgs,
   lib,
   ...
-}: let
-  code-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
-  plugins = (import ./external-extensions.nix) {
-    pkgs = pkgs;
-    lib = lib;
-  };
-in {
+}: {
   programs.vscode = {
-    extensions = with code-extensions.vscode-marketplace; [
+    extensions = with pkgs.vscode-marketplace; [
       # bun
       oven.bun-vscode
       # nix language
@@ -23,9 +17,10 @@ in {
       # python
       ms-python.python
       # C/C++
-      ms-vscode.cpptools
-      # OCaml
-      ocamllabs.ocaml-platform
+      # ms-vscode.cpptools
+
+      # C# Devkit
+      ms-dotnettools.csdevkit
       # Discord Presence
       leonardssh.vscord
       # Comment Anchors
@@ -49,18 +44,21 @@ in {
       # GitHub Readme Preview
       bierner.markdown-preview-github-styles
       bierner.github-markdown-preview
-
       # Color theme
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
+      # Gleam
+      gleam.gleam
+      # Continue.dev
+      continue.continue
+      # SuperMaven
+      supermaven.supermaven
 
       # External Extensions from [nix4vscode](https://github.com/nix-community/nix4vscode)
       # Continue.dev use local llm for code
-      plugins.continue.continue
+      # plugins.continue.continue
       # SuperMaven Github Copilor but better??
-      plugins.supermaven.supermaven
-
-      gleam.gleam
+      # plugins.supermaven.supermaven
     ];
   };
 }

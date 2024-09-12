@@ -58,6 +58,7 @@
     nixpkgs = {
       # url = "github:nixos/nixpkgs/nixpkgs-unstable";
       url = "github:nixos/nixpkgs/master";
+      # url = "github:/nixos/nixpkgs/1284004bf6c6e50d8592b6efe83708931e75aec7";
     };
 
     nur = {
@@ -68,6 +69,7 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     zen-browser = {
       url = "github:MarceColl/zen-browser-flake";
     };

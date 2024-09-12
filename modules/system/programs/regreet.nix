@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.regreet = {
-    enable = true;
+    enable = false;
     settings = {
       background = "~/.current_wallpaper";
     };

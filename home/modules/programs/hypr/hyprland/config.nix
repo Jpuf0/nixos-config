@@ -5,6 +5,7 @@ $mainMod = SUPER
 
 monitor=DP-2,1920x1080@240,0x0,1
 monitor=HDMI-A-1,1920x1080@60,1920x0,1
+monitor = , preferred, auto, 1
 # monitor=eDP-1,preferred,auto,2
 
 # autostart
@@ -74,14 +75,15 @@ dwindle {
 
 master {
   new_status = master
-  special_scale_factor = 1
+  special_scale_factor = 1      # xdg-desktop-portal-hyprland
+
   no_gaps_when_only = false
 }
 
 decoration {
   rounding = 5
   # rounding = 12
-  
+
   active_opacity = 0.90;
   inactive_opacity = 0.90;
   fullscreen_opacity = 1.0;
@@ -91,19 +93,19 @@ decoration {
 
     size = 4
     passes = 2
-    
+
     brightness = 1
     contrast = 1.300000
     ignore_opacity = true
     noise = 0.011700
-    
+
     new_optimizations = true
-    
+
     xray = true
   }
 
   drop_shadow = true;
-  
+
   shadow_ignore_window = true;
   shadow_offset = 0 2
   shadow_range = 20
@@ -114,7 +116,7 @@ decoration {
 
 animations {
   enabled = true
-  
+
   bezier = fluent_decel, 0, 0.2, 0.4, 1
   bezier = easeOutCirc, 0, 0.55, 0.45, 1
   bezier = easeOutCubic, 0.33, 1, 0.68, 1
@@ -124,7 +126,7 @@ animations {
   animation = windowsIn, 1, 3, easeOutCubic, popin 30% # window open
   animation = windowsOut, 1, 3, fluent_decel, popin 70% # window close.
   animation = windowsMove, 1, 2, easeinoutsine, slide # everything in between, moving, dragging, resizing.
-  
+
   # Fade
   animation = fadeIn, 1, 3, easeOutCubic  # fade in (open) -> layers and windows
   animation = fadeOut, 1, 2, easeOutCubic # fade out (close) -> layers and windows

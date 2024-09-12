@@ -6,6 +6,7 @@
     ./wayland.nix
     ./misc.nix
     ./ollama.nix
+    ./mullvad.nix
   ];
 
   services = {

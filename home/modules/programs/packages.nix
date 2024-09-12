@@ -86,7 +86,7 @@
     carla
     yabridge
     yabridgectl
-    mullvad
+    mullvad-vpn
     gleam
     erlang
     rebar3
@@ -104,5 +104,8 @@
     sunshine
     moonlight-qt
     firefox
+    desmume
+    zed-editor
+    craftos-pc
   ];
 }
