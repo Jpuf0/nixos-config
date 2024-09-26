@@ -7,6 +7,7 @@
     ./misc.nix
     ./ollama.nix
     ./mullvad.nix
+    ./mpris-proxy.nix
   ];
 
   services = {

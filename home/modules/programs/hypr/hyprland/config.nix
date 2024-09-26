@@ -1,11 +1,13 @@
 {...}: {
   wayland.windowManager.hyprland = {
     extraConfig = "
+# debug:disable_logs = false
 $mainMod = SUPER
 
+monitor=Unknown-1,disable
 monitor=DP-2,1920x1080@240,0x0,1
 monitor=HDMI-A-1,1920x1080@60,1920x0,1
-monitor = , preferred, auto, 1
+# monitor = , preferred, auto, 1
 # monitor=eDP-1,preferred,auto,2
 
 # autostart
@@ -37,7 +39,7 @@ misc {
   layers_hog_keyboard_focus = true
   animate_manual_resizes = false
   enable_swallow = true
-  # swallow_regex =
+  swallow_regex = ^(Alacritty|kitty)$
   focus_on_activate = false
 }
 
@@ -138,6 +140,10 @@ animations {
   animation = workspaces, 1, 4, easeOutCubic, fade # styles: slide, slidevert, fade, slidefade, slidefadevert
 }
 
+render {
+  explicit_sync = 0
+}
+
 
 # ----------------------------------------------------------------
 
@@ -150,7 +156,7 @@ bind = $mainMod, M, exit,
 bind = $mainMod, Return, exec, kitty
 bind = ALT, Return, exec, kitty --title float_kitty
 bind = $mainMod SHIFT, Return, exec, kitty --start-as=fullscreen -o 'font_size=16'
-bind = $mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] floorp'
+bind = $mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] zen'
 bind = $mainMod, C, killactive,
 bind = $mainMod, F, fullscreen, 0
 bind = $mainMod SHIFT, F, fullscreen, 1
@@ -166,7 +172,7 @@ bind = $mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped
 # bind = $mainMod, C ,exec, hyprpicker -a
 # bind = $mainMod, G,exec, $HOME/.local/bin/toggle_layout
 bind = $mainMod, W,exec, pkill wofi || wallpaper-picker
-bind = $mainMod SHIFT, W, exec, floorp
+bind = $mainMod SHIFT, W, exec, zen
 bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
 # screenshot
@@ -251,8 +257,8 @@ windowrule = idleinhibit focus,mpv
 windowrule = float,udiskie
 windowrule = float,title:^(Transmission)$
 windowrule = float,title:^(Volume Control)$
-windowrule = float,title:^(floorp — Sharing Indicator)$
-windowrule = move 0 0,title:^(floorp — Sharing Indicator)$
+windowrule = float,title:^(zen-alpha — Sharing Indicator)$
+windowrule = move 0 0,title:^(zen-alpha — Sharing Indicator)$
 windowrule = size 700 450,title:^(Volume Control)$
 windowrule = move 40 55%,title:^(Volume Control)$
 windowrulev2 = float, title:^(Picture-in-Picture)$
@@ -269,9 +275,10 @@ windowrulev2 = opacity 1.0 override 1.0 override, title:^(.*mpv.*)$
 windowrule = tile,Aseprite
 windowrulev2 = opacity 1.0 override 1.0 override, class:(Aseprite)
 windowrulev2 = opacity 1.0 override 1.0 override, class:(Unity)
+windowrulev2 = opacity 1.0 override 1.0 override, class:(zen-alpha)
 windowrule = size 1200 725,mpv
 windowrulev2 = idleinhibit focus, class:^(mpv)$
-windowrulev2 = idleinhibit fullscreen, class:^(floorp)$
+windowrulev2 = idleinhibit fullscreen, class:^(zen-alpha)$
 
 windowrule = float,title:^(float_kitty)$
 windowrule = center,title:^(float_kitty)$

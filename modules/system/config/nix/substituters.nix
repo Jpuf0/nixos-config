@@ -1,5 +1,6 @@
 {
   nix.settings = {
+    trusted-users = ["jpuf"];
     substituters = [
       "https://nix-gaming.cachix.org"
       "https://nix-community.cachix.org"

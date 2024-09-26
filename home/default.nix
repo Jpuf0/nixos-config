@@ -5,7 +5,6 @@
 }: let
   sharedModules = [
     (import ./modules/programs/discord)
-    (import ./modules/programs/floorp)
     (import ./modules/programs/hypr)
     (import ./modules/programs/scripts)
     (import ./modules/programs/vscode)

@@ -107,5 +107,7 @@
     desmume
     zed-editor
     craftos-pc
+    vdhcoapp
+    spotify
   ];
 }
