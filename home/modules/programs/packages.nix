@@ -109,5 +109,6 @@
     craftos-pc
     vdhcoapp
     spotify
+    heroic
   ];
 }

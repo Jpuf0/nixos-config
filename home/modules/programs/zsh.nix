@@ -36,7 +36,7 @@
     shellAliases = with lib;
     with pkgs; {
       cat = "${getExe bat}";
-      grep = "${getExe bat-extras.batgrep}";
+      bgrep = "${getExe bat-extras.batgrep}";
 
       # Utils
       c = "clear";

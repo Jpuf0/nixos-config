@@ -201,6 +201,7 @@ bind = $mainMod, 7, workspace, 7
 bind = $mainMod, 8, workspace, 8
 bind = $mainMod, 9, workspace, 9
 bind = $mainMod, 0, workspace, 10
+bind = $mainMod, backspace, togglespecialworkspace, minimized
 
 # same as above, but switch to the workspace
 bind = $mainMod SHIFT, 1, movetoworkspacesilent, 1     # movetoworkspacesilent
@@ -213,7 +214,7 @@ bind = $mainMod SHIFT, 7, movetoworkspacesilent, 7
 bind = $mainMod SHIFT, 8, movetoworkspacesilent, 8
 bind = $mainMod SHIFT, 9, movetoworkspacesilent, 9
 bind = $mainMod SHIFT, 0, movetoworkspacesilent, 10
-bind = $mainMod CTRL, c, movetoworkspace, empty
+bind = $mainMod CTRL, C, movetoworkspace, special:minimized
 
 # window control
 bind = $mainMod SHIFT, left, movewindow, l
