@@ -11,7 +11,6 @@
 
   cfg = config.sakura.programs.hyprland;
 
-  #TODO: Add support for positioning
   # Helper function to validate a single monitor configuration
   validateMonitor = m: let
     parts = lib.splitString "," m;
@@ -187,7 +186,7 @@ in {
             no_gaps_when_only = 0;
             force_split = 0;
             special_scale_factor = 1.0;
-            split_width_factor = 1.0;
+            split_width_multiplier = 1.0;
             use_active_for_splits = true;
             pseudotile = true;
             preserve_split = true;
@@ -269,7 +268,7 @@ in {
               "ALT, Return, exec, kitty --title float_kitty"
               "$mainMod, C, killactive,"
               "$mainMod, F, fullscreen, 0"
-              "$mainMod, SHIFT, F, fullscreen, 1"
+              "$mainMod SHIFT, F, fullscreen, 1"
               "$mainMod, Space, togglefloating,"
               "$mainMod, D, exec, pkill wofi || wofi --show drun"
               "$mainMod, P, pseudo,"
@@ -289,7 +288,7 @@ in {
 
               # Windows-like Focus Switching
               "$mainMod, tab, workspace, m+1"
-              "$mainMod, SHIFT, tab, workspace, m-1"
+              "$mainMod SHIFT, tab, workspace, m-1"
             ]
             # workspaces
             # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
@@ -345,45 +344,44 @@ in {
           ];
 
           windowrulev2 = [
-            "center,imv"
-            "center,mpv"
+            "center,class:^(imv)$"
+            "center,class:^(mpv)$"
             "center,title:^(float_kitty)$"
-            "float, title:^(Picture-in-Picture)$"
             "float,class:^(confirm)$"
             "float,class:^(confirmreset)$"
             "float,class:^(dialog)$"
             "float,class:^(download)$"
             "float,class:^(error)$"
             "float,class:^(file_progress)$"
+            "float,class:^(imv)$"
+            "float,class:^(mpv)$"
             "float,class:^(notification)$"
             "float,class:^(pavucontrol)$"
             "float,class:^(SoundWireServer)$"
-            "float,imv"
-            "float,mpv"
+            "float,class:^(udiskie)$"
+            "float,class:^(wofi)$"
             "float,title:^(branchdialog)$"
             "float,title:^(Confirm to replace files)$"
             "float,title:^(File Operation Progress)$"
             "float,title:^(float_kitty)$"
             "float,title:^(Open File)$"
+            "float,title:^(Picture-in-Picture)$"
             "float,title:^(Volume Control)$"
-            "float,udiskie"
-            "float,wofi"
             "idleinhibit focus, class:^(mpv)$"
             "idleinhibit fullscreen, class:^(zen-alpha)$"
             "move 40 55%,title:^(Volume Control)$"
-            "noborder,wofi"
+            "noborder,class:^(wofi)$"
             "opacity 1.0 override 1.0 override, class:(zen-alpha)"
             "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
             "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
             "opacity 1.0 override 1.0 override, title:^(.*YouTube.*)$"
             "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
             "pin, title:^(Picture-in-Picture)$"
-            "pin,wofi"
-            "size 1200 725,imv"
-            "size 1200 725,mpv"
+            "pin,class:^(wofi)$"
+            "size 1200 725,class:^(imv)$"
+            "size 1200 725,class:^(mpv)$"
             "size 700 450,title:^(Volume Control)$"
             "size 950 600,title:^(float_kitty)$"
-            "tile,Aseprite"
           ];
         };
       };
