@@ -5,6 +5,7 @@
     ./steam.nix
     ./streamdeck.nix
     ./regreet.nix
+    ./nix-ld.nix
   ];
 
   programs = {

@@ -110,5 +110,7 @@
     vdhcoapp
     spotify
     heroic
+    cmake
+    rpcs3
   ];
 }

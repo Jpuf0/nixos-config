@@ -6,6 +6,7 @@
 }: {
   imports = [
     inputs.home-manager.nixosModules.default
+    inputs.nix-ld.nixosModules.nix-ld
   ];
 
   home-manager = {
