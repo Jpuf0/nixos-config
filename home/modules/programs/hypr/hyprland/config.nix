@@ -32,6 +32,10 @@ input {
   sensitivity = 0
 }
 
+cursor {
+  no_hardware_cursors = true
+}
+
 misc {
   disable_autoreload = true
   disable_hyprland_logo = true
@@ -66,7 +70,6 @@ xwayland {
 }
 
 dwindle {
-  no_gaps_when_only = false
   force_split = 0
   special_scale_factor = 1.0
   split_width_multiplier = 1.0
@@ -79,7 +82,6 @@ master {
   new_status = master
   special_scale_factor = 1      # xdg-desktop-portal-hyprland
 
-  no_gaps_when_only = false
 }
 
 decoration {

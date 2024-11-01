@@ -100,7 +100,6 @@
     ollama
     simplex-chat-desktop
     blender
-    nix-ld
     sunshine
     moonlight-qt
     firefox
@@ -112,5 +111,6 @@
     heroic
     cmake
     rpcs3
+    flatpak
   ];
 }
