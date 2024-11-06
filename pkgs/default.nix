@@ -3,7 +3,7 @@
 
   perSystem = {pkgs, ...}: {
     packages = {
-      effectsfx = pkgs.callPackage ./eventnsfx {};
+      effectsfx = pkgs.callPackage ./eventsfx {};
     };
   };
 }
