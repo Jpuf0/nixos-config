@@ -7,13 +7,15 @@
     swww
     # swaybg
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
+    inputs.self.packages.${pkgs.system}.effectsfx
     hyprpicker
     wofi
     grim
     slurp
     wl-clipboard
     cliphist
-    wf-recorder
+    # wf-recorder
+    # libinput
     glib
     wayland
   ];

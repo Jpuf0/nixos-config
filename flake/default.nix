@@ -3,5 +3,6 @@
     ./devshell.nix
     ../hosts
     ../home
+    ../pkgs
   ];
 }
