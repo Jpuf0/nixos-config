@@ -10,7 +10,6 @@
     (import ./modules/programs/vscode)
     (import ./modules/programs/waybar)
     (import ./modules/programs/wofi)
-    (import ./modules/programs/adb.nix)
     (import ./modules/programs/bat.nix)
     (import ./modules/programs/btop.nix)
     (import ./modules/programs/direnv.nix)
