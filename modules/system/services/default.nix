@@ -1,13 +1,14 @@
 {pkgs, ...}: {
   imports = [
+    ./eventsfx.nix
     ./kde/polkit-kde.nix
+    ./misc.nix
+    ./mpris-proxy.nix
+    ./mullvad.nix
     ./networking.nix
+    ./ollama.nix
     ./pipewire.nix
     ./wayland.nix
-    ./misc.nix
-    ./ollama.nix
-    ./mullvad.nix
-    ./mpris-proxy.nix
   ];
 
   services = {
