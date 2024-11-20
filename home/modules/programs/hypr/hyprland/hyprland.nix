@@ -7,7 +7,6 @@
     swww
     # swaybg
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
-    inputs.self.packages.${pkgs.system}.effectsfx
     hyprpicker
     wofi
     grim

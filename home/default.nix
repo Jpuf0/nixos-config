@@ -21,6 +21,7 @@
     (import ./modules/programs/packages.nix)
     (import ./modules/programs/zen)
     (import ./modules/programs/zsh.nix)
+    (import ./modules/programs/eventsfx.nix)
   ];
 
   homeImports = {
