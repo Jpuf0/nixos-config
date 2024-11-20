@@ -60,7 +60,7 @@
     telegram-desktop
     pywal
     dnsutils
-    audacious-plugins
+    # audacious-plugins
     alacritty
     gimp
     usbmuxd
@@ -99,7 +99,7 @@
     spotify-player
     ollama
     simplex-chat-desktop
-    blender
+    # blender
     sunshine
     moonlight-qt
     firefox

@@ -17,6 +17,10 @@
   boot.kernelModules = ["kvm-intel" "wl" "v4l2loopback"];
   boot.extraModulePackages = with config.boot.kernelPackages; [broadcom_sta v4l2loopback usbip];
 
+  boot.extraModprobeConfig = ''
+    options v4l2loopback exclusive_caps=1 card_label="Discord Multi-Monitor" video_nr=0
+  '';
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c89d2e3c-4d7d-43ab-9e14-82ee5aa8340c";
     fsType = "ext4";

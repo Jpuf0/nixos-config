@@ -9,6 +9,9 @@
       "wheel"
       "docker"
       "input"
+      "video"
+      "adbusers"
+      "plugdev"
     ];
   };
 }

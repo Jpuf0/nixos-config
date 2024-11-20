@@ -13,7 +13,8 @@
     slurp
     wl-clipboard
     cliphist
-    # wf-recorder
+    wf-recorder
+    v4l-utils
     # libinput
     glib
     wayland
