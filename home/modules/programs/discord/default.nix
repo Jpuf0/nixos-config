@@ -14,5 +14,6 @@ in {
         [./vesktop.patch]
       ];
     }))
+    equibop
   ];
 }

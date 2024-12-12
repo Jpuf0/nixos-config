@@ -69,9 +69,19 @@
     usbutils
     docker
     bottles
-    steamtinkerlaunch
+    protonup-qt
+    # steamtinkerlaunch
+    xdotool
+    xorg.xprop
+    unixtools.xxd
+    xorg.xwininfo
+    xorg.xrandr
+    yad
+
     wine64
     winetricks
+    protontricks
+    p7zip
     gamemode
     gamescope
     nvtopPackages.full
@@ -104,7 +114,7 @@
     moonlight-qt
     firefox
     desmume
-    zed-editor
+    # zed-editor
     craftos-pc
     vdhcoapp
     spotify
@@ -113,5 +123,10 @@
     rpcs3
     flatpak
     jetbrains.webstorm
+    nodePackages_latest.pnpm
+    bitwarden-cli
+    bitwarden-desktop
+    bitwarden-menu
+    dmenu
   ];
 }
