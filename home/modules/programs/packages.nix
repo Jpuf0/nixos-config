@@ -112,5 +112,6 @@
     cmake
     rpcs3
     flatpak
+    jetbrains.webstorm
   ];
 }

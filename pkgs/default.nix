@@ -4,6 +4,7 @@
   perSystem = {pkgs, ...}: {
     packages = {
       eventsfx = pkgs.callPackage ./eventsfx {};
+      zen-browser = pkgs.callPackage ./zen {};
     };
   };
 }
