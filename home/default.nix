@@ -28,6 +28,9 @@
     "jpuf" =
       [(import ./home.nix)]
       ++ sharedModules;
+    "ypuf" = 
+      [(import ./home_ypuf.nix)]
+      ++ sharedModules
   };
 
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
@@ -41,6 +44,10 @@ in {
     homeConfigurations = {
       "jpuf" = homeManagerConfiguration {
         modules = homeImports."jpuf";
+        inherit pkgs;
+      };
+      "ypuf" = homeManagerConfiguration {
+        modules = homeImports."ypuf";
         inherit pkgs;
       };
     };
