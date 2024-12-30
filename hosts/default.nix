@@ -62,17 +62,17 @@ in {
       inherit specialArgs;
 
       modules = [
-        ./azalea
-      ]
-      ++ commonModules
-      ++ [
-        {
-          home-manager = {
-            users.jpuf.imports = homeImports."ypuf";
-            extraSpecialArgs = specialArgs;
-          };
-        }
-      ]
+          ./azalea
+        ]
+        ++ commonModules
+        ++ [
+          {
+            home-manager = {
+              users.jpuf.imports = homeImports."ypuf";
+              extraSpecialArgs = specialArgs;
+            };
+          }
+        ];
     };
   };
 }
