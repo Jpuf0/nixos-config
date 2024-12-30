@@ -8,24 +8,26 @@
   primeConfig = config.hardware.nvidia.prime;
 in {
   config = {
-    hardware = {
-      nvidia = {
-        modesetting.enable = true;
-        powerManagement = {
-          enable = true;
-          finegrained = false;
-        };
+    # hardware = {
+    #   nvidia = {
+    #     modesetting.enable = true;
+    #     powerManagement = {
+    #       enable = true;
+    #       finegrained = false;
+    #     };
 
-        prime.offload = {
-          enable = mkIf (primeConfig.nvidiaBusId != "" && (primeConfig.intelBusId != "" || primeConfig.amdgpuBusId != "")) true;
-          enableOffloadCmd = mkIf primeConfig.offload.enable true;
-        };
+    #     prime.offload = {
+    #       enable = mkIf (primeConfig.nvidiaBusId != "" && (primeConfig.intelBusId != "" || primeConfig.amdgpuBusId != "")) true;
+    #       enableOffloadCmd = mkIf primeConfig.offload.enable true;
+    #     };
 
-        open = true;
-        nvidiaSettings = true;
+    #     open = true;
+    #     nvidiaSettings = true;
 
-        package = config.boot.kernelPackages.nvidiaPackages.beta;
-      };
-    };
+    #     package = config.boot.kernelPackages.nvidiaPackages.beta;
+    #   };
+    # };
+    hardware.amdgpu.opencl.enable = true;
+    services.xserver.videoDrivers = ["amdgpu"];
   };
 }
