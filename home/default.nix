@@ -30,7 +30,7 @@
       ++ sharedModules;
     "ypuf" = 
       [(import ./home_ypuf.nix)]
-      ++ sharedModules
+      ++ sharedModules;
   };
 
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
