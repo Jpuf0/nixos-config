@@ -68,7 +68,7 @@ in {
         ++ [
           {
             home-manager = {
-              users.jpuf.imports = homeImports."ypuf";
+              users.ypuf.imports = homeImports."ypuf";
               extraSpecialArgs = specialArgs;
             };
           }
