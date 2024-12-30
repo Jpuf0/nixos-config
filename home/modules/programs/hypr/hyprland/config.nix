@@ -7,7 +7,7 @@ $mainMod = SUPER
 #monitor=Unknown-1,disable
 #monitor=DP-2,1920x1080@240,0x0,1
 #monitor=HDMI-A-1,1920x1080@60,1920x0,1
-monitor = , preferred, auto, 1
+monitor =, preferred, auto, 1
 # monitor=eDP-1,preferred,auto,2
 
 # autostart
