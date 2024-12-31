@@ -66,6 +66,7 @@ in {
       package = lib.mkOption {
         example = "config.boot.kernelPackages.nvidiaPackages.legacy_470";
         description = "The NVIDIA driver package to use";
+        default = config.boot.kernelPackages.nvidiaPackages.stable;
       };
     };
   };

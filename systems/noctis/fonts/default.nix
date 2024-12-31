@@ -29,8 +29,8 @@
     fontDir.enable = true;
 
     packages = with pkgs; [
-      nerdfonts
-      (nerdfonts.override {fonts = ["JetBrainsMono" "NerdFontsSymbolsOnly"];})
+      # (nerdfonts.override {fonts = ["JetBrainsMono" "NerdFontsSymbolsOnly"];})
+      nerd-fonts.jetbrains-mono
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji

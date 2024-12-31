@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   imports = [
     ./cache
     ./config
@@ -28,7 +28,13 @@
       locale = "en_US.UTF-8";
 
       hardware = {
-        gpu.type = "nvidia";
+        gpu = {
+          type = "nvidia";
+          nvidia = {
+            package = config.boot.kernelPackages.nvidiaPackages.beta;
+            open = true;
+          };
+        };
         cpu.type = "intel";
       };
 
@@ -60,10 +66,10 @@
 
       hyprland = {
         enable = true;
-        monitors = [
-          "DP-2,1920x1080@240,0x0,1"
-          "HDMI-A-1,1920x1080@60,1920x0,1"
-        ];
+        # monitors = [
+        #   "DP-2,1920x1080@240,0x0,1"
+        #   "HDMI-A-1,1920x1080@60,1920x0,1"
+        # ];
       };
 
       shells = {
