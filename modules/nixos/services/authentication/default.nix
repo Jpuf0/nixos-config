@@ -14,7 +14,7 @@ in {
     agents = mkOption {
       type = enum ["gnome" "kde" "qt5"];
       description = "Polkit agents";
-      default = "gnome";
+      default = "kde";
     };
   };
 

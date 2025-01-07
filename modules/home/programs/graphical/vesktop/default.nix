@@ -31,14 +31,15 @@ in {
   config = mkIf cfg.enable {
     home-manager.users."${username}" = {
       home.packages = with pkgs; [
-        (vesktop.overrideAttrs (old: {
-          patches = concatLists [
-            (old.patches or [])
-            [
-              ./vesktop.patch
-            ]
-          ];
-        }))
+        # (vesktop.overrideAttrs (old: {
+        #   patches = concatLists [
+        #     (old.patches or [])
+        #     [
+        #       ./vesktop.patch
+        #     ]
+        #   ];
+        # }))
+        vesktop
       ];
 
       xdg.configFile = {

@@ -67,7 +67,7 @@ in {
       alacritty
       gimp
       docker
-      bottles
+      # bottles
       steamtinkerlaunch
       wine64
       winetricks
@@ -93,7 +93,7 @@ in {
       craftos-pc
       vdhcoapp
       spotify
-      heroic
+      # heroic
       cmake
     ];
 

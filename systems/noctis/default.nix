@@ -40,14 +40,17 @@
 
       services = {
         ssh.enable = true;
-        polkit.enable = true;
+        polkit = {
+          enable = true;
+          agents = "kde";
+        };
         pipewire.enable = true;
       };
     };
 
     xdg = {
       enable = true;
-      default_browser = "zen-alpha.desktop";
+      default_browser = "zen";
       default_editor = "vscodium";
       default_terminal = "kitty";
     };
