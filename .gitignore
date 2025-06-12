@@ -1,6 +1,6 @@
 .direnv
 .vscode
+.zed
 .pre-commit-config.yaml
-ghost.qcow2
 result
-noctis.qcow2
+*.qcow2

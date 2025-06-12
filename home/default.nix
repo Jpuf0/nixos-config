@@ -7,8 +7,8 @@
     (import ./modules/programs/discord)
     (import ./modules/programs/hypr)
     (import ./modules/programs/scripts)
-    (import ./modules/programs/vscode)
-    (import ./modules/programs/waybar)
+    # (import ./modules/programs/vscode)
+    # (import ./modules/programs/waybar)
     (import ./modules/programs/wofi)
     (import ./modules/programs/bat.nix)
     (import ./modules/programs/btop.nix)
@@ -20,8 +20,13 @@
     (import ./modules/programs/nvim.nix)
     (import ./modules/programs/packages.nix)
     (import ./modules/programs/zen)
-    (import ./modules/programs/zsh.nix)
+    (import ./modules/programs/fish)
     (import ./modules/programs/eventsfx.nix)
+    (import ./modules/programs/claude-desktop.nix)
+    (import ./modules/programs/spicetify.nix)
+    (import ./modules/programs/xdg.nix)
+    (import ./modules/programs/nh.nix)
+    (import ./modules/programs/quickshell)
   ];
 
   homeImports = {

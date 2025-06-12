@@ -111,7 +111,7 @@
     "totalTypeScript.hideBasicTips" = true;
   };
 in {
-  programs.vscode.userSettings =
+  programs.vscode.profiles.default.userSettings =
     {
       "extensions.autoCheckUpdates" = false;
       "extensions.autoUpdate" = false;

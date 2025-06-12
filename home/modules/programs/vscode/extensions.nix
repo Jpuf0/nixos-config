@@ -4,7 +4,7 @@
   lib,
   ...
 }: {
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     extensions = with pkgs.vscode-marketplace; [
       # bun
       oven.bun-vscode
@@ -20,7 +20,7 @@
       # ms-vscode.cpptools
 
       # C# Devkit
-      ms-dotnettools.csdevkit
+      # ms-dotnettools.csdevkit
       # Discord Presence
       leonardssh.vscord
       # Comment Anchors
@@ -53,12 +53,6 @@
       continue.continue
       # SuperMaven
       supermaven.supermaven
-
-      # External Extensions from [nix4vscode](https://github.com/nix-community/nix4vscode)
-      # Continue.dev use local llm for code
-      # plugins.continue.continue
-      # SuperMaven Github Copilor but better??
-      # plugins.supermaven.supermaven
     ];
   };
 }

@@ -17,11 +17,10 @@
       textColor = "#cdd6f4";
       icons = true;
       actions = true;
-      extraConfig = ''
-        text-alignment=center
-        [urgency=high]
-        border-color=#fab387
-      '';
+      markup = false;
+      settings = {
+        text-alignment = "center";
+      };
     };
   };
 }

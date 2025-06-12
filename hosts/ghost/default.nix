@@ -4,11 +4,13 @@
   networking.hostName = "ghost";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
+    kernelParams = ["quiet"];
+    consoleLogLevel = 0;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 10;
+      systemd-boot.configurationLimit = 5;
     };
   };
 

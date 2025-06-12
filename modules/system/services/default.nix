@@ -9,6 +9,7 @@
     ./ollama.nix
     ./pipewire.nix
     ./wayland.nix
+    ./ssh.nix
   ];
 
   services = {
@@ -18,6 +19,7 @@
     udisks2.enable = true;
     tumbler.enable = true;
     fwupd.enable = true;
+    flatpak.enable = true;
 
     dbus = {
       enable = true;

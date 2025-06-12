@@ -15,17 +15,23 @@ in {
           enable = true;
           finegrained = false;
         };
-
-        prime.offload = {
-          enable = mkIf (primeConfig.nvidiaBusId != "" && (primeConfig.intelBusId != "" || primeConfig.amdgpuBusId != "")) true;
-          enableOffloadCmd = mkIf primeConfig.offload.enable true;
-        };
-
         open = true;
-        nvidiaSettings = true;
+        nvidiaSettings = false;
 
         package = config.boot.kernelPackages.nvidiaPackages.beta;
       };
+    };
+    environment = {
+      sessionVariables = {
+        "__EGL_VENDOR_LIBRARY_FILENAMES" = "${config.hardware.nvidia.package}/share/glvnd/egl_vendor.d/10_nvidia.json";
+      };
+    };
+    boot = {
+      kernelParams = [
+        "nvidia.NVreg_UsePageAttributeTable=1"
+        "nvidia.NVreg_TemporaryFilePath=/var/tmp"
+      ];
+      blacklistedKernelModules = ["nouveau"];
     };
   };
 }

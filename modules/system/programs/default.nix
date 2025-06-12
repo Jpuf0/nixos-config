@@ -1,6 +1,7 @@
 {
   imports = [
-    ./zsh.nix
+    # ./zsh.nix
+    ./fish.nix
     ./home-manager.nix
     ./steam.nix
     ./streamdeck.nix
@@ -17,5 +18,14 @@
     ssh.startAgent = true;
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings.features.cdi = true;
+  };
+
+  virtualisation.virtualbox.host.enable = true;
+
+  networking.firewall.trustedInterfaces = ["docker0"];
+
+  hardware.nvidia-container-toolkit.enable = true;
 }

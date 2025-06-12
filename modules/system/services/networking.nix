@@ -33,7 +33,6 @@
       enable = true;
       allowedTCPPorts = [22 53 80 443 39361 59010 59011 8081];
       allowedUDPPorts = [53 59010 39361 59011 8081];
-      trustedInterfaces = ["docker0"];
     };
   };
 

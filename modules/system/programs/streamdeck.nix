@@ -1,5 +1,5 @@
 {pkgs, ...}: {
   programs.streamcontroller = {
-    enable = true;
+    enable = false;
   };
 }

@@ -4,7 +4,8 @@
 
     overlays = with inputs; [
       nix-vscode-extensions.overlays.default
-      nur.overlay
+      nur.overlays.default
+      nix-alien.overlays.default
     ];
   };
 }

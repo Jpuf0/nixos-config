@@ -25,6 +25,10 @@
     options v4l2loopback exclusive_caps=1 card_label="Discord Multi-Monitor" video_nr=0
   '';
 
+  # boot.extraModprobeConfig = ''
+  #   options nvidia NVreg_RegistryDwords="PowerMizerEnable=0x1; PerfLevelSrc=0x2222; PowerMizerLevel=0x3; PowerMizerDefault=0x3; PowerMizerDefaultAC=0x3"
+  # ''
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c89d2e3c-4d7d-43ab-9e14-82ee5aa8340c";
     fsType = "ext4";

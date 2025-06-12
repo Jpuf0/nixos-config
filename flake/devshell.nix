@@ -9,6 +9,7 @@
         git
         nil
         nodePackages.prettier
+        nix-prefetch
       ];
 
       name = "Sakura";

@@ -3,7 +3,7 @@
     isNormalUser = true;
     description = "i cant have colon 3";
     initialPassword = "nixos";
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -12,6 +12,7 @@
       "video"
       "adbusers"
       "plugdev"
+      "vboxusers"
     ];
   };
 }

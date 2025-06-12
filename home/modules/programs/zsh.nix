@@ -28,7 +28,7 @@
       plugins = ["git" "fzf"];
     };
 
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
     '';
@@ -48,13 +48,14 @@
       findw = "grep -rl";
       q = "exit";
       code = "codium";
+      ssh = "kitten ssh";
 
       l = "${getExe eza} --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
       ll = "${getExe eza} --icons  -a --group-directories-first -1 --no-user --long";
       tree = "${getExe eza} --icons --tree --group-directories-first";
 
       # Nixos
-      cdnix = "cd ~/.nixos && codium ~/.nixos";
+      cdnix = "cd ~/.nixos && zeditor ~/.nixos";
       nix-shell = "nix-shell --run zsh";
       nix-switch = "sudo nixos-rebuild switch --impure --flake ~/.nixos#${osConfig.networking.hostName}";
       nix-switchu = "sudo nixos-rebuild switch --upgrade --impure --flake ~/.nixos#${osConfig.networking.hostName}";

@@ -4,29 +4,25 @@
   ...
 }: {
   home.packages = with pkgs; [
-    swww
-    # swaybg
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
-    hyprpicker
     wofi
-    grim
-    slurp
     wl-clipboard
     cliphist
-    wf-recorder
-    v4l-utils
-    # libinput
     glib
-    wayland
   ];
-  systemd.user.targets.hyprland-session.Unit.Wants = ["xdg-desktop-autostart.target"];
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+
+    package = null;
+    portalPackage = null;
+
     xwayland = {
       enable = true;
       # hidpi = true;
     };
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      variables = ["--all"];
+    };
   };
 }

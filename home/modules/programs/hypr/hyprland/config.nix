@@ -1,29 +1,31 @@
 {...}: {
   wayland.windowManager.hyprland = {
     extraConfig = "
-# debug:disable_logs = false
+debug:disable_logs = false
 $mainMod = SUPER
 
-monitor=Unknown-1,disable
-monitor=DP-2,1920x1080@240,0x0,1
+monitor=DP-2,1920x1080@60,0x0,1
 monitor=HDMI-A-1,1920x1080@60,1920x0,1
-# monitor = , preferred, auto, 1
+monitor = , preferred, auto, 1
 # monitor=eDP-1,preferred,auto,2
 
 # autostart
 exec-once = systemctl --user import-environment &
 exec-once = hash dbus-update-activation-environment 2>/dev/null &
-exec-once = dbus-update-activation-environment --systemd &
+exec-once = dbus-update-activation-environment --systemd --all &
 exec-once = nm-applet &
-exec-once = hypridle
 # exec-once = wl-paste --primary --watch wl-copy --primary --clear
 exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
 # exec-once = sleep 1 && hyprlock
 # exec-once = background-changer &
 exec-once = hyprctl setcursor Nordzy-cursors 22 &
-exec-once = waybar &
+# exec-once = waybar &
 exec-once = mako &
+
+# env
+env = NIXOS_OZONE_WL,1
+env = ELECTRON_OZONE_PLATFORM_HINT,auto
 
 input {
   kb_layout = us
@@ -50,12 +52,11 @@ misc {
 general {
   layout = dwindle
 
-  gaps_in = 0
-  gaps_out = 0
-  border_size = 2
+  gaps_in = 8
+  gaps_out = 18
+  border_size = 3
   col.active_border = rgb(cba6f7) rgb(94e2d5) 45deg
   col.inactive_border = 0x00000000
-  border_part_of_window = true
 
   # gaps_in = 5
   # gaps_out = 10
@@ -152,6 +153,23 @@ render {
 # show keybinds list
 bind = $mainMod, F1, exec, show-keybinds
 
+
+exec = hyprctl dispatch submap global
+submap = global
+
+# = = = APP MENU = = = #
+bind = $mainMod, D, global, caelestia:launcher
+bindin = $mainMod, catchall, global, caelestia:launcherInterrupt
+bindin = $mainMod, mouse:272, global, caelestia:launcherInterrupt
+bindin = $mainMod, mouse:273, global, caelestia:launcherInterrupt
+bindin = $mainMod, mouse:274, global, caelestia:launcherInterrupt
+bindin = $mainMod, mouse:275, global, caelestia:launcherInterrupt
+bindin = $mainMod, mouse:276, global, caelestia:launcherInterrupt
+bindin = $mainMod, mouse:277, global, caelestia:launcherInterrupt
+bindin = $mainMod, mouse_up, global, caelestia:launcherInterrupt
+bindin = $mainMod, mouse_down, global, caelestia:launcherInterrupt
+
+bind = $mainMod SHIFT, Escape, global, caelestia:session
 # keybindings
 
 bind = $mainMod, M, exit,
@@ -163,10 +181,7 @@ bind = $mainMod, C, killactive,
 bind = $mainMod, F, fullscreen, 0
 bind = $mainMod SHIFT, F, fullscreen, 1
 bind = $mainMod, Space, togglefloating,
-bind = $mainMod, D, exec, pkill wofi || wofi --show drun
-bind = $mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] vesktop'
 # bind = $mainMod, Escape, exec, hyprlock
-bind = $mainMod SHIFT, Escape, exec, shutdown-script
 bind = $mainMod, P, pseudo,
 bind = $mainMod, J, togglesplit,
 bind = $mainMod, E, exec, nemo
@@ -178,9 +193,9 @@ bind = $mainMod SHIFT, W, exec, zen
 bind = $mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
 # screenshot
-# bind = $mainMod, Print, exec, grimblast --notify --cursor save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
-# bind = ,Print, exec, grimblast --notify --cursor  copy area
-bind = ALT+SHIFT,s,exec, grimblast --notify --freeze --cursor copysave area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
+# bind = $mainMod, Print, exec, grimblast --notify save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
+# bind = ,Print, exec, grimblast --notify copy area
+bind = ALT+SHIFT,s,exec, grimblast --notify --freeze copysave area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png
 
 # switch focus
 bind = $mainMod, left, movefocus, l
@@ -250,38 +265,36 @@ bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
 # windowrule
-windowrule = float,audacious
-windowrule = workspace 8 silent, audacious
-windowrule = pin,wofi
-windowrule = float,wofi
-windowrule = noborder,wofi
-windowrule = tile, neovide
-windowrule = idleinhibit focus,mpv
-windowrule = float,udiskie
+windowrule = pin,class:(wofi)
+windowrule = float,class:(wofi)
+windowrule = noborder,class:(wofi)
+windowrule = idleinhibit focus,class:(mpv)
+windowrule = float,class:(udiskie)
 windowrule = float,title:^(Transmission)$
 windowrule = float,title:^(Volume Control)$
-windowrule = float,title:^(zen-alpha — Sharing Indicator)$
-windowrule = move 0 0,title:^(zen-alpha — Sharing Indicator)$
+windowrule = float,title:^(zen-beta — Sharing Indicator)$
+windowrule = move 0 0,title:^(zen-beta — Sharing Indicator)$
 windowrule = size 700 450,title:^(Volume Control)$
 windowrule = move 40 55%,title:^(Volume Control)$
 windowrulev2 = float, title:^(Picture-in-Picture)$
 windowrulev2 = opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$
 windowrulev2 = opacity 1.0 override 1.0 override, title:^(.*YouTube.*)$
 windowrulev2 = pin, title:^(Picture-in-Picture)$
-windowrule = float,imv
-windowrule = center,imv
-windowrule = size 1200 725,imv
+windowrulev2 = float, initialTitle:^(Discord Popout)$
+windowrulev2 = opacity 1.0 override 1.0 override, initialTitle:^(Discord Popout)$
+windowrulev2 = pin, initialTitle:^(Discord Popout)$
+windowrule = float,class:(imv)
+windowrule = center,class:(imv)
+windowrule = size 1200 725,class:(imv)
 windowrulev2 = opacity 1.0 override 1.0 override, title:^(.*imv.*)$
-windowrule = float,mpv
-windowrule = center,mpv
+windowrule = float,class:(mpv)
+windowrule = center,class:(mpv)
 windowrulev2 = opacity 1.0 override 1.0 override, title:^(.*mpv.*)$
-windowrule = tile,Aseprite
-windowrulev2 = opacity 1.0 override 1.0 override, class:(Aseprite)
 windowrulev2 = opacity 1.0 override 1.0 override, class:(Unity)
-windowrulev2 = opacity 1.0 override 1.0 override, class:(zen-alpha)
-windowrule = size 1200 725,mpv
+windowrulev2 = opacity 1.0 override 1.0 override, class:(zen-beta)
+windowrule = size 1200 725,class:(mpv)
 windowrulev2 = idleinhibit focus, class:^(mpv)$
-windowrulev2 = idleinhibit fullscreen, class:^(zen-alpha)$
+windowrulev2 = idleinhibit fullscreen, class:^(zen-beta)$
 
 windowrule = float,title:^(float_kitty)$
 windowrule = center,title:^(float_kitty)$

@@ -2,7 +2,9 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  pythonPkgs = pkgs.python3Packages;
+in {
   home.packages = with pkgs; [
     bitwise # cli tool for bit / hex manipulation
     eza # ls replacement
@@ -13,7 +15,8 @@
     libreoffice
     nitch # systhem fetch util
     nix-prefetch-github
-    pipx # Install Python applications in isolated environments
+    # pipx # Install Python applications in isolated environments
+    uv
     prismlauncher # minecraft launcher
     ripgrep # grep replacement
     toipe # typing test in the terminal
@@ -37,6 +40,7 @@
     bun
 
     dotnet-sdk_8
+    dotnet-ef
 
     bleachbit # cache cleaner
     cmatrix
@@ -54,13 +58,11 @@
     unzip
     wget
     xdg-utils
-    # runelite
     jq
     bluez
     telegram-desktop
     pywal
     dnsutils
-    # audacious-plugins
     alacritty
     gimp
     usbmuxd
@@ -68,7 +70,7 @@
     ifuse
     usbutils
     docker
-    bottles
+    bottles-unwrapped
     protonup-qt
     # steamtinkerlaunch
     xdotool
@@ -88,12 +90,9 @@
     r2modman
     ryujinx
     gallery-dl
-    maliit-keyboard
-    maliit-framework
     wvkbd
     qbittorrent
     easyeffects
-    carla
     yabridge
     yabridgectl
     mullvad-vpn
@@ -102,31 +101,35 @@
     rebar3
     obs-studio
     syncthing
-    lightspark
     gargoyle
     remmina
-    # prisma-engines
     spotify-player
-    ollama
-    simplex-chat-desktop
-    # blender
+
+    gollama
+    # lmstudio
+
     sunshine
     moonlight-qt
     firefox
-    desmume
-    # zed-editor
-    craftos-pc
+    zed-editor
     vdhcoapp
-    spotify
+    # spotify # now provided by spicetify
     heroic
     cmake
-    rpcs3
-    flatpak
-    jetbrains.webstorm
+    jetbrains-toolbox
     nodePackages_latest.pnpm
-    bitwarden-cli
-    bitwarden-desktop
-    bitwarden-menu
     dmenu
+    nix-alien
+    hyprpicker
+    gifski
+    pythonPkgs.tensorflowWithCuda
+    mangohud
+    mangojuice
+    gale
+    piper
   ];
+  home.sessionVariables = {
+    # Because dotnet is a fucking rat
+    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
+  };
 }

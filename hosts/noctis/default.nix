@@ -4,13 +4,13 @@
   networking.hostName = "noctis";
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = ["quiet"];
     consoleLogLevel = 0;
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 10;
+      systemd-boot.configurationLimit = 5;
     };
   };
 
@@ -34,7 +34,7 @@
     hardware.bolt.enable = true;
 
     upower = {
-      enable = true;
+      enable = false;
       percentageLow = 30;
       percentageCritical = 20;
       percentageAction = 10;

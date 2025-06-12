@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   fonts.fontconfig.enable = true;
   home.packages = [
     # pkgs.nerd-fonts
@@ -21,12 +25,12 @@
       };
     };
     theme = {
-      name = "Catppuccin-Mocha-Compact-Lavender-Dark";
+      name = "catppuccin-mocha-lavender-compact"; # Fixed: was "Catppuccin-Mocha-Compact-Lavender-Dark"
       package = pkgs.catppuccin-gtk.override {
+        variant = "mocha";
         accents = ["lavender"];
         size = "compact";
         # tweaks = [ "rimless" ];
-        variant = "mocha";
       };
     };
     cursorTheme = {
@@ -34,7 +38,17 @@
       package = pkgs.nordzy-cursor-theme;
       size = 22;
     };
+
+    gtk2 = {
+      extraConfig = "gtk-application-prefer-dark-theme = true";
+      configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    };
+
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
+
+  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
   home.pointerCursor = {
     name = "Nordzy-cursors";

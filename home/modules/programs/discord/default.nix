@@ -1,19 +1,18 @@
 {
-  config,
   pkgs,
+  inputs,
   lib,
   ...
-}: let
-  inherit (lib) concatLists;
-in {
+}: {
   imports = [(import ./theme-template.nix)];
   home.packages = with pkgs; [
-    (vesktop.overrideAttrs (old: {
-      patches = concatLists [
-        (old.patches or [])
-        [./vesktop.patch]
-      ];
-    }))
+    (discord-canary.override {
+      withVencord = true;
+    })
+    vesktop
     equibop
   ];
+  # ++ [
+  #   inputs.self.packages.${pkgs.system}.equibop
+  # ];
 }
