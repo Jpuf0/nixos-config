@@ -12,6 +12,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     verbose = true;
+    backupFileExtension = "backup";
     sharedModules = [
       {home.stateVersion = lib.mkForce config.system.stateVersion;}
     ];
