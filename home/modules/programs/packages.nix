@@ -63,7 +63,6 @@ in {
     telegram-desktop
     pywal
     dnsutils
-    alacritty
     gimp
     usbmuxd
     libimobiledevice
@@ -96,9 +95,9 @@ in {
     yabridge
     yabridgectl
     mullvad-vpn
-    gleam
-    erlang
-    rebar3
+    # gleam
+    # erlang
+    # rebar3
     obs-studio
     syncthing
     gargoyle

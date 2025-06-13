@@ -5,6 +5,7 @@
   inputs,
   ...
 }: {
+  programs.man.generateCaches = true;
   programs.fish = {
     enable = true;
 
