@@ -11,16 +11,19 @@
     "quickshell/caelestia" = {
       source = ./shell;
       recursive = true;
+      force = true;
     };
 
     # Fish completions
     "fish/completions/caelestia.fish" = {
       source = ./caelestia-completions.fish;
+      force = true;
     };
 
     # Your custom scripts.json for toggle workspaces
     "caelestia/scripts.json" = {
       source = ./shell/scripts.json;
+      force = true;
     };
   };
 

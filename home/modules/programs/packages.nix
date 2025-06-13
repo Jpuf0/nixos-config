@@ -79,7 +79,7 @@ in {
     xorg.xrandr
     yad
 
-    wine64
+    # wine64
     winetricks
     protontricks
     p7zip

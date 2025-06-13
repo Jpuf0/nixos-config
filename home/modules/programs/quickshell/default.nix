@@ -40,6 +40,7 @@
     ibm-plex
     fd
     python3Packages.pyaudio
+    python3Packages.aubio
     python3Packages.numpy
     cava
     networkmanager

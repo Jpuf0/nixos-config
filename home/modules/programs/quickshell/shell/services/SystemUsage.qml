@@ -97,7 +97,7 @@ Singleton {
         id: storage
 
         running: true
-        command: ["sh", "-c", "df | grep '^/dev/' | awk '{print $1, $3, $4}'"]
+        command: ["sh", "-c", "df | grep '^/dev/' | awk '{print \$1, \$3, \$4}'"]
         stdout: SplitParser {
             splitMarker: ""
             onRead: data => {
@@ -111,9 +111,9 @@ Singleton {
                       const device = parts[0];
                       const used = parseInt(parts[1], 10) || 0;
                       const avail = parseInt(parts[2], 10) || 0;
-                      
+
                       // only keep the entry with the largest total space for each device
-                      if (!deviceMap.has(device) || 
+                      if (!deviceMap.has(device) ||
                           (used + avail) > (deviceMap.get(device).used + deviceMap.get(device).avail)) {
                           deviceMap.set(device, { used: used, avail: avail });
                       }
@@ -122,7 +122,7 @@ Singleton {
 
               let totalUsed = 0;
               let totalAvail = 0;
-  
+
               for (const [device, stats] of deviceMap) {
                   totalUsed += stats.used;
                   totalAvail += stats.avail;

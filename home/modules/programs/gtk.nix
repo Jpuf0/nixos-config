@@ -48,7 +48,22 @@
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
-  dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style.name = "gtk2";
+  };
+
+  dconf = {
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        gtk-theme = "catppuccin-mocha-lavender-compact";
+        icon-theme = "Papirus-Dark";
+        cursor-theme = "Nordzy-cursors";
+      };
+    };
+  };
 
   home.pointerCursor = {
     name = "Nordzy-cursors";

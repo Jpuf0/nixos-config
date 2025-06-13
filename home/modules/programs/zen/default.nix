@@ -11,26 +11,24 @@
     enable = true;
   };
   xdg = {
-    enable = true;
     mime.enable = true;
-
     mimeApps = {
       enable = true;
 
       defaultApplications = {
-        "text/uri-list" = cfg.default_browser;
-        "x-scheme-handler/http" = cfg.default_browser;
-        "x-scheme-handler/https" = cfg.default_browser;
-        "x-scheme-handler/chrome" = cfg.default_browser;
-        "text/html" = cfg.default_browser;
-        "application/x-extension-htm" = cfg.default_browser;
-        "application/x-extension-html" = cfg.default_browser;
-        "application/x-extension-shtml" = cfg.default_browser;
-        "application/xhtml+xml" = cfg.default_browser;
-        "application/x-extension-xhtml" = cfg.default_browser;
-        "application/x-extension-xht" = cfg.default_browser;
-        "x-scheme-handler/about" = cfg.default_browser;
-        "x-scheme-handler/unknown" = cfg.default_browser;
+        "text/uri-list" = "zen-beta.desktop";
+        "x-scheme-handler/http" = "zen-beta.desktop";
+        "x-scheme-handler/https" = "zen-beta.desktop";
+        "x-scheme-handler/chrome" = "zen-beta.desktop";
+        "text/html" = "zen-beta.desktop";
+        "application/x-extension-htm" = "zen-beta.desktop";
+        "application/x-extension-html" = "zen-beta.desktop";
+        "application/x-extension-shtml" = "zen-beta.desktop";
+        "application/xhtml+xml" = "zen-beta.desktop";
+        "application/x-extension-xhtml" = "zen-beta.desktop";
+        "application/x-extension-xht" = "zen-beta.desktop";
+        "x-scheme-handler/about" = "zen-beta.desktop";
+        "x-scheme-handler/unknown" = "zen-beta.desktop";
       };
     };
   };
