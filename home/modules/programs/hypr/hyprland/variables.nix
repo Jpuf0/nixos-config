@@ -15,7 +15,7 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     QT_QPA_PLATFORM = "wayland;xcb";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
+    # QT_QPA_PLATFORMTHEME = "qt6ct";
     QT_STYLE_OVERRIDE = "kvantum";
     MOZ_ENABLE_WAYLAND = "1";
     WLR_BACKEND = "vulkan";
