@@ -24,14 +24,14 @@
       "network"
     ];
     clock = {
-      format = " {:%H:%M (%Z)}";
+      format = " {:%I:%M %p (%Z)}";
       tooltip = "true";
       tooltip-format = "<big>{:%a %d %B %Y}</big>\n<tt><small>{calendar}</small></tt>";
       format-alt = " {:%d/%m}";
       timezones = [
         "Europe/London"
         "US/Eastern"
-        "Asia/Manila"
+        "Australia/Melbourne"
       ];
       calendar = {
         format = {
