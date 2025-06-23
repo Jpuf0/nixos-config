@@ -126,6 +126,7 @@ in {
     mangojuice
     gale
     piper
+    carla
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

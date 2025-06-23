@@ -13,7 +13,7 @@
     src = pkgs.fetchFromGitHub {
       owner = "caelestia-dots";
       repo = "scripts";
-      rev = "main";
+      rev = "11bf718cc5bfe6e6360a31b2752022daf5288e55";
       sha256 = "sha256-agQPRI7mnbIHyW5M+Wr0NJMOLeRe0i5qFrAYsGTDEzI=";
     };
     nativeBuildInputs = with pkgs; [

@@ -32,6 +32,6 @@ Singleton {
 
         property DesktopEntry entry
 
-        command: ["gtk-launch", entry?.id ?? ""]
+        command: ["hyprctl", "dispatch", "exec", "--", "gtk-launch", `${entry?.id ?? ""}.desktop`]
     }
 }

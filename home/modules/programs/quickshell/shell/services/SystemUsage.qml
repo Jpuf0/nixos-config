@@ -101,6 +101,7 @@ Singleton {
         stdout: SplitParser {
             splitMarker: ""
             onRead: data => {
+              console.log("storage: ", data);
               const deviceMap = new Map();
 
               for (const line of data.trim().split("\n")) {
