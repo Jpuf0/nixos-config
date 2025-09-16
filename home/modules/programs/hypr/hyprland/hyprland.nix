@@ -9,6 +9,10 @@
     wl-clipboard
     cliphist
     glib
+    swaybg
+    swww
+    mpvpaper
+    psmisc
   ];
   wayland.windowManager.hyprland = {
     enable = true;

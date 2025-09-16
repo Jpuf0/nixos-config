@@ -10,6 +10,7 @@
   ls = "eza -l";
   lt = "eza --tree";
   tree = "eza -T";
+  dsize = "du -hs";
 
   # Directory navigation
   ".." = "cd ..";
@@ -68,5 +69,5 @@
   mv = "mv -i";
 
   # Restart caelestia
-  restart-desktop = "systemctl --user restart caelestia-shell.service";
+  restart-desktop = "systemctl --user restart caelestia.service";
 }

@@ -12,6 +12,34 @@
 
     functions = import ./functions.nix {inherit pkgs lib;};
 
+    plugins = with pkgs.fishPlugins; [
+      {
+        name = "fzf.fish";
+        src = fzf-fish.src;
+      }
+      {
+        name = "fifc";
+        src = fifc.src;
+      }
+      {
+        name = "autopair";
+        src = autopair.src;
+      }
+      {
+        name = "colored-man-pages";
+        src = colored-man-pages.src;
+      }
+      {
+        name = "done";
+        src = done.src;
+      }
+      {
+        name = "grc";
+        src = grc.src;
+      }
+    ];
+    # // import ./plugins.nix {inherit pkgs lib;};
+
     shellInit = ''
       # Disable fish greeting
       set -g fish_greeting
@@ -28,8 +56,23 @@
       set -g fish_color_autosuggestion brblack
       set -g fish_color_valid_path --underline
 
+      # Set default editor
+      set -gx EDITOR vim
+
       # Enable vi mode
       fish_vi_key_bindings
+
+      # Configure plugins
+      set fzf_diff_highlighter delta --paging=never --width=20
+      set fzf_directory_opts --bind "ctrl-o:execute($EDITOR {} &> /dev/tty)"
+
+      set -Ux fifc_editor $EDITOR
+
+      set -U __done_notification_command "notify-send -i utilities-terminal "\$title" "\$message""
+      set -U __done_notify_sound 1
+      set -U __done_allow_nongraphical 1
+      set -U __done_kitty_remote_control 1
+      set -U __done_kitty_remote_control_password "kitty-rc-password"
     '';
 
     interactiveShellInit = ''
@@ -38,9 +81,9 @@
       zoxide init --cmd cd fish | source
 
       # Set up fzf key bindings if fzf is available
-      if command -v fzf >/dev/null
-        fzf_key_bindings
-      end
+      # if command -v fzf >/dev/null
+      #   fzf_key_bindings
+      # end
     '';
   };
 
@@ -61,8 +104,8 @@
 
         character = {
           success_symbol = "[ ](bold #89b4fa)[ ➜](bold green)";
-          error_symbol = "[ ](bold #89b4fa)[ ➜](bold red)";
-          # error_symbol = "[ ](bold #89dceb)[ ✗](bold red)";
+          # error_symbol = "[ ](bold #89b4fa)[ ➜](bold red)";
+          error_symbol = "[ ](bold #89dceb)[ ✗](bold red)";
         };
 
         cmd_duration = {

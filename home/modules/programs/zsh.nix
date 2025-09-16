@@ -50,8 +50,8 @@
       code = "codium";
       ssh = "kitten ssh";
 
-      l = "${getExe eza} --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
-      ll = "${getExe eza} --icons  -a --group-directories-first -1 --no-user --long";
+      l = "${getExe eza} --icons -a --group-directories-first -1"; #EZA_ICON_SPACING=2
+      ll = "${getExe eza} --icons -a --group-directories-first -1 --no-user --long";
       tree = "${getExe eza} --icons --tree --group-directories-first";
 
       # Nixos

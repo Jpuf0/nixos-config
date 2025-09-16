@@ -13,6 +13,7 @@
       "adbusers"
       "plugdev"
       "vboxusers"
+      "llm"
     ];
   };
 

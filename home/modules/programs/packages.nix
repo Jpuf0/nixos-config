@@ -3,7 +3,15 @@
   pkgs,
   ...
 }: let
-  pythonPkgs = pkgs.python3Packages;
+  pythonPkgs = pkgs.python312Packages;
+  # zed = pkgs.zed-editor.overrideAttrs (oa: {
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "zed-industries";
+  #     repo = "zed";
+  #     tag = "v{oa.version}";
+  #     hash = "sha256-Q7Ord+GJJcOCH/S3qNwAbzILqQiIC94qb8V+JkzQqaQ=";
+  #   };
+  # });
 in {
   home.packages = with pkgs; [
     bitwise # cli tool for bit / hex manipulation
@@ -36,10 +44,10 @@ in {
     nil
 
     # Node
-    nodejs
+    nodejs_latest
     bun
 
-    dotnet-sdk_8
+    dotnet-sdk_9
     dotnet-ef
 
     bleachbit # cache cleaner
@@ -63,7 +71,7 @@ in {
     telegram-desktop
     pywal
     dnsutils
-    gimp
+    # gimp
     usbmuxd
     libimobiledevice
     ifuse
@@ -87,7 +95,7 @@ in {
     gamescope
     nvtopPackages.full
     r2modman
-    ryujinx
+    ryubing
     gallery-dl
     wvkbd
     qbittorrent
@@ -105,12 +113,13 @@ in {
     spotify-player
 
     gollama
-    # lmstudio
+    lmstudio
 
     sunshine
     moonlight-qt
     firefox
     zed-editor
+    # zed
     vdhcoapp
     # spotify # now provided by spicetify
     heroic
@@ -126,7 +135,14 @@ in {
     mangojuice
     gale
     piper
-    carla
+    lutris
+
+    unityhub
+    vrc-get
+
+    opencode
+    grc
+    runelite
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

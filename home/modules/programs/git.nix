@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     gh
-    git-lfs
+    # git-lfs
     delta
   ];
 
@@ -33,7 +33,7 @@
         default = "current";
       };
       credential.helper = "${
-        pkgs.git.override { withLibsecret = true; }
+        pkgs.git.override {withLibsecret = true;}
       }/bin/git-credential-libsecret";
     };
 

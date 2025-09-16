@@ -25,7 +25,7 @@
 
   virtualisation.virtualbox.host.enable = true;
 
-  networking.firewall.trustedInterfaces = ["docker0"];
+  # networking.firewall.trustedInterfaces = ["docker0"];
 
   hardware.nvidia-container-toolkit.enable = true;
 }

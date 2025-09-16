@@ -67,7 +67,8 @@
     };
 
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixpkgs-unstable";
+      url = "github:nixos/nixpkgs/nixos-unstable";
+      # url = "github:nixos/nixpkgs/nixpkgs-unstable";
       # url = "github:nixos/nixpkgs/master";
       # url = "github:/nixos/nixpkgs/1284004bf6c6e50d8592b6efe83708931e75aec7";
     };
@@ -99,6 +100,16 @@
 
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      # url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?rev=f7597cdae2d537c5b12843599955856090dc49d5";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caelestia-cli = {
+      url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

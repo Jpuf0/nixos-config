@@ -17,8 +17,8 @@
     (import ./modules/programs/gtk.nix)
     (import ./modules/programs/kitty.nix)
     # (import ./modules/programs/mako.nix)
-    (import ./modules/programs/dunst.nix)
-    (import ./modules/programs/nvim.nix)
+    # (import ./modules/programs/dunst.nix)
+    (import ./modules/programs/nvim)
     (import ./modules/programs/packages.nix)
     (import ./modules/programs/zen)
     (import ./modules/programs/fish)
@@ -27,7 +27,9 @@
     (import ./modules/programs/spicetify.nix)
     (import ./modules/programs/xdg.nix)
     (import ./modules/programs/nh.nix)
-    (import ./modules/programs/quickshell)
+    # (import ./modules/programs/quickshell)
+    # (import ./modules/programs/caelestia)
+    (import ./modules/programs/caelestia/caelestia.nix)
   ];
 
   homeImports = {
