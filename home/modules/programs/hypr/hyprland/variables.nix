@@ -28,5 +28,6 @@
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "catppuccin-mocha-lavender-compact";
     LIBVA_DRIVER_NAME = "nvidia";
+    NVD_BACKEND = "direct";
   };
 }

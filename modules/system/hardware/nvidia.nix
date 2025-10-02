@@ -8,18 +8,16 @@
   primeConfig = config.hardware.nvidia.prime;
 in {
   config = {
-    hardware = {
-      nvidia = {
-        modesetting.enable = true;
-        powerManagement = {
-          enable = true;
-          finegrained = false;
-        };
-        open = true;
-        nvidiaSettings = false;
-
-        package = config.boot.kernelPackages.nvidiaPackages.beta;
+    hardware.nvidia = {
+      open = true;
+      modesetting.enable = true;
+      powerManagement = {
+        enable = true;
+        finegrained = false;
       };
+      nvidiaSettings = false;
+
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
     environment = {
       sessionVariables = {
