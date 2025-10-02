@@ -17,6 +17,14 @@
   "..." = "cd ../..";
   "...." = "cd ../../..";
 
+  # Screenshots (using grimblast with notifications)
+  ss = "grimblast --notify copy area"; # Screenshot area to clipboard
+  ssf = "grimblast --notify save area"; # Screenshot area to file
+  sss = "grimblast --notify copy screen"; # Screenshot screen to clipboard
+  sssf = "grimblast --notify save screen"; # Screenshot screen to file
+  ssw = "grimblast --notify copy active"; # Screenshot window to clipboard
+  sswf = "grimblast --notify save active"; # Screenshot window to file
+
   # Git shortcuts
   g = "git";
   gs = "git status";

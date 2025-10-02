@@ -54,6 +54,10 @@ in {
         modules = homeImports."jpuf";
         inherit pkgs;
       };
+      "ypuf" = homeManagerConfiguration {
+        modules = homeImports."ypuf";
+        inherit pkgs;
+      };
     };
   };
 }

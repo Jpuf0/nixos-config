@@ -1,5 +1,12 @@
-{pkgs, ...}: {
-  imports = [./hardware-configuration.nix];
+{
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+    inputs.nixos-hardware.nixosModules.dell-xps-15-9500-nvidia
+  ];
 
   networking.hostName = "ghost";
 
@@ -10,7 +17,7 @@
     loader = {
       efi.canTouchEfiVariables = true;
       systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 5;
+      systemd-boot.configurationLimit = 3;
     };
   };
 
@@ -39,6 +46,13 @@
     hardware.bolt.enable = true;
 
     logind = {
+      settings = {
+        Login = {
+          HandleLidSwitchExternalPower = "";
+          HandleLidSwitch = "";
+          HandlePowerKey = "";
+        };
+      };
       powerKey = "suspend";
       lidSwitch = "suspend";
       lidSwitchExternalPower = "lock";

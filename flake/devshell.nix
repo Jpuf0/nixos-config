@@ -10,6 +10,7 @@
         nil
         nodePackages.prettier
         nix-prefetch
+        nixd
       ];
 
       name = "Sakura";
