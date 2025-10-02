@@ -1,6 +1,5 @@
 .direnv
 .vscode
-.zed
 .pre-commit-config.yaml
 result
 *.qcow2
