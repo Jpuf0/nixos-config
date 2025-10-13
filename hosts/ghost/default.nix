@@ -48,14 +48,23 @@
     logind = {
       settings = {
         Login = {
-          HandleLidSwitchExternalPower = "";
-          HandleLidSwitch = "";
-          HandlePowerKey = "";
+          HandlePowerKey = "suspend"; # default "poweroff"
+          HandlePowerKeyLongPress = "poweroff"; # default "ignore"
+          # HandleRebootKey= ""; # default "reboot"
+          # HandleRebootKeyLongPress= ""; # default "poweroff"
+          # HandleSuspendKey= ""; # default "suspend"
+          # HandleSuspendKeyLongPress= ""; # default "hibernate"
+          # HandleHibernateKey= ""; # default "hibernate"
+          # HandleHibernateKeyLongPress= ""; # default "ignore"
+          HandleLidSwitch = "suspend"; # default "suspend"
+          # HandleLidSwitchExternalPower = "lock"; # completely ignored by default (for backwards compatibility) — an explicit value must be set before it will be used to determine behaviour.
+          # HandleLidSwitchDocked= ""; # default "ignore"
+          # HandleSecureAttentionKey= ""; # default "secure-attention-key"
         };
       };
-      powerKey = "suspend";
-      lidSwitch = "suspend";
-      lidSwitchExternalPower = "lock";
+      # powerKey = "suspend";
+      # lidSwitch = "suspend";
+      # lidSwitchExternalPower = "lock";
     };
 
     upower = {
@@ -65,5 +74,6 @@
       percentageAction = 10;
       criticalPowerAction = "Hibernate";
     };
+    power-profiles-daemon.enable = true;
   };
 }

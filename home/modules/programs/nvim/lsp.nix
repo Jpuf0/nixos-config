@@ -6,7 +6,7 @@
 }: {
   programs.neovim = {
     extraPackages = with pkgs; [
-      ccls
+      # ccls
       clang-tools
       # cmake-language-server
       lemminx
@@ -41,7 +41,7 @@
         type = "lua";
         config = lib.strings.concatStrings [
           (builtins.readFile ./lua/lsp/bash.lua)
-          (builtins.readFile ./lua/lsp/ccls.lua)
+          # (builtins.readFile ./lua/lsp/ccls.lua)
           (builtins.readFile ./lua/lsp/cmake.lua)
           (builtins.readFile ./lua/lsp/html.lua)
           (builtins.readFile ./lua/lsp/luals.lua)

@@ -15,7 +15,7 @@
     gnupg.agent = {
       enable = true;
     };
-    ssh.startAgent = true;
+    ssh.startAgent = false;
   };
 
   virtualisation.docker = {

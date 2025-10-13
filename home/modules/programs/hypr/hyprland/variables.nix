@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.sessionVariables = {
-    # AQ_DRM_DEVICES = "/dev/dri/card1";
+    AQ_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
     __GL_GSYNC_ALLOWED = "0";
     __GL_VRR_ALLOWED = "0";
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
@@ -28,6 +28,6 @@
     CLUTTER_BACKEND = "wayland";
     GTK_THEME = "catppuccin-mocha-lavender-compact";
     LIBVA_DRIVER_NAME = "nvidia";
-    NVD_BACKEND = "direct";
+    # NVD_BACKEND = "direct";
   };
 }

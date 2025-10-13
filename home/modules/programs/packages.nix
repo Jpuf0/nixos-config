@@ -143,6 +143,7 @@ in {
     opencode
     grc
     runelite
+    obsidian
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

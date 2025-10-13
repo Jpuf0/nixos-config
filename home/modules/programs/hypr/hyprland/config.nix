@@ -4,10 +4,10 @@
 debug:disable_logs = false
 $mainMod = SUPER
 
-monitor=DP-2,1920x1080@60,1920x0,1
-monitor=HDMI-A-1,1920x1080@60,0x0,1
-monitor = , preferred, auto, 1
-# monitor=eDP-1,preferred,auto,2
+#monitor=DP-2,1920x1080@60,1920x0,1
+#monitor=HDMI-A-1,1920x1080@60,0x0,1
+#monitor = , preferred, auto, 1
+monitor=eDP-1,preferred,auto,2
 
 # autostart
 exec-once = systemctl --user import-environment &
@@ -165,6 +165,9 @@ bindin = $mainMod, mouse_up, global, caelestia:launcherInterrupt
 bindin = $mainMod, mouse_down, global, caelestia:launcherInterrupt
 
 bind = $mainMod SHIFT, Escape, global, caelestia:session
+
+bindl = , XF86MonBrightnessUp, global, caelestia:brightnessUp
+bindl = , XF86MonBrightnessDown, global, caelestia:brightnessDown
 # keybindings
 
 bind = $mainMod, M, exit,
@@ -250,8 +253,6 @@ bind = ,XF86AudioPlay,exec, playerctl play-pause
 bind = ,XF86AudioNext,exec, playerctl next
 bind = ,XF86AudioPrev,exec, playerctl previous
 bind = ,XF86AudioStop,exec, playerctl stop
-bind = ,XF86MonBrightnessUp,exec, brightnessctl s +10
-bind = ,XF86MonBrightnessDown,exec, brightnessctl s 10-
 bind = $mainMod, mouse_down, workspace, e-1
 bind = $mainMod, mouse_up, workspace, e+1
 
