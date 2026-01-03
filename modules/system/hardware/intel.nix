@@ -5,7 +5,7 @@
     hardware = {
       graphics = {
         extraPackages = with pkgs; [
-          vaapiVdpau
+          libva-vdpau-driver
           libvdpau-va-gl
           nvidia-vaapi-driver
           intel-media-driver

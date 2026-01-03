@@ -23,7 +23,7 @@
     daemon.settings.features.cdi = true;
   };
 
-  virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
 
   # networking.firewall.trustedInterfaces = ["docker0"];
 

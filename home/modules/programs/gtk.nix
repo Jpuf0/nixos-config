@@ -8,7 +8,7 @@
     # pkgs.nerd-fonts
     pkgs.nerd-fonts.jetbrains-mono
     pkgs.twemoji-color-font
-    pkgs.noto-fonts-emoji
+    pkgs.noto-fonts-color-emoji
   ];
 
   gtk = {

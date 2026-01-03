@@ -4,10 +4,10 @@
 debug:disable_logs = false
 $mainMod = SUPER
 
-#monitor=DP-2,1920x1080@60,1920x0,1
+monitor=DP-2,1920x1080@60,1920x0,1
 #monitor=HDMI-A-1,1920x1080@60,0x0,1
 #monitor = , preferred, auto, 1
-monitor=eDP-1,preferred,auto,2
+#monitor=eDP-1,preferred,auto,2
 
 # autostart
 exec-once = systemctl --user import-environment &

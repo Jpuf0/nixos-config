@@ -47,7 +47,8 @@ in {
     nodejs_latest
     bun
 
-    dotnet-sdk_9
+    # dotnet-sdk_9
+    dotnet-sdk
     dotnet-ef
 
     bleachbit # cache cleaner
@@ -93,7 +94,7 @@ in {
     p7zip
     gamemode
     gamescope
-    nvtopPackages.full
+    # nvtopPackages.full
     r2modman
     ryubing
     gallery-dl
@@ -103,17 +104,17 @@ in {
     yabridge
     yabridgectl
     mullvad-vpn
-    # gleam
-    # erlang
-    # rebar3
+    gleam
+    erlang
+    rebar3
     obs-studio
     syncthing
-    gargoyle
+    # gargoyle
     remmina
     spotify-player
 
-    gollama
-    lmstudio
+    # gollama
+    # lmstudio
 
     sunshine
     moonlight-qt
@@ -122,7 +123,7 @@ in {
     # zed
     vdhcoapp
     # spotify # now provided by spicetify
-    heroic
+    # heroic
     cmake
     jetbrains-toolbox
     nodePackages_latest.pnpm
@@ -132,10 +133,10 @@ in {
     gifski
     pythonPkgs.tensorflowWithCuda
     mangohud
-    mangojuice
-    gale
+    # mangojuice
+    # gale
     piper
-    lutris
+    # lutris
 
     unityhub
     vrc-get
@@ -144,6 +145,7 @@ in {
     grc
     runelite
     obsidian
+    dysk
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

@@ -6,7 +6,6 @@
       packages = with pkgs; [
         via
         vial
-        android-udev-rules
       ];
     };
     usbmuxd.enable = true;

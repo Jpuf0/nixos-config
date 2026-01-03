@@ -1,11 +1,13 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
+    package = pkgs.ollama-cuda;
+    # acceleration = "cuda";
     openFirewall = false;
     host = "0.0.0.0";
     user = "ollama";

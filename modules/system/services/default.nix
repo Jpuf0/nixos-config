@@ -10,6 +10,7 @@
     ./pipewire.nix
     ./wayland.nix
     ./ssh.nix
+    ./zerotier.nix
   ];
 
   services = {
