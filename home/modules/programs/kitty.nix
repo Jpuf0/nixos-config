@@ -32,6 +32,10 @@
       ## fish done plugin
       remote_control_password = "\"kitty-rc-password\" ls";
       allow_remote_control = "password";
+
+      ## fun
+      cursor_trail = "3";
+      cursor_trail_decay = "0.1 0.4";
     };
 
     keybindings = {

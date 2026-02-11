@@ -67,8 +67,8 @@
     };
 
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
-      # url = "github:nixos/nixpkgs/nixpkgs-unstable";
+      # url = "github:nixos/nixpkgs/nixos-unstable";
+      url = "github:nixos/nixpkgs/nixpkgs-unstable";
       # url = "github:nixos/nixpkgs/master";
       # url = "github:/nixos/nixpkgs/1284004bf6c6e50d8592b6efe83708931e75aec7";
     };
@@ -111,6 +111,10 @@
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hytale-launcher = {
+      url = "github:JPyke3/hytale-launcher-nix";
     };
   };
 

@@ -7,7 +7,6 @@
     ./streamdeck.nix
     ./regreet.nix
     ./nix-ld.nix
-    ./adb.nix
   ];
 
   programs = {

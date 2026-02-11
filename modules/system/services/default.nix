@@ -11,6 +11,7 @@
     ./wayland.nix
     ./ssh.nix
     ./zerotier.nix
+    ./ratbag.nix
   ];
 
   services = {

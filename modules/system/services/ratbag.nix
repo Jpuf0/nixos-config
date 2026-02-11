@@ -5,5 +5,5 @@
 }: {
   services.ratbagd = {
     enable = true;
-  }
+  };
 }

@@ -19,6 +19,15 @@ in {
     entr # perform action when file change
     file # Show file information
     fzf # fuzzy finder
+    dua
+    gdu
+    gtop
+    glances
+    bottom
+    cheat
+    tldr
+    bandwhich
+
     jdk
     libreoffice
     nitch # systhem fetch util
@@ -101,8 +110,8 @@ in {
     wvkbd
     qbittorrent
     easyeffects
-    yabridge
-    yabridgectl
+    # yabridge
+    # yabridgectl
     mullvad-vpn
     gleam
     erlang
@@ -114,14 +123,14 @@ in {
     spotify-player
 
     # gollama
-    # lmstudio
+    lmstudio
 
     sunshine
     moonlight-qt
     firefox
     zed-editor
     # zed
-    vdhcoapp
+    # vdhcoapp
     # spotify # now provided by spicetify
     # heroic
     cmake
@@ -146,6 +155,10 @@ in {
     runelite
     obsidian
     dysk
+
+    chatterino7
+
+    inputs.hytale-launcher.packages.${pkgs.system}.default
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

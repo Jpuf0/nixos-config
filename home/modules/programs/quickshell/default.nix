@@ -11,7 +11,7 @@
   ];
 
   home.packages = with pkgs; [
-    inputs.self.packages.${pkgs.system}.app2unit
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.app2unit
     gtk3
     config.programs.quickshell.finalPackage
     config.programs.quickshell.caelestia-scripts

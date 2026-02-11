@@ -3,5 +3,5 @@
   pkgs,
   ...
 }: {
-  home.packages = with inputs.eventsfx.packages."${pkgs.system}"; [default];
+  home.packages = with inputs.eventsfx.packages."${pkgs.stdenv.hostPlatform.system}"; [default];
 }
