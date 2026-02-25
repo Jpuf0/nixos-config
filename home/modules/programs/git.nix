@@ -3,6 +3,7 @@
     gh
     # git-lfs
     delta
+    better-commits
   ];
 
   programs.git = {

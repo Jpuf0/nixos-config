@@ -22,6 +22,10 @@
     daemon.settings.features.cdi = true;
   };
 
+  virtualisation.libvirtd = {
+    enable = true;
+  };
+
   # virtualisation.virtualbox.host.enable = true;
 
   # networking.firewall.trustedInterfaces = ["docker0"];

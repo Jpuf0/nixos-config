@@ -99,7 +99,6 @@ in {
 
     # wine64
     winetricks
-    protontricks
     p7zip
     gamemode
     gamescope
@@ -156,9 +155,10 @@ in {
     obsidian
     dysk
 
-    chatterino7
-
     inputs.hytale-launcher.packages.${pkgs.system}.default
+    winboat
+    stoat-desktop
+    virt-manager
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat
