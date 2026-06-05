@@ -75,7 +75,6 @@ dwindle {
   special_scale_factor = 1.0
   split_width_multiplier = 1.0
   use_active_for_splits = true
-  pseudotile = yes
   preserve_split = yes
 }
 
@@ -110,7 +109,6 @@ decoration {
 
   shadow {
     enabled = true
-    ignore_window = true
     offset = 0 2
     range = 20
     render_power = 3
@@ -181,7 +179,6 @@ bind = $mainMod SHIFT, F, fullscreen, 1
 bind = $mainMod, Space, togglefloating,
 # bind = $mainMod, Escape, exec, hyprlock
 bind = $mainMod, P, pseudo,
-bind = $mainMod, J, togglesplit,
 bind = $mainMod, E, exec, nemo
 bind = $mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped
 # bind = $mainMod, C ,exec, hyprpicker -a
@@ -264,7 +261,6 @@ bindm = $mainMod, mouse:273, resizewindow
 # windowrule = match:class (wofi), pin on
 # windowrule = match:class (wofi), float on
 # windowrule = match:class (wofi), noborder on
-windowrule   = match:class (mpv), idle_inhibit on
 windowrule   = match:class (udiskie), float on
 windowrule   = match:title ^(Transmission)$, float on
 windowrule   = match:title ^(Volume Control)$, float on
@@ -310,6 +306,18 @@ windowrule   = match:title ^(Open File)$, float on
 windowrule   = match:title ^(branchdialog)$, float on
 windowrule   = match:title ^(Confirm to replace files)$, float on
 windowrule   = match:title ^(File Operation Progress)$, float on
+
+windowrule {
+  name = shimeji
+  match:class = DesktopPets
+
+  float = true
+  no_blur = true
+	no_focus = false
+	no_shadow = true
+	border_size = 0
+	opacity = 1.0
+}
     ";
   };
 }

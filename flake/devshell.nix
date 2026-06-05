@@ -8,7 +8,7 @@
         deadnix
         git
         nil
-        nodePackages.prettier
+        prettier
         nix-prefetch
         nixd
       ];

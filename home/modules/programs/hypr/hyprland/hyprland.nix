@@ -10,7 +10,7 @@
     cliphist
     glib
     swaybg
-    swww
+    awww
     mpvpaper
     psmisc
   ];

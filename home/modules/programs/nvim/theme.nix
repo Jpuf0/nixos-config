@@ -35,7 +35,7 @@
       }
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       require("catppuccin").setup({
         flavour = "auto",
         background = {

@@ -3,6 +3,18 @@
 
   networking.hostName = "noctis";
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "broadcom-sta-6.30.223.271-59-6.19.11"
+      "broadcom-sta-6.30.223.271-59-7.0.3"
+      "broadcom-sta-6.30.223.271-59-7.0.6"
+      "broadcom-sta-6.30.223.271-59-7.0.9"
+      "broadcom-sta-6.30.223.271-59-7.0.10"
+      "electron-38.8.4"
+    ];
+  };
+
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = ["quiet"];

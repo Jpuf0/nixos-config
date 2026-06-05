@@ -6,9 +6,9 @@
 }: {
   imports = [(import ./theme-template.nix)];
   home.packages = with pkgs; [
-    (discord-canary.override {
-      withVencord = true;
-    })
+    # (discord-canary.override {
+    #   withVencord = true;
+    # })
     vesktop
     # equibop
     (import (pkgs.fetchzip {

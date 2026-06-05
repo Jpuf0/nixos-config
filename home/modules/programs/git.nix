@@ -6,6 +6,14 @@
     better-commits
   ];
 
+  programs.delta = {
+    enable = true;
+    options = {
+      line-numbers = true;
+    };
+    enableGitIntegration = true;
+  };
+
   programs.git = {
     enable = true;
 
@@ -32,13 +40,7 @@
     signing = {
       key = "847A356BD6C0BADBBE5FE93EF9BE92F02750551B";
       signByDefault = true;
-    };
-
-    delta = {
-      enable = true;
-      options = {
-        line-numbers = true;
-      };
+      format = "openpgp";
     };
 
     ignores = [

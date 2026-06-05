@@ -7,6 +7,6 @@ export SWWW_TRANSITION_ANGLE=30
 export INTERVAL=300
 
 while true; do
-  swww img $(find $wallpapers_path -type f | shuf -n 1)
+  awww img $(find $wallpapers_path -type f | shuf -n 1)
   sleep $INTERVAL
 done

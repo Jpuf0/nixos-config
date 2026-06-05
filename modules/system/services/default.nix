@@ -1,16 +1,18 @@
 {pkgs, ...}: {
   imports = [
-    ./eventsfx.nix
+    # ./eventsfx.nix
     ./kde/polkit-kde.nix
     ./misc.nix
     ./mpris-proxy.nix
     ./mullvad.nix
     ./networking.nix
     ./ollama.nix
+    ./llama.nix
     ./pipewire.nix
     ./wayland.nix
     ./ssh.nix
     ./zerotier.nix
+    ./tailscale.nix
     ./ratbag.nix
   ];
 
@@ -22,6 +24,7 @@
     tumbler.enable = true;
     fwupd.enable = true;
     flatpak.enable = true;
+    clamav.daemon.enable = true;
 
     dbus = {
       enable = true;

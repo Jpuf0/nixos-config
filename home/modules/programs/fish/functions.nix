@@ -57,11 +57,6 @@
     find . -type f -iname "*$argv*" 2>/dev/null
   '';
 
-  # Find directory by name
-  fd = ''
-    find . -type d -iname "*$argv*" 2>/dev/null
-  '';
-
   # Quick file search with preview using fzf
   fzf-file = ''
     fzf --preview 'bat --style=numbers --color=always {}'

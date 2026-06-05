@@ -75,7 +75,7 @@
     mesa
     nspr
     nss
-    openssl
+    # openssl
     p11-kit
     pango
     pixman

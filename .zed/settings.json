@@ -1,3 +1,26 @@
 {
-    "tab_size": 2
+  "tab_size": 2,
+  "lsp": {
+    "lua-language-server": {
+      "initialization_options": {
+        "settings": {
+          "Lua": {
+            "codeLens": {
+              "enable": true,
+            },
+            "runtime": {
+              "version": "LuaJIT",
+            },
+            "workspace": {
+              "library": ["${env:VIMRUNTIME}"],
+              "checkThirdParty": false,
+            },
+            "diagnostics": {
+              "globals": ["vim"],
+            },
+          },
+        },
+      },
+    },
+  },
 }

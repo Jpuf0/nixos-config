@@ -6,6 +6,9 @@
 
     extraHosts = ''
       172.17.0.1 host.docker.internal
+      0.0.0.0 hkrpg-log-upload-os.hoyoverse.com
+      0.0.0.0 log-upload-os.hoyoverse.com
+      0.0.0.0 sg-public-data-api.hoyoverse.com
     '';
 
     nameservers = [

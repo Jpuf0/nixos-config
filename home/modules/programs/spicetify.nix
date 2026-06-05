@@ -24,7 +24,7 @@
       seekSong # Seek through songs
       goToSong # Go to song feature
       betterGenres # Better genre display
-      lastfm
+      # lastfm
       # beautifulLyrics
     ];
 

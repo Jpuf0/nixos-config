@@ -4,6 +4,7 @@
   ...
 }: let
   pythonPkgs = pkgs.python312Packages;
+  aagl = inputs.aagl.packages.${pkgs.stdenv.hostPlatform.system};
   # zed = pkgs.zed-editor.overrideAttrs (oa: {
   #   src = pkgs.fetchFromGitHub {
   #     owner = "zed-industries";
@@ -27,6 +28,7 @@ in {
     cheat
     tldr
     bandwhich
+    fd
 
     jdk
     libreoffice
@@ -38,7 +40,12 @@ in {
     ripgrep # grep replacement
     toipe # typing test in the terminal
     nemo-with-extensions # file manager
+
     yazi # terminal file manager
+    ouch
+    sox
+    exiftool
+
     yt-dlp
     zenity
 
@@ -69,7 +76,7 @@ in {
     man-pages # extra man pages
     mpv # video player
     ncdu # disk space
-    openssl
+    # openssl
     pamixer # pulseaudio command line mixer
     pavucontrol # pulseaudio volume controle (GUI)
     playerctl # controller for media players
@@ -87,14 +94,15 @@ in {
     ifuse
     usbutils
     docker
+    ctop
     bottles-unwrapped
     protonup-qt
     # steamtinkerlaunch
     xdotool
-    xorg.xprop
+    xprop
     unixtools.xxd
-    xorg.xwininfo
-    xorg.xrandr
+    xwininfo
+    xrandr
     yad
 
     # wine64
@@ -134,17 +142,17 @@ in {
     # heroic
     cmake
     jetbrains-toolbox
-    nodePackages_latest.pnpm
+    pnpm
     dmenu
     nix-alien
     hyprpicker
     gifski
-    pythonPkgs.tensorflowWithCuda
+    # pythonPkgs.tensorflowWithCuda
     mangohud
     # mangojuice
     # gale
     piper
-    # lutris
+    lutris
 
     unityhub
     vrc-get
@@ -158,7 +166,13 @@ in {
     inputs.hytale-launcher.packages.${pkgs.system}.default
     winboat
     stoat-desktop
-    virt-manager
+    # virt-manager
+    linux-wifi-hotspot
+    clamav
+
+    aagl.honkers-railway-launcher
+    aagl.honkers-launcher
+    aagl.sleepy-launcher
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

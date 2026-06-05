@@ -1,4 +1,4 @@
-require("lspconfig").omnisharp.setup({
+vim.lsp.config("omnisharp", {
 	cmd = {
 		"/usr/bin/env",
 		"OMNISHARPHOME=~/.config/omnisharp",
@@ -38,5 +38,8 @@ require("lspconfig").omnisharp.setup({
 
 	-- Only run analyzers against open files when 'enableRoslynAnalyzers' is
 	-- true
-	analyze_open_documents_only = false,
+    analyze_open_documents_only = false,
+
+	root_markers = { "*.sln", "*.csproj" },
 })
+vim.lsp.enable("omnisharp")

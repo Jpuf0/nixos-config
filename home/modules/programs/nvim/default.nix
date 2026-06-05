@@ -9,10 +9,12 @@
   ];
 
   programs.neovim = {
+    withRuby = true;
+    withPython3 = true;
     enable = true;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    extraLuaConfig = builtins.readFile (./lua/keybinds.lua);
+    initLua = builtins.readFile (./lua/keybinds.lua);
   };
 }

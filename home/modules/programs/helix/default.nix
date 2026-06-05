@@ -9,10 +9,10 @@
       lua-language-server
       markdown-oxide
       nil
-      nixfmt-rfc-style
-      nodePackages.bash-language-server
-      nodePackages.prettier
-      nodePackages.typescript-language-server
+      nixfmt
+      bash-language-server
+      prettier
+      typescript-language-server
       omnisharp-roslyn
       rust-analyzer
       shellcheck

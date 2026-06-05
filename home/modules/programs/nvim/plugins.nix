@@ -45,6 +45,14 @@
       }
 
       vim-dirdiff
+
+      nvim-vtsls
+
+      {
+        plugin = lazydev-nvim;
+        type = "lua";
+        config = builtins.readFile ./lua/lazydev.lua;
+      }
     ];
   };
 }
