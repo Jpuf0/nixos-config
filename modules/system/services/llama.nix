@@ -12,6 +12,8 @@
 
   services.llama-cpp = {
     enable = true;
-    port = 11344;
+    settings = {
+      port = 11344;
+    };
   };
 }

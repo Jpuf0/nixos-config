@@ -13,10 +13,12 @@
   ];
 
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod"];
-  boot.initrd.kernelModules = ["wl"];
-  boot.kernelModules = ["kvm-intel" "wl" "v4l2loopback"];
+  # boot.initrd.kernelModules = ["wl"];
+  boot.initrd.kernelModules = [];
+  # boot.kernelModules = ["kvm-intel" "wl" "v4l2loopback"];
+  boot.kernelModules = ["kvm-intel" "v4l2loopback"];
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    broadcom_sta
+    # broadcom_sta
     v4l2loopback
     usbip
   ];

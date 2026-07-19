@@ -49,7 +49,7 @@
             lsp.servers = ["nixd"];
           };
           bash.enable = true;
-          clang.enable = true;
+          clang.enable = false;
           css.enable = true;
           html.enable = true;
           json.enable = true;

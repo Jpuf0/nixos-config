@@ -1,5 +1,6 @@
 {...}: {
   wayland.windowManager.hyprland = {
+    configType = "hyprlang";
     extraConfig = "
 debug:disable_logs = false
 $mainMod = SUPER

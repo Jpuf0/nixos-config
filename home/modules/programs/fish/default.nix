@@ -96,6 +96,7 @@
     settings =
       {
         right_format = "$cmd_duration";
+        scan_timeout = 60;
 
         directory = {
           format = "[ ](bold #89b4fa)[ $path ]($style)";
@@ -124,7 +125,7 @@
 
         palette = "catppuccin_mocha";
       }
-      // builtins.fromTOML (builtins.readFile "${inputs.catppuccin-starship}/themes/mocha.toml");
+      // fromTOML (builtins.readFile "${inputs.catppuccin-starship}/themes/mocha.toml");
   };
 
   programs.zoxide = {

@@ -3,18 +3,22 @@
 
   nixConfig = {
     extra-substituters = [
-      "https://hyprland.cachix.org"
       "https://cache.nixos.org/"
-      "https://nix-community.cachix.org"
       "https://cuda-maintainers.cachix.org"
+      "https://cache.nixos-cuda.org"
       "https://ezkea.cachix.org"
+      "https://hyprland.cachix.org"
+      "https://nix-community.cachix.org"
+      "https://nix-gaming.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
     ];
   };
 
@@ -69,8 +73,8 @@
     };
 
     nixpkgs = {
-      # url = "github:nixos/nixpkgs/nixos-unstable";
-      url = "github:nixos/nixpkgs/nixpkgs-unstable";
+      url = "github:nixos/nixpkgs/nixos-unstable";
+      # url = "github:nixos/nixpkgs/nixpkgs-unstable";
       # url = "github:nixos/nixpkgs/master";
       # url = "github:/nixos/nixpkgs/1284004bf6c6e50d8592b6efe83708931e75aec7";
     };
@@ -100,11 +104,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      # url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?rev=f7597cdae2d537c5b12843599955856090dc49d5";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # quickshell = {
+    #   url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    #   # url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?rev=f7597cdae2d537c5b12843599955856090dc49d5";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
@@ -137,6 +141,8 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} {imports = [./flake];};

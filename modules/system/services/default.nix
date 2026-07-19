@@ -24,7 +24,7 @@
     tumbler.enable = true;
     fwupd.enable = true;
     flatpak.enable = true;
-    clamav.daemon.enable = true;
+    # clamav.daemon.enable = true;
 
     dbus = {
       enable = true;

@@ -53,7 +53,7 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
+    platformTheme.name = "gtk3";
     style.name = "gtk2";
   };
 
@@ -69,6 +69,7 @@
   };
 
   home.pointerCursor = {
+    enable = true;
     name = "Nordzy-cursors";
     package = pkgs.nordzy-cursor-theme;
     size = 22;

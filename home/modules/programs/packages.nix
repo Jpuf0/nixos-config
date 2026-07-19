@@ -95,7 +95,7 @@ in {
     usbutils
     docker
     ctop
-    bottles-unwrapped
+    # bottles-unwrapped
     protonup-qt
     # steamtinkerlaunch
     xdotool
@@ -121,7 +121,7 @@ in {
     # yabridgectl
     mullvad-vpn
     gleam
-    erlang
+    beamPackages.erlang
     rebar3
     obs-studio
     syncthing
@@ -130,7 +130,7 @@ in {
     spotify-player
 
     # gollama
-    lmstudio
+    # lmstudio
 
     sunshine
     moonlight-qt
@@ -144,7 +144,7 @@ in {
     jetbrains-toolbox
     pnpm
     dmenu
-    nix-alien
+    # nix-alien
     hyprpicker
     gifski
     # pythonPkgs.tensorflowWithCuda
@@ -152,7 +152,7 @@ in {
     # mangojuice
     # gale
     piper
-    lutris
+    # lutris
 
     unityhub
     vrc-get
@@ -163,16 +163,18 @@ in {
     obsidian
     dysk
 
-    inputs.hytale-launcher.packages.${pkgs.system}.default
+    # inputs.hytale-launcher.packages.${pkgs.system}.default
     winboat
     stoat-desktop
     # virt-manager
     linux-wifi-hotspot
-    clamav
+    # clamav
 
-    aagl.honkers-railway-launcher
-    aagl.honkers-launcher
-    aagl.sleepy-launcher
+    # aagl.honkers-railway-launcher
+    # aagl.honkers-launcher
+    # aagl.sleepy-launcher
+
+    claude-code
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat
