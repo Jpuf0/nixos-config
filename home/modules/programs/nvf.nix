@@ -13,14 +13,17 @@
           tabstop = 2;
           shiftwidth = 2;
         };
+
         preventJunkFiles = true;
         undoFile.enable = true;
         enableLuaLoader = true;
+
         clipboard = {
           enable = true;
           providers.wl-copy.enable = true;
           registers = "unnamedplus";
         };
+
         viAlias = true;
         vimAlias = true;
 
@@ -30,6 +33,12 @@
           trouble.enable = true;
           lspSignature.enable = true;
           lightbulb.enable = true;
+        };
+
+        treesitter = {
+          enable = true;
+          context.enable = true;
+          fold = true;
         };
 
         debugger = {
@@ -43,6 +52,7 @@
           enableFormat = true;
           enableTreesitter = true;
           enableExtraDiagnostics = true;
+          enableDAP = true;
 
           nix = {
             enable = true;
@@ -124,6 +134,7 @@
         };
 
         utility = {
+          multicursors.enable = true;
           icon-picker.enable = true;
           diffview-nvim.enable = true;
           motion = {

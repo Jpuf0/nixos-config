@@ -35,6 +35,7 @@
     (import ./modules/programs/caelestia/caelestia.nix)
     (import ./modules/programs/tailray.nix)
     (import ./modules/programs/aagl.nix)
+    (import ./modules/programs/atuin.nix)
   ];
 
   homeImports = {

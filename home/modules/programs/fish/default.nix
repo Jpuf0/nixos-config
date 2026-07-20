@@ -60,7 +60,7 @@
       set -gx EDITOR vim
 
       # Enable vi mode
-      fish_vi_key_bindings
+      # fish_vi_key_bindings
 
       # Configure plugins
       set fzf_diff_highlighter delta --paging=never --width=20
@@ -84,6 +84,8 @@
       # if command -v fzf >/dev/null
       #   fzf_key_bindings
       # end
+
+      fzf_configure_bindings --history=
     '';
   };
 

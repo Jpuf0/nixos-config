@@ -33,6 +33,11 @@
       flake = false;
     };
 
+    catppuccin-atuin = {
+      url = "github:catppuccin/atuin";
+      flake = false;
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";

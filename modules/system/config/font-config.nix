@@ -10,8 +10,8 @@
       defaultFonts = {
         emoji = ["Noto Color Emoji"];
         monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji" "Symbols Nerd Font"];
-        serif = ["Noto Serif" "Noto Color Emoji"];
-        sansSerif = ["Inter" "Noto Color Emoji"];
+        serif = ["Noto Serif" "Inter" "Noto Color Emoji"];
+        sansSerif = ["Noto Sans" "Inter" "Noto Color Emoji"];
       };
 
       hinting = {
@@ -31,14 +31,13 @@
     };
 
     packages = with pkgs; [
-      # (nerdfonts.override {fonts = ["JetBrainsMono" "NerdFontsSymbolsOnly"];})
-      nerd-fonts.jetbrains-mono
+      inter
       noto-fonts
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.caskaydia-cove
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
       twemoji-color-font
-
-      (google-fonts.override {fonts = ["Inter"];})
     ];
   };
 }

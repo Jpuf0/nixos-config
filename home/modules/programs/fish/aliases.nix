@@ -52,8 +52,8 @@
   h = "history";
 
   # Package management (NixOS specific)
-  rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
-  hm-switch = "home-manager switch --flake ~/.dotfiles";
+  # rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
+  # hm-switch = "home-manager switch --flake ~/.dotfiles";
 
   # Development
   v = "nvim";
@@ -77,4 +77,7 @@
 
   # Restart caelestia
   restart-desktop = "systemctl --user restart caelestia.service";
+
+  # Kitty
+  icat = "kitty icat";
 }

@@ -3,13 +3,13 @@
   config,
   ...
 }: {
-  fonts.fontconfig.enable = true;
-  home.packages = [
-    # pkgs.nerd-fonts
-    pkgs.nerd-fonts.jetbrains-mono
-    pkgs.twemoji-color-font
-    pkgs.noto-fonts-color-emoji
-  ];
+  # home.packages = [
+  #   # pkgs.nerd-fonts
+  #   pkgs.nerd-fonts.jetbrains-mono
+  #   pkgs.nerd-fonts-caskaydia-cove
+  #   pkgs.twemoji-color-font
+  #   pkgs.noto-fonts-color-emoji
+  # ];
 
   gtk = {
     enable = true;
@@ -53,7 +53,7 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk3";
+    # platformTheme.name = "gtk3";
     style.name = "gtk2";
   };
 

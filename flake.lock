@@ -206,6 +206,22 @@
         "type": "github"
       }
     },
+    "catppuccin-atuin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772473626,
+        "narHash": "sha256-4V9Rz37PlBLB1E3JVVYzrJwe9XXlKAFAO5gxWW/cTCw=",
+        "owner": "catppuccin",
+        "repo": "atuin",
+        "rev": "68aa64b77573c235044b614e752a781701af4eec",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "atuin",
+        "type": "github"
+      }
+    },
     "catppuccin-starship": {
       "flake": false,
       "locked": {
@@ -228,11 +244,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1784429929,
-        "narHash": "sha256-zEluI50TgMDmaGh03/fESCTVo0iNsi3rMAS4qG9fRMA=",
+        "lastModified": 1784484843,
+        "narHash": "sha256-DQpCBkh4J5yoBDKbWIxDqdicKU4nBjnX4Kx+404zD2I=",
         "owner": "sadjow",
         "repo": "claude-code-nix",
-        "rev": "b6ed5740cbb5f7b5ba5802bfc116b073e05cfdbd",
+        "rev": "6ee481c21e1e069e465abe89bb722c3fcdb78a1f",
         "type": "github"
       },
       "original": {
@@ -520,11 +536,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784407317,
-        "narHash": "sha256-iZrxHToDJWnvt+5LGAtvuQMTy1NZYlNEKbKaVtBJNcc=",
+        "lastModified": 1784489491,
+        "narHash": "sha256-j9maqjx1T8+ljAVntAdSI5hSGCm77QNZz64JF1rJNu0=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "39411a8e12a5526d992e65bc7e3dc9a4414d6713",
+        "rev": "3139deb8cafbe73b39b24451255b2fdd3426077e",
         "type": "github"
       },
       "original": {
@@ -647,11 +663,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1784458603,
-        "narHash": "sha256-sGjSVB0NOJS36OmKRsmHjchpWNwXPxXXpSNQ4lHeZh4=",
+        "lastModified": 1784493300,
+        "narHash": "sha256-1avSEwYcQBT1n6nFtqncnbQkMLRtsmZGG2XZlgPhPAc=",
         "ref": "refs/heads/main",
-        "rev": "0a5aa45bc151bff51a61a051ba72ea3743a26b0e",
-        "revCount": 7622,
+        "rev": "42b15274bcde7d9add76dfc70b0bb70c7a870305",
+        "revCount": 7624,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -1407,11 +1423,11 @@
         "nixpkgs": "nixpkgs_10"
       },
       "locked": {
-        "lastModified": 1784460618,
-        "narHash": "sha256-CmpXoD2KYkrsNFQfnJx2zZpIqqP1tyCf7YG3OzPG5UI=",
+        "lastModified": 1784492479,
+        "narHash": "sha256-ewMtrRNixQqFViVY9tEhE9WrhhusLYSoVECONSa0dx0=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "933cabb76637cce145535c604ed30cd4ae7f1e97",
+        "rev": "56a8888ca31db39d7335874ae4a187361225a4fb",
         "type": "github"
       },
       "original": {
@@ -1530,6 +1546,7 @@
         "alejandra": "alejandra",
         "caelestia-cli": "caelestia-cli",
         "caelestia-shell": "caelestia-shell_2",
+        "catppuccin-atuin": "catppuccin-atuin",
         "catppuccin-starship": "catppuccin-starship",
         "claude-code": "claude-code",
         "claude-desktop": "claude-desktop",
@@ -1597,11 +1614,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1784442826,
-        "narHash": "sha256-oXizZ5p9MdNicgEPw7mkZD0gezVlCbgeG6aAjXpDyHA=",
+        "lastModified": 1784481035,
+        "narHash": "sha256-nC0QN+GPTnA5i+WBx8S2rG8+VFh+EeBnEe5mU3hlAcQ=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "47c9223179f533174b719a53209aa9ab3e2f4e9c",
+        "rev": "a6baa7464f9b21a106dcfabb0bdcfe96fb434409",
         "type": "github"
       },
       "original": {

@@ -175,6 +175,8 @@ in {
     # aagl.sleepy-launcher
 
     claude-code
+    llmfit
+    llmserve
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

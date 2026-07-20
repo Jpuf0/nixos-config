@@ -13,6 +13,8 @@ in {
 
   home.packages = [
     inputs.hypr-contrib.packages.${system}.grimblast
+    pkgs.cliphist
+    pkgs.wl-clipboard-rs
   ];
 
   xdg.configFile = let
