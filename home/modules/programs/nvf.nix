@@ -1,8 +1,11 @@
 {
   inputs,
+  pkgs,
   lib,
   ...
-}: {
+}: let
+  inherit (lib.generators) mkLuaInline;
+in {
   imports = [inputs.nvf.homeManagerModules.default];
 
   programs.nvf = {
@@ -26,6 +29,36 @@
 
         viAlias = true;
         vimAlias = true;
+
+        autocmds = [
+          # {
+          #   enable    = true; # bool
+          #   event     = null; # nullOr (listOf str)   [ "BufWritePre" ]
+          #   pattern   = null; # nullOr (listOf str)   [ "*.lua", "*.nix" ]
+          #   callback  = null; # nullOr luaInline      lib.generators.mkLuaInline "function() print('File saved!) end"
+          #   command   = null; # nullOr str            "echo 'File saved!'"
+          #   group     = null; # nullOr str            "MyCustomAuGroup"
+          #   desc      = null; # nullOr str            "Format buffer on save"
+          #   once      = false;# bool
+          #   nested    = false;# bool
+          # }
+          {
+            enable = true;
+            event = ["CursorHold"];
+            callback = mkLuaInline ''
+              function()
+                vim.diagnostic.open_float(nil, {
+                  focusable = false,
+                  close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+                  border = "rounded",
+                  source = true,
+                  scope = "cursor",
+                })
+              end
+            '';
+            desc = "";
+          }
+        ];
 
         lsp = {
           enable = true;
@@ -125,7 +158,22 @@
           cheatsheet.enable = true;
         };
 
-        telescope.enable = true;
+        telescope = {
+          enable = true;
+          extensions = [
+            {
+              name = "";
+              packages = [
+                pkgs.vimPlugins.telescope-fzf-native-nvim
+              ];
+              setup = {
+                fzf = {
+                  fuzzy = true;
+                };
+              };
+            }
+          ];
+        };
 
         git = {
           enable = true;
@@ -134,12 +182,11 @@
         };
 
         utility = {
-          multicursors.enable = true;
-          icon-picker.enable = true;
           diffview-nvim.enable = true;
-          motion = {
-            leap.enable = true;
-          };
+          icon-picker.enable = true;
+          motion.leap.enable = true;
+          multicursors.enable = true;
+          direnv.enable = true;
         };
 
         terminal = {
@@ -160,12 +207,9 @@
           fastaction.enable = true;
         };
 
-        # assistant = {
-        #   copilot = {
-        #     enable = true;
-        #     cmp.enable = true;
-        #   };
-        # };
+        assistant = {
+          supermaven-nvim.enable = true;
+        };
 
         comments = {
           comment-nvim.enable = true;

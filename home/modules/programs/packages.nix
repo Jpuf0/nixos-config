@@ -175,6 +175,7 @@ in {
     # aagl.sleepy-launcher
 
     claude-code
+    claude-desktop-fhs
     llmfit
     llmserve
   ];

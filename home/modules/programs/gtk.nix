@@ -1,15 +1,15 @@
 {
   pkgs,
   config,
+  lib,
   ...
-}: {
-  # home.packages = [
-  #   # pkgs.nerd-fonts
-  #   pkgs.nerd-fonts.jetbrains-mono
-  #   pkgs.nerd-fonts-caskaydia-cove
-  #   pkgs.twemoji-color-font
-  #   pkgs.noto-fonts-color-emoji
-  # ];
+}: let
+  inherit (lib) mkForce;
+in {
+  home.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = mkForce "qt6ct";
+    # QT_STYLE_OVERRIDE = mkForce null;
+  };
 
   gtk = {
     enable = true;
@@ -53,8 +53,8 @@
 
   qt = {
     enable = true;
-    # platformTheme.name = "gtk3";
     style.name = "gtk2";
+    platformTheme.name = "qtct";
   };
 
   dconf = {

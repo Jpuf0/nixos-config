@@ -10,6 +10,13 @@
 
   networking.hostName = "ghost";
 
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-40.10.5"
+    ];
+  };
+
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = ["quiet"];

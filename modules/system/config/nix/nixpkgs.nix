@@ -9,6 +9,7 @@
       nix-alien.overlays.default
       millennium.overlays.default
       inputs.claude-code.overlays.default
+      inputs.claude-desktop.overlays.default
     ];
   };
 }

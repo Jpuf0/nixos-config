@@ -100,8 +100,7 @@
     };
 
     claude-desktop = {
-      url = "github:k3d3/claude-desktop-linux-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:aaddrick/claude-desktop-debian";
     };
 
     spicetify-nix = {

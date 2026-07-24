@@ -26,7 +26,6 @@
     (import ./modules/programs/zen)
     (import ./modules/programs/fish)
     # (import ./modules/programs/eventsfx.nix)
-    # (import ./modules/programs/claude-desktop.nix)
     (import ./modules/programs/spicetify.nix)
     (import ./modules/programs/xdg.nix)
     (import ./modules/programs/nh.nix)
