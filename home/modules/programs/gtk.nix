@@ -7,7 +7,7 @@
   inherit (lib) mkForce;
 in {
   home.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = mkForce "qt6ct";
+    QT_QPA_PLATFORMTHEME = mkForce "qtengine";
     # QT_STYLE_OVERRIDE = mkForce null;
   };
 

@@ -17,6 +17,8 @@ in {
     pkgs.wl-clipboard-rs
   ];
 
+  wayland.windowManager.hyprland.systemd.enable = false;
+  
   xdg.configFile = let
     lua = [
       ./config/animations.lua

@@ -68,7 +68,7 @@
 
       set -Ux fifc_editor $EDITOR
 
-      set -U __done_notification_command "notify-send -i utilities-terminal "\$title" "\$message""
+      # set -U __done_notification_command "notify-send -i utilities-terminal "\$title" "\$message""
       set -U __done_notify_sound 1
       set -U __done_allow_nongraphical 1
       set -U __done_kitty_remote_control 1

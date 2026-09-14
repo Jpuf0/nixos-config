@@ -16,7 +16,7 @@
 
       daemon = {
         enabled = true;
-        autostart = false;
+        autostart = true;
         sync_frequency = 300;
       };
 

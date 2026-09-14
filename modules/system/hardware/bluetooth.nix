@@ -3,7 +3,7 @@
     enable = true;
     powerOnBoot = true;
     settings.General = {
-      ControllerMode = "bredr";
+      ControllerMode = "dual";
       Experimental = true;
       Enable = "Source,Sink,Media,Socket";
     };

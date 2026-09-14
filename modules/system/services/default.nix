@@ -29,7 +29,7 @@
     dbus = {
       enable = true;
       implementation = "broker";
-      packages = with pkgs; [dconf gcr udisks2];
+      packages = with pkgs; [dconf gcr_4 udisks2];
     };
   };
 }

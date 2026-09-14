@@ -23,12 +23,13 @@ in {
     dua
     gdu
     gtop
-    glances
+    # glances
     bottom
     cheat
     tldr
     bandwhich
     fd
+    ouch
 
     jdk
     libreoffice
@@ -160,7 +161,7 @@ in {
     opencode
     grc
     runelite
-    obsidian
+    # obsidian
     dysk
 
     # inputs.hytale-launcher.packages.${pkgs.system}.default
@@ -178,6 +179,8 @@ in {
     claude-desktop-fhs
     llmfit
     llmserve
+    qFlipper
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ctrlem
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

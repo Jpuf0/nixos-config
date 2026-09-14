@@ -32,15 +32,15 @@ in {
 
         autocmds = [
           # {
-          #   enable    = true; # bool
-          #   event     = null; # nullOr (listOf str)   [ "BufWritePre" ]
-          #   pattern   = null; # nullOr (listOf str)   [ "*.lua", "*.nix" ]
-          #   callback  = null; # nullOr luaInline      lib.generators.mkLuaInline "function() print('File saved!) end"
-          #   command   = null; # nullOr str            "echo 'File saved!'"
-          #   group     = null; # nullOr str            "MyCustomAuGroup"
-          #   desc      = null; # nullOr str            "Format buffer on save"
-          #   once      = false;# bool
-          #   nested    = false;# bool
+          #   enable    = true;  # bool
+          #   event     = null;  # nullOr (listOf str)   [ "BufWritePre" ]
+          #   pattern   = null;  # nullOr (listOf str)   [ "*.lua", "*.nix" ]
+          #   callback  = null;  # nullOr luaInline      lib.generators.mkLuaInline "function() print('File saved!) end"
+          #   command   = null;  # nullOr str            "echo 'File saved!'"
+          #   group     = null;  # nullOr str            "MyCustomAuGroup"
+          #   desc      = null;  # nullOr str            "Format buffer on save"
+          #   once      = false; # bool
+          #   nested    = false; # bool
           # }
           {
             enable = true;
@@ -208,7 +208,7 @@ in {
         };
 
         assistant = {
-          supermaven-nvim.enable = true;
+          supermaven-nvim.enable = false;
         };
 
         comments = {

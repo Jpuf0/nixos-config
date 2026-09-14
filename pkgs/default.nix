@@ -5,7 +5,7 @@
     packages = {
       app2unit = pkgs.callPackage ./app2unit {};
       eventsfx = pkgs.callPackage ./eventsfx {};
-      equibop = pkgs.callPackage ./equibop {};
+      ctrlem = pkgs.callPackage ./ctrlem {};
     };
   };
 }

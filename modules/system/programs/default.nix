@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   imports = [
     # ./zsh.nix
     ./fish.nix
@@ -15,6 +15,7 @@
       enable = true;
     };
     ssh.startAgent = false;
+    gpu-screen-recorder.enable = true;
   };
 
   virtualisation.docker = {
@@ -31,4 +32,5 @@
   # networking.firewall.trustedInterfaces = ["docker0"];
 
   hardware.nvidia-container-toolkit.enable = true;
+  hardware.flipperzero.enable = true;
 }

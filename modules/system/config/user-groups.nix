@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   users.users.jpuf = {
     isNormalUser = true;
-    description = "i cant have colon 3";
+    description = "jpuf";
     initialPassword = "nixos";
     shell = pkgs.fish;
     extraGroups = [
@@ -19,7 +19,7 @@
 
   users.users.ypuf = {
     isNormalUser = true;
-    description = "i cant have colon 3";
+    description = "ypuf";
     initialPassword = "nixos";
     shell = pkgs.fish;
     extraGroups = [

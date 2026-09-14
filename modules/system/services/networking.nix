@@ -1,8 +1,17 @@
-{pkgs, ...}: {
+{lib, ...}: {
   networking = {
     dhcpcd.extraConfig = "nohook resolv.conf";
-    networkmanager.enable = true;
-    networkmanager.dns = "none";
+    networkmanager = {
+      enable = true;
+      dns = lib.mkDefault "none";
+      wifi = {
+        backend = "iwd";
+        # broadcom-sta (wl) can't randomize scan MACs in-driver, so NM rewrites the
+        # real interface MAC and association/EAP breaks; ASK4 also registers by MAC.
+        macAddress = "permanent";
+        scanRandMacAddress = false;
+      };
+    };
 
     extraHosts = ''
       172.17.0.1 host.docker.internal
