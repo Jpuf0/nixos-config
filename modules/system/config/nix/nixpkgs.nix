@@ -4,12 +4,14 @@
 
     overlays = with inputs; [
       # (import ./overlays.nix)
-      nix-vscode-extensions.overlays.default
       nur.overlays.default
       nix-alien.overlays.default
       millennium.overlays.default
-      inputs.claude-code.overlays.default
-      inputs.claude-desktop.overlays.default
+      # claude-code.overlays.default
+      claude-desktop.overlays.default
+
+      # Only uncomment if using nixpkgs-unstable.
+      # llm-agents.overlays.shared-nixpkgs
     ];
   };
 }

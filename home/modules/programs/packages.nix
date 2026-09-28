@@ -3,16 +3,11 @@
   pkgs,
   ...
 }: let
-  pythonPkgs = pkgs.python312Packages;
-  aagl = inputs.aagl.packages.${pkgs.stdenv.hostPlatform.system};
-  # zed = pkgs.zed-editor.overrideAttrs (oa: {
-  #   src = pkgs.fetchFromGitHub {
-  #     owner = "zed-industries";
-  #     repo = "zed";
-  #     tag = "v{oa.version}";
-  #     hash = "sha256-Q7Ord+GJJcOCH/S3qNwAbzILqQiIC94qb8V+JkzQqaQ=";
-  #   };
-  # });
+  system = pkgs.stdenv.hostPlatform.system;
+
+  self_pkgs = inputs.self.packages.${system};
+  aagl = inputs.aagl.packages.${system};
+  llm-agents = inputs.llm-agents.packages.${system};
 in {
   home.packages = with pkgs; [
     bitwise # cli tool for bit / hex manipulation
@@ -130,8 +125,6 @@ in {
     remmina
     spotify-player
 
-    # gollama
-    # lmstudio
 
     sunshine
     moonlight-qt
@@ -145,10 +138,9 @@ in {
     jetbrains-toolbox
     pnpm
     dmenu
-    # nix-alien
+    nix-alien
     hyprpicker
     gifski
-    # pythonPkgs.tensorflowWithCuda
     mangohud
     # mangojuice
     # gale
@@ -161,7 +153,7 @@ in {
     opencode
     grc
     runelite
-    # obsidian
+    obsidian
     dysk
 
     # inputs.hytale-launcher.packages.${pkgs.system}.default
@@ -170,17 +162,40 @@ in {
     # virt-manager
     linux-wifi-hotspot
     # clamav
+    qFlipper
 
-    # aagl.honkers-railway-launcher
-    # aagl.honkers-launcher
-    # aagl.sleepy-launcher
+    self_pkgs.amethyst-mod-manager
 
-    claude-code
-    claude-desktop-fhs
+    # LLM/AI Stuff
+    claude-desktop-fhs       # https://github.com/aaddrick/claude-desktop-debian, FHS-compatible sandboxed version of the desktop app.
+
+    # claude-code            # https://github.com/sadjow/claude-code-nix, modules/system/config/nix/nixpkgs.nix#L11
+    llm-agents.claude-code   # https://numtide.github.io/llm-agents.nix, LLM-agents packaged version.
+    llm-agents.oh-my-claudecode
+
+    llm-agents.codex
+    llm-agents.oh-my-codex
+
+    llm-agents.t3code-desktop
+
+    llm-agents.ccstatusline
+    # llm-agents.ccusage
+    llm-agents.voxtype
+    # llm-agents.agentsview
+    llm-agents.ctx
+    llm-agents.skills
+    llm-agents.qmd
+    # (llm-agents.qmd.override {
+    #   cudaSupport = true;
+    #   cudaPackages = pkgs.cudaPackages;
+    # })
+
+    # Local LLM Stuff
     llmfit
     llmserve
-    qFlipper
-    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.amethyst-mod-manager
+    # gollama
+    # lmstudio
+
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

@@ -2,6 +2,10 @@
   inputs,
   pkgs,
   ...
-}: {
-  home.packages = with inputs.eventsfx.packages."${pkgs.stdenv.hostPlatform.system}"; [default];
+}: let
+  system = pkgs.stdenv.hostPlatform.system;
+  eventsfx = inputs.eventsfx.packages."${system}".default;
+in
+{
+  home.packages = [eventsfx];
 }

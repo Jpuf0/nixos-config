@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    # ./eventsfx.nix
+    ./eventsfx.nix
     ./kde/polkit-kde.nix
     ./misc.nix
     ./mpris-proxy.nix

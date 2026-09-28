@@ -24,7 +24,7 @@
     settings = {
       editor = {
         auto-format = false;
-        auto-complettion = true;
+        auto-completion = true;
         bufferline = "always";
         color-modes = true;
         line-number = "relative";

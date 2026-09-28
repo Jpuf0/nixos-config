@@ -1,4 +1,22 @@
-{inputs, ...}: {
+{inputs, ...}: let
+  font = "CaskaydiaCove NF";
+
+  # { enabled; id } entries used by bar.entries, bar.statusIcons, utilities.quickToggles
+  on = id: {
+    enabled = true;
+    inherit id;
+  };
+  off = id: {
+    enabled = false;
+    inherit id;
+  };
+
+  vpnProvider = id: name: displayName: interface: {
+    inherit id name displayName interface;
+    connectCmd = [];
+    disconnectCmd = [];
+  };
+in {
   imports = [inputs.caelestia-shell.homeManagerModules.default];
 
   programs.caelestia = {
@@ -8,200 +26,104 @@
       target = "graphical-session.target";
       environment = [];
     };
+
     settings = {
       appearance = {
-        anim = {
-          durations = {
-            scale = 1;
-          };
+        # font = {
+        #   clock = "IBM Plex Sans";
+        #   workspaces = font;
+        #   body.family = font;
+        #   label.family = font;
+        #   title.family = font;
+        #   headline.family = font;
+        # };
+      };
+
+      background = {
+        desktopClock = {
+          enabled = true;
+          background.enabled = true;
         };
-        font = {
-          family = {
-            material = "Material Symbols Rounded";
-            mono = "JetBrains Mono NF";
-            sans = "IBM Plex Sans";
-          };
-          size = {
-            scale = 1;
-          };
-        };
-        padding.scale = 1;
-        rounding.scale = 1;
-        spacing.scale = 1;
-        transparency = {
-          enabled = false;
-          base = 0.85;
-          layers = 0.4;
+        visualizer.enabled = true;
+      };
+
+      bar = {
+        scrollActions.brightness = false;
+        statusIcons = [
+          (off "lockStatus")
+          (on "audio")
+          (off "microphone")
+          (off "kbLayout")
+          (on "network")
+          (on "bluetooth")
+          (off "battery")
+        ];
+        workspaces = {
+          activeTrail = false;
+          maxWindowIcons = 3;
+          label = " "; # default has two trailing spaces
+          specialWorkspaceIcons = [
+            {
+              name = "steam";
+              icon = "sports_esports";
+            }
+          ];
         };
       };
+
+      border = {
+
+      };
+
       general = {
         apps = {
           terminal = ["kitty"];
           audio = ["pavucontrol"];
+          explorer = ["nemo"];
+        };
+
+        idle = {
+          timeouts = [
+            {
+              timeout = 180;
+              idleAction = "lock";
+            }
+            {
+              timeout = 300;
+              idleAction = "dpms off";
+              returnAction = "dpms on";
+            }
+          ];
         };
       };
-      background = {
-        enabled = true;
-        desktopClock = {
-          enabled = false;
-        };
-        visualiser = {
-          enabled = false;
-          autoHide = true;
-          rounding = 1;
-          spacing = 1;
-        };
-      };
-      bar = {
-        clock = {
-          showIcon = true;
-        };
-        dragThreshold = 20;
-        entries = [
-          {
-            enabled = true;
-            id = "logo";
-          }
-          {
-            enabled = true;
-            id = "workspaces";
-          }
-          {
-            enabled = true;
-            id = "spacer";
-          }
-          {
-            enabled = true;
-            id = "activeWindow";
-          }
-          {
-            enabled = true;
-            id = "spacer";
-          }
-          {
-            enabled = true;
-            id = "tray";
-          }
-          {
-            enabled = true;
-            id = "clock";
-          }
-          {
-            enabled = true;
-            id = "statusIcons";
-          }
-          {
-            enabled = true;
-            id = "power";
-          }
-          {
-            enabled = false;
-            id = "idleInhibitor";
-          }
-        ];
-        persistent = true;
-        showOnHover = true;
-        status = {
-          showAudio = true;
-          showBattery = false;
-          showBluetooth = true;
-          showKbLayout = false;
-          showNetwork = true;
-          showLockStatus = true;
-        };
-        tray = {
-          background = true;
-          recolour = true;
-        };
-        workspaces = {
-          activeIndicator = true;
-          activeLabel = "󰮯";
-          activeTrail = false;
-          label = "  ";
-          occupiedBg = false;
-          occupiedLabel = "󰮯";
-          perMonitorWorkspaces = false;
-          showWindows = true;
-          shown = 5;
-        };
-      };
-      border = {
-        rounding = 25;
-        thickness = 10;
-      };
-      dashboard = {
-        enabled = true;
-        dragThreshold = 20;
-        mediaUpdateInterval = 500;
-        showOnHover = true;
-      };
+
       launcher = {
-        actionPrefix = ">";
-        dragThreshold = 50;
-        vimKeybinds = false;
-        enableDangerousActions = false;
-        maxShown = 8;
-        maxWallpapers = 9;
-        specialPrefix = "@";
-        useFuzzy = {
-          apps = false;
-          actions = false;
-          schemes = false;
-          variants = false;
-          wallpapers = false;
-        };
-        showOnHover = false;
+        favouriteApps = ["equibop" "steam" "dev.zed.Zed" "zen-beta"];
+        hiddenApps = ["ModOrganizer-steamtinkerlaunch-dl"];
       };
-      lock = {
-        recolourLogo = false;
-      };
+
       notifs = {
-        actionOnClick = false;
-        clearThreshold = 0.3;
-        defaultExpireTimeout = 5000;
-        expandThreshold = 20;
-        expire = false;
+        defaultExpireTimeout = 3000;
       };
+
       osd = {
-        enabled = true;
-        enableBrightness = true;
+        enableBrightness = false;
         enableMicrophone = true;
-        hideDelay = 2000;
       };
-      paths = {
-        mediaGif = "root:/assets/bongocat.gif";
-        sessionGif = "root:/assets/kurukuru.gif";
-        wallpaperDir = "~/Pictures/Wallpapers";
-      };
+
       services = {
-        audioIncrement = 0.1;
-        defaultPlayer = "Spotify";
-        gpuType = "";
-        playerAliases = [
-          {
-            from = "com.github.th_ch.youtube_music";
-            to = "YT Music";
-          }
-        ];
-        weatherLocation = "";
-        useFahrenheit = false;
-        useTwelveHourClock = false;
-        smartScheme = true;
-        visualiserBars = 45;
+        clockFormat = "TwentyFourHour";
+        weatherUnits = "Celsius";
       };
-      session = {
-        dragThreshold = 30;
-        vimKeybinds = false;
-        commands = {
-          logout = ["loginctl" "terminate-user" ""];
-          shutdown = ["systemctl" "poweroff"];
-          hibernate = ["systemctl" "hibernate"];
-          reboot = ["systemctl" "reboot"];
-        };
-      };
+
+      utilities = {};
     };
+
     cli = {
       enable = true;
+      settings = {
+
+      };
     };
   };
 }

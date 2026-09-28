@@ -3,8 +3,8 @@
 
   perSystem = {pkgs, ...}: {
     packages = {
-      app2unit = pkgs.callPackage ./app2unit {};
       amethyst-mod-manager = pkgs.callPackage ./amethyst {};
+      equibop = pkgs.callPackage ./equibop {};
       eventsfx = pkgs.callPackage ./eventsfx {};
     };
   };

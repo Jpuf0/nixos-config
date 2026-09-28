@@ -2,11 +2,15 @@
   inputs,
   pkgs,
   ...
-}: {
+}: let
+  system = pkgs.stdenv.hostPlatform.system;
+  eventsfx = inputs.eventsfx.packages."${system}".default;
+in
+{
   systemd.user.services.eventsfx = {
     description = "eventsfx daemon";
     after = ["sound.target"];
     wantedBy = ["default.target"];
-    serviceConfig.ExecStart = "${inputs.eventsfx.packages."${pkgs.stdenv.hostPlatform.system}".default}/bin/eventsfx";
+    serviceConfig.ExecStart = "${eventsfx}/bin/eventsfx";
   };
 }

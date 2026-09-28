@@ -4,31 +4,28 @@
   nixConfig = {
     extra-substituters = [
       "https://cache.nixos.org/"
-      "https://cuda-maintainers.cachix.org"
       "https://cache.nixos-cuda.org"
       "https://ezkea.cachix.org"
       "https://hyprland.cachix.org"
       "https://nix-community.cachix.org"
       "https://nix-gaming.cachix.org"
+      "https://cache.numtide.com"
     ];
     extra-trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
+      "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
   };
 
   inputs = {
-    alejandra = {
-      url = "github:kamadorueda/alejandra/3.0.0";
-      inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin = {
+      url = "github:catppuccin/nix";
     };
-
-    catppuccin.url = "github:catppuccin/nix";
 
     catppuccin-starship = {
       url = "github:catppuccin/starship";
@@ -52,57 +49,51 @@
 
     hypr-contrib = {
       url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hypridle = {
-    #   url = "github:hyprwm/Hypridle";
-    #   inputs.nixpkgs.follows = "nixpkgs";
+    # hyprland = {
+    #   type = "git";
+    #   url = "https://github.com/hyprwm/Hyprland";
+    #   # inputs.nixpkgs.follows = "nixpkgs";
+    #   submodules = true;
     # };
-
-    hyprland = {
-      type = "git";
-      url = "https://github.com/hyprwm/Hyprland";
-      # inputs.nixpkgs.follows = "nixpkgs";
-      submodules = true;
-    };
-
-    # hyprlock = {
-    #   url = "github:hyprwm/Hyprlock";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-    };
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
-      # url = "github:nixos/nixpkgs/nixpkgs-unstable";
-      # url = "github:nixos/nixpkgs/master";
-      # url = "github:/nixos/nixpkgs/1284004bf6c6e50d8592b6efe83708931e75aec7";
+    };
+
+    # nixpkgs-unstable = {
+    #   url = "github:nixos/nixpkgs/nixos-unstable";
+    # };
+
+    # nixpkgs-master = {
+    #   url = "github:nixos/nixpkgs/master";
+    # };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
 
     nix-alien = {
       url = "github:thiagokokada/nix-alien";
     };
 
-    nur = {
-      url = "github:nix-community/NUR";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     eventsfx = {
       url = "github:SaphiraKai/eventsfx";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    claude-desktop = {
-      url = "github:aaddrick/claude-desktop-debian";
     };
 
     spicetify-nix = {
@@ -110,26 +101,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # quickshell = {
-    #   url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-    #   # url = "git+https://git.outfoxxed.me/outfoxxed/quickshell?rev=f7597cdae2d537c5b12843599955856090dc49d5";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     caelestia-cli = {
       url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     caelestia-greeter = {
       url = "github:dim-ghub/caelestia-greeter";
-    };
-
-    hytale-launcher = {
-      url = "github:JPyke3/hytale-launcher-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     millennium = {
@@ -146,12 +130,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    aagl = {
-      url = "github:ezKEa/aagl-gtk-on-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+    claude-desktop = {
+      url = "github:aaddrick/claude-desktop-debian";
     };
 
-    claude-code.url = "github:sadjow/claude-code-nix";
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} {imports = [./flake];};
