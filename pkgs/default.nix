@@ -4,8 +4,8 @@
   perSystem = {pkgs, ...}: {
     packages = {
       app2unit = pkgs.callPackage ./app2unit {};
+      amethyst-mod-manager = pkgs.callPackage ./amethyst {};
       eventsfx = pkgs.callPackage ./eventsfx {};
-      ctrlem = pkgs.callPackage ./ctrlem {};
     };
   };
 }

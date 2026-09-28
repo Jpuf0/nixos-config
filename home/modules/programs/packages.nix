@@ -180,7 +180,7 @@ in {
     llmfit
     llmserve
     qFlipper
-    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.ctrlem
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.amethyst-mod-manager
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

@@ -9,13 +9,18 @@
     enable = true;
     settings = {
       git = {
-        pagers = [
-          {pager = "delta --dark --paging=never";}
+        diffRenderers = [
           {
-            pager = "ydiff -p cat -s --wrap --width={{columnWidth}}";
+            command = "delta --dark --paging=never";
+          }
+          {
+            command = "ydiff -p cat -s --wrap --width={{columnWidth}}";
             colorArg = "never";
           }
-          {externalDiffCommand = "difft --color=always";}
+          {
+            command = "difft --color=always";
+            type = "extDiff";
+          }
         ];
       };
     };

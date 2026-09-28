@@ -121,7 +121,11 @@ in {
         statusline = {
           lualine = {
             enable = true;
-            theme = "catppuccin";
+            setupOpts.options.theme = "catppuccin";
+            integrations.breadcrumbs = {
+              navbuddy.enable = true;
+              nvim-navic.enable = true;
+            };
           };
         };
 
@@ -200,10 +204,10 @@ in {
           noice.enable = true;
           colorizer.enable = true;
           illuminate.enable = true;
-          breadcrumbs = {
-            enable = true;
-            navbuddy.enable = true;
-          };
+          # breadcrumbs = {
+          #   enable = true;
+          #   navbuddy.enable = true;
+          # };
           fastaction.enable = true;
         };
 

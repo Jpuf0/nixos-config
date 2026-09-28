@@ -6,10 +6,8 @@
       dns = lib.mkDefault "none";
       wifi = {
         backend = "iwd";
-        # broadcom-sta (wl) can't randomize scan MACs in-driver, so NM rewrites the
-        # real interface MAC and association/EAP breaks; ASK4 also registers by MAC.
+        # ASK4 registers devices by MAC, so keep the card's real address
         macAddress = "permanent";
-        scanRandMacAddress = false;
       };
     };
 

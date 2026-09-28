@@ -6,22 +6,13 @@
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      "broadcom-sta-6.30.223.271-59-6.19.11"
-      "broadcom-sta-6.30.223.271-59-7.0.3"
-      "broadcom-sta-6.30.223.271-59-7.0.6"
-      "broadcom-sta-6.30.223.271-59-7.0.9"
-      "broadcom-sta-6.30.223.271-59-7.0.10"
-      "broadcom-sta-6.30.223.271-59-7.1.2"
-      "broadcom-sta-6.30.223.271-63-7.2.3"
-      "broadcom-sta-6.30.223.271-63-6.18.50"
       "electron-38.8.4"
       "electron-40.10.5"
     ];
   };
 
   boot = {
-    # LTS while testing whether broadcom-sta (wl) is more stable than on zen 7.2
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = ["quiet"];
     consoleLogLevel = 0;
     loader = {
@@ -33,7 +24,6 @@
 
   hardware = {
     enableAllFirmware = true;
-    enableAllHardware = true;
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
 
