@@ -116,6 +116,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    caelestia-dots = {
+      url = "github:caelestia-dots/caelestia";
+      flake = false;
+    };
+
     millennium = {
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     };

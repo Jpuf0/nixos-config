@@ -79,6 +79,22 @@
         "type": "github"
       }
     },
+    "caelestia-dots": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790078748,
+        "narHash": "sha256-ZvI53bpo0tIrciKaZ4XCxk9zlfTaM5/Bu+PHPNW6E2Y=",
+        "owner": "caelestia-dots",
+        "repo": "caelestia",
+        "rev": "d459e9182ae55ba7eb29fa90781297224911d6bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "caelestia-dots",
+        "repo": "caelestia",
+        "type": "github"
+      }
+    },
     "caelestia-greeter": {
       "inputs": {
         "m3shapes": "m3shapes_2",
@@ -828,6 +844,7 @@
     "root": {
       "inputs": {
         "caelestia-cli": "caelestia-cli",
+        "caelestia-dots": "caelestia-dots",
         "caelestia-greeter": "caelestia-greeter",
         "caelestia-shell": "caelestia-shell_2",
         "catppuccin": "catppuccin",

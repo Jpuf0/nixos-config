@@ -168,6 +168,7 @@ in {
 
     # LLM/AI Stuff
     claude-desktop-fhs       # https://github.com/aaddrick/claude-desktop-debian, FHS-compatible sandboxed version of the desktop app.
+    llm-agents.chatgpt
 
     # claude-code            # https://github.com/sadjow/claude-code-nix, modules/system/config/nix/nixpkgs.nix#L11
     llm-agents.claude-code   # https://numtide.github.io/llm-agents.nix, LLM-agents packaged version.
