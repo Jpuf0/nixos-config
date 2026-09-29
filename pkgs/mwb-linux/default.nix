@@ -18,16 +18,16 @@ buildGoModule {
   src = fetchFromGitHub {
     owner = "lucky-verma";
     repo = "mwb-linux";
-    rev = "PASTE_COMMIT_SHA"; # git ls-remote https://github.com/lucky-verma/mwb-linux refs/pull/41/head
-    hash = lib.fakeHash;
+    rev = "15036dc52c51b8b08f64b1506cc2cf61e1b4f489"; # git ls-remote https://github.com/lucky-verma/mwb-linux refs/pull/41/head
+    hash = "sha256-S2WhrcH7v533Jp8GBBedrHJFxFqA7DbNzkIEsyTY/7Q=";
   };
 
-  vendorHash = lib.fakeHash;
+  vendorHash = "sha256-3uQxvR8jIYGxZWK+g/Q7SbSEWGbeNwIj9eXoUQBueyw=";
 
-  subPackages = [ "cmd/mwb" ];
+  subPackages = ["cmd/mwb"];
 
   # portal (libei) code is excluded without this tag
-  tags = [ "wayland_portal" ];
+  tags = ["wayland_portal"];
   env.CGO_ENABLED = "1";
 
   nativeBuildInputs = [
@@ -35,18 +35,20 @@ buildGoModule {
     pkg-config
   ];
 
-  buildInputs = [ libei ];
+  buildInputs = [libei];
 
   postInstall = ''
     wrapProgram $out/bin/mwb \
       --prefix PATH : ${
-        lib.makeBinPath [
-          wl-clipboard
-          xclip
-          xdotool
-          xsel
-        ]
-      }
+      lib.makeBinPath [
+        wl-clipboard
+        xclip
+        xdotool
+        xsel
+      ]
+    }
+
+    install -Dm644 ${./99-mwb.rules} $out/lib/udev/rules.d/99-mwb.rules
   '';
 
   __structuredAttrs = true;

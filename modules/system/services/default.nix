@@ -14,6 +14,8 @@
     ./zerotier.nix
     ./tailscale.nix
     ./ratbag.nix
+
+    ./mwb.nix
   ];
 
   services = {

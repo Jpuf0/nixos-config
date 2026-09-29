@@ -1,0 +1,2 @@
+KERNEL=="uinput", GROUP="input", MODE="0660", OPTIONS+="static_node=uinput"
+ACTION=="add|change", SUBSYSTEM=="input", ATTRS{name}=="mwb-mouse", ENV{LIBINPUT_ACCEL_PROFILE}="flat", ENV{LIBINPUT_ACCEL_SPEED}="0"

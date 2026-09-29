@@ -1,5 +1,7 @@
-{
+{self, ...}: {
   systems = ["x86_64-linux"];
+
+  flake.nixosModules.mwb = import ./mwb-linux/module.nix self;
 
   perSystem = {pkgs, ...}: {
     packages = {

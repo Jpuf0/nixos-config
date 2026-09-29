@@ -7,7 +7,6 @@
         alejandra
         deadnix
         git
-        nil
         prettier
         nix-prefetch
         nixd
