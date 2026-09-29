@@ -87,7 +87,7 @@
 
       fzf_configure_bindings --history=
 
-      cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
+      cat --plain ~/.local/state/caelestia/sequences.txt 2> /dev/null
     '';
   };
 

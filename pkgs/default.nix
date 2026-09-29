@@ -6,6 +6,7 @@
       amethyst-mod-manager = pkgs.callPackage ./amethyst {};
       equibop = pkgs.callPackage ./equibop {};
       eventsfx = pkgs.callPackage ./eventsfx {};
+      mwb-linux = pkgs.callPackage ./mwb-linux {};
     };
   };
 }
