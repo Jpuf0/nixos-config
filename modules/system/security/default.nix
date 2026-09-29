@@ -2,7 +2,6 @@
   imports = [
     ./sunshine.nix
     ./howdy.nix
-    ./fprintd.nix
   ];
 
   security = {

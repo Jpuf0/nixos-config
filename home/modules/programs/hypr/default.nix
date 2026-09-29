@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   lib,
@@ -57,7 +58,7 @@
 in {
   home.packages = with pkgs; [
     cliphist
-    wl-clipboard-rs
+    wl-clipboard
     hyprpicker
     fuzzel
     ydotool
@@ -72,7 +73,15 @@ in {
   xdg.configFile =
     lib.listToAttrs (map link (lib.unique (relFiles upstream ++ relFiles overrides)))
     // {
-      "caelestia/hypr-vars.lua".text = "return ${lib.generators.toLua {} vars}\n";
-      "caelestia/hypr-user.lua".source = ./hypr-user.lua;
+      # "caelestia/hypr-vars.lua".text = "return ${lib.generators.toLua {} vars}\n";
+      # "caelestia/hypr-user.lua".source = ./hypr-user.lua;
+      "caelestia/hypr-vars.lua".source = config.lib.file.mkOutOfStoreSymlink /home/jpuf/.nixos/home/modules/programs/hypr/config/hypr-vars.lua;
+      "caelestia/hypr-user.lua".source = config.lib.file.mkOutOfStoreSymlink /home/jpuf/.nixos/home/modules/programs/hypr/config/hypr-user.lua;
+      "uwsm/env".text = ''
+        # 1. Source Home Manager's generated environment variables first
+        if [ -f "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh" ]; then
+          . "${config.home.sessionVariablesPackage}/etc/profile.d/hm-session-vars.sh"
+        fi
+      '';
     };
 }

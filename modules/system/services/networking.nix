@@ -1,14 +1,17 @@
-{lib, ...}: {
+{lib, pkgs, ...}: {
   networking = {
     dhcpcd.extraConfig = "nohook resolv.conf";
     networkmanager = {
       enable = true;
-      dns = lib.mkDefault "none";
+      dns = "systemd-resolved";
       wifi = {
         backend = "iwd";
         # ASK4 registers devices by MAC, so keep the card's real address
         macAddress = "permanent";
       };
+      plugins = with pkgs; [
+        networkmanager-openconnect
+      ];
     };
 
     extraHosts = ''
