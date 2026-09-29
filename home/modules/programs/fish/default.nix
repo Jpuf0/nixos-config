@@ -73,8 +73,6 @@
       set -U __done_allow_nongraphical 1
       set -U __done_kitty_remote_control 1
       set -U __done_kitty_remote_control_password "kitty-rc-password"
-
-      cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
     '';
 
     interactiveShellInit = ''
@@ -88,6 +86,8 @@
       # end
 
       fzf_configure_bindings --history=
+
+      cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
     '';
   };
 
