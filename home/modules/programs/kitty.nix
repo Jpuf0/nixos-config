@@ -17,6 +17,7 @@
       scrollback_lines = 10000;
       enable_audio_bell = true;
       mouse_hide_wait = 60;
+      remember_window_size = "no";
 
       ## Tabs
       tab_title_template = "{index}";
