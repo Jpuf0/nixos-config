@@ -171,6 +171,8 @@ in {
     distrobox
     distrobox-tui
 
+    deskflow
+
     # LLM/AI Stuff
     claude-desktop-fhs # https://github.com/aaddrick/claude-desktop-debian, FHS-compatible sandboxed version of the desktop app.
     llm-agents.chatgpt
