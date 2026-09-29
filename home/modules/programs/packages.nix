@@ -125,7 +125,6 @@ in {
     remmina
     spotify-player
 
-
     sunshine
     moonlight-qt
     firefox
@@ -169,12 +168,15 @@ in {
     gpauth
     gpclient
 
+    distrobox
+    distrobox-tui
+
     # LLM/AI Stuff
-    claude-desktop-fhs       # https://github.com/aaddrick/claude-desktop-debian, FHS-compatible sandboxed version of the desktop app.
+    claude-desktop-fhs # https://github.com/aaddrick/claude-desktop-debian, FHS-compatible sandboxed version of the desktop app.
     llm-agents.chatgpt
 
     # claude-code            # https://github.com/sadjow/claude-code-nix, modules/system/config/nix/nixpkgs.nix#L11
-    llm-agents.claude-code   # https://numtide.github.io/llm-agents.nix, LLM-agents packaged version.
+    llm-agents.claude-code # https://numtide.github.io/llm-agents.nix, LLM-agents packaged version.
     llm-agents.oh-my-claudecode
 
     llm-agents.codex
@@ -199,7 +201,6 @@ in {
     llmserve
     # gollama
     # lmstudio
-
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

@@ -18,9 +18,15 @@
     gpu-screen-recorder.enable = true;
   };
 
-  virtualisation.docker = {
-    enable = true;
-    daemon.settings.features.cdi = true;
+  virtualisation = {
+    docker = {
+      enable = true;
+      daemon.settings.features.cdi = true;
+    };
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
   };
 
   # virtualisation.libvirtd = {
