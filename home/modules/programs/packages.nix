@@ -82,7 +82,7 @@ in {
     jq
     bluez
     telegram-desktop
-    pywal
+    # pywal
     dnsutils
     # gimp
     usbmuxd
@@ -115,7 +115,6 @@ in {
     easyeffects
     # yabridge
     # yabridgectl
-    mullvad-vpn
     gleam
     beamPackages.erlang
     rebar3
@@ -137,7 +136,7 @@ in {
     jetbrains-toolbox
     pnpm
     dmenu
-    nix-alien
+    # nix-alien
     hyprpicker
     gifski
     mangohud
@@ -204,6 +203,8 @@ in {
     llmserve
     # gollama
     # lmstudio
+
+    nur.repos.lonerOrz.fluxer
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

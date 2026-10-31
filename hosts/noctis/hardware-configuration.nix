@@ -7,7 +7,17 @@
   pkgs,
   modulesPath,
   ...
-}: {
+}: let
+  v4l2loopback-workaround = pkgs.runCommand "v4l2loopback-workaround" {} ''
+    subdir=lib/modules/${config.boot.kernelPackages.kernel.modDirVersion}
+    mkdir -p $out/$subdir
+    cd ${config.boot.kernelPackages.v4l2loopback}
+    for f in *; do
+      if [[ $f =~ ^modules ]]; then continue; fi
+      cp -r $f $out/$subdir/$f
+    done
+  '';
+in {
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
@@ -16,7 +26,8 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel" "v4l2loopback"];
   boot.extraModulePackages = with config.boot.kernelPackages; [
-    v4l2loopback
+    v4l2loopback-workaround
+    # v4l2loopback
     usbip
   ];
 

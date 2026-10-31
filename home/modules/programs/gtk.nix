@@ -53,8 +53,10 @@ in {
 
   qt = {
     enable = true;
-    style.name = "gtk2";
-    platformTheme.name = "qtct";
+    # style.name = "gtk2";
+    # platformTheme.name = "qtct";
+    style.name = "Adwaita-dark";
+    platformTheme.name = "gtk3";
   };
 
   dconf = {

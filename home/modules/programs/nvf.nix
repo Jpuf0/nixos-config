@@ -100,7 +100,7 @@ in {
           markdown.enable = true;
           python.enable = true;
           rust.enable = true;
-          typescript.enable = true;
+          typescript.enable = false; # Re-enable when typescript-language-server doesnt error.
           typst.enable = true;
           yaml.enable = true;
         };

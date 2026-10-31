@@ -1,5 +1,16 @@
 {pkgs, ...}: {
-  security.polkit.enable = true;
+  security.polkit = {
+    enable = true;
+    extraConfig = ''
+      polkit.addRule(function(action, subject) {
+        if (action.id == "org.freedesktop.policykit.exec" &&
+            action.lookup("program") == "${pkgs.linux-wifi-hotspot}/bin/create_ap" &&
+            subject.user == "jpuf" && subject.local && subject.active) {
+          return polkit.Result.YES;
+        }
+      });
+    '';
+  };
 
   systemd.user.services.polkit-gnome = {
     description = "polkit-kde-authentication-agent-1";

@@ -17,7 +17,7 @@ in {
       };
       nvidiaSettings = false;
 
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
     # environment = {
     #   sessionVariables = {

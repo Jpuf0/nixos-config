@@ -8,7 +8,7 @@
     enable = true;
     package = pkgs.ollama-cuda;
     # acceleration = "cuda";
-    openFirewall = false;
+    openFirewall = true;
     host = "0.0.0.0";
     user = "ollama";
     group = "llm";

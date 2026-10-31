@@ -36,24 +36,9 @@
   gb = "git branch";
   gco = "git checkout";
 
-  # Git clone helpers for multiple accounts
-  gcp = "git-clone-personal";
-  gcw = "git-clone-work";
-
-  # SSH key management
-  ssh-add-personal = "ssh-add ~/.ssh/id_rsa_personal";
-  ssh-add-work = "ssh-add ~/.ssh/id_rsa_work";
-  ssh-test-personal = "ssh -T git@github-personal";
-  ssh-test-work = "ssh -T git@github-work";
-
   # System shortcuts
   c = "clear";
-  e = "exit";
   h = "history";
-
-  # Package management (NixOS specific)
-  # rebuild = "sudo nixos-rebuild switch --flake ~/.dotfiles";
-  # hm-switch = "home-manager switch --flake ~/.dotfiles";
 
   # Development
   v = "nvim";
@@ -74,9 +59,6 @@
   # Safety nets
   cp = "cp -i";
   mv = "mv -i";
-
-  # Restart caelestia
-  restart-desktop = "systemctl --user restart caelestia.service";
 
   # Kitty
   icat = "kitty icat";

@@ -23,22 +23,9 @@ in {
     enable = true;
     systemd = {
       enable = false;
-      target = "graphical-session.target";
-      environment = [];
     };
 
     settings = {
-      appearance = {
-        # font = {
-        #   clock = "IBM Plex Sans";
-        #   workspaces = font;
-        #   body.family = font;
-        #   label.family = font;
-        #   title.family = font;
-        #   headline.family = font;
-        # };
-      };
-
       background = {
         desktopClock = {
           enabled = true;
@@ -69,10 +56,6 @@ in {
             }
           ];
         };
-      };
-
-      border = {
-
       };
 
       general = {
@@ -116,13 +99,116 @@ in {
         weatherUnits = "Celsius";
       };
 
-      utilities = {};
+      utilities = {
+        enabled = true;
+        maxToasts = 3;
+        quickToggles = [
+          (on "wifi")
+          (on "bluetooth")
+          (on "mic")
+          (on "settings")
+          (on "gameMode")
+          (on "dnd")
+          (on "vpn")
+        ];
+        toasts = {
+          audioInputChanged = true;
+          audioOutputChanged = true;
+          capsLockChanged = true;
+          chargingChanged = true;
+          configLoaded = true;
+          dndChanged = true;
+          fullscreen = "important";
+          gameModeChanged = true;
+          kbLayoutChanged = false;
+          kbLimit = false;
+          nowPlaying = true;
+          numLockChanged = true;
+          vpnChanged = true;
+        };
+        vpn = {
+          enabled = true;
+          selectedProvider = "";
+          provider = [
+            # (vpnProvider "tailscale" "tailscale" "Tailscale" "tailscale0")
+            (vpnProvider "mullvad" "mullvad" "Mullvad" "wg0-mullvad")
+          ];
+        };
+      };
     };
 
     cli = {
       enable = true;
       settings = {
-
+        record = {
+          extraArgs = [];
+        };
+        wallpaper = {
+          postHook = "";
+        };
+        theme = {
+          enableTerm = true;
+          enableHypr = true;
+          enableDiscord = true;
+          enableSpicetify = true;
+          enablePandora = true;
+          enableFuzzel = true;
+          enableBtop = true;
+          enableNvtop = true;
+          enableHtop = true;
+          enableGtk = true;
+          enableQt = true;
+          enableWarp = true;
+          enableChromium = true;
+          enableZed = true;
+          enableCava = true;
+          iconTheme = "Papirus-Dark";
+          iconThemeLight = "Papirus-Light";
+          iconThemeDark = "Papirus-Dark";
+          postHook = "";
+        };
+        toggles = {
+          communication = {
+            discord = {
+              enable = true;
+              match = [{class = "equibop";}];
+              command = ["equibop"];
+              move = true;
+            };
+            whatsapp = {
+              enable = false;
+            };
+          };
+          music = {
+            spotify = {
+              enable = true;
+              match = [{class = "Spotify";} {initialTitle = "Spotify";}];
+              command = ["spotify"];
+              move = true;
+            };
+            feishin = {
+              enable = false;
+            };
+          };
+          sysmon = {
+            btop = {
+              enable = true;
+              match = [
+                {
+                  class = "btop";
+                  title = "btop";
+                  workspace = {name = "special:sysmon";};
+                }
+              ];
+              command = ["kitty" "--app-id" "btop" "-T" "btop" "fish" "-C" "exec btop"];
+            };
+          };
+          todo = {
+            todoist = {
+              enable = false;
+            };
+          };
+        };
       };
     };
   };

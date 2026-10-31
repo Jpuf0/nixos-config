@@ -45,16 +45,16 @@
       set -g fish_greeting
 
       # Set fish colors
-      set -g fish_color_command blue
-      set -g fish_color_param cyan
-      set -g fish_color_redirection yellow
-      set -g fish_color_comment brblack
-      set -g fish_color_error red
-      set -g fish_color_escape magenta
-      set -g fish_color_operator green
-      set -g fish_color_quote yellow
-      set -g fish_color_autosuggestion brblack
-      set -g fish_color_valid_path --underline
+      # set -g fish_color_command blue
+      # set -g fish_color_param cyan
+      # set -g fish_color_redirection yellow
+      # set -g fish_color_comment brblack
+      # set -g fish_color_error red
+      # set -g fish_color_escape magenta
+      # set -g fish_color_operator green
+      # set -g fish_color_quote yellow
+      # set -g fish_color_autosuggestion brblack
+      # set -g fish_color_valid_path --underline
 
       # Set default editor
       set -gx EDITOR vim
@@ -87,7 +87,7 @@
 
       fzf_configure_bindings --history=
 
-      cat --plain ~/.local/state/caelestia/sequences.txt 2> /dev/null
+      cat -pp ~/.local/state/caelestia/sequences.txt 2> /dev/null
     '';
   };
 

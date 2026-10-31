@@ -11,10 +11,10 @@
     ./pipewire.nix
     ./wayland.nix
     ./ssh.nix
-    ./zerotier.nix
+    # ./zerotier.nix
     ./tailscale.nix
     ./ratbag.nix
-
+    ./beszel-agent.nix
     ./mwb.nix
   ];
 

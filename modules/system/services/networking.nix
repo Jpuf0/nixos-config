@@ -1,4 +1,6 @@
-{lib, pkgs, ...}: {
+{pkgs, ...}: {
+  services.resolved.enable = true;
+
   networking = {
     dhcpcd.extraConfig = "nohook resolv.conf";
     networkmanager = {
@@ -16,9 +18,6 @@
 
     extraHosts = ''
       172.17.0.1 host.docker.internal
-      0.0.0.0 hkrpg-log-upload-os.hoyoverse.com
-      0.0.0.0 log-upload-os.hoyoverse.com
-      0.0.0.0 sg-public-data-api.hoyoverse.com
     '';
 
     nameservers = [
@@ -46,6 +45,31 @@
       enable = true;
       allowedTCPPorts = [22 53 80 443 39361 59010 59011 8081];
       allowedUDPPorts = [53 59010 39361 59011 8081];
+      checkReversePath = "loose";
+      interfaces = {
+        ap0.allowedUDPPorts = [67 53 5355];
+        wlan0.allowedUDPPorts = [67 53 5355];
+        tailscale0.allowedTCPPorts = [5900 11434];
+      };
+    };
+
+    nftables = {
+      enable = true;
+
+      tables.mullvad_tailscale = {
+        family = "inet";
+        content = ''
+          chain output {
+            type route hook output priority -100; policy accept;
+            ip daddr 100.64.0.0/10 ct mark set 0x00000f41 meta mark set 0x6d6f6c65
+            ip6 daddr fd7a:115c:a1e0::/48 ct mark set 0x00000f41 meta mark set 0x6d6f6c65
+          }
+          chain input {
+            type filter hook input priority -100; policy accept;
+            iifname "tailscale0" ct mark set 0x00000f41 meta mark set 0x6d6f6c65
+          }
+        '';
+      };
     };
   };
 

@@ -35,15 +35,17 @@
     (import ./modules/programs/tailray.nix)
     (import ./modules/programs/aagl.nix)
     (import ./modules/programs/atuin.nix)
+    (import ./modules/programs/gammastep.nix)
+    (import ./modules/programs/wayvnc.nix)
   ];
 
   homeImports = {
     "jpuf" =
       [(import ./home.nix)]
       ++ sharedModules;
-    "ypuf" =
-      [(import ./home_ypuf.nix)]
-      ++ sharedModules;
+    # "ypuf" =
+    #   [(import ./home_ypuf.nix)]
+    #   ++ sharedModules;
   };
 
   inherit (inputs.home-manager.lib) homeManagerConfiguration;
@@ -59,10 +61,10 @@ in {
         modules = homeImports."jpuf";
         inherit pkgs;
       };
-      "ypuf" = homeManagerConfiguration {
-        modules = homeImports."ypuf";
-        inherit pkgs;
-      };
+      # "ypuf" = homeManagerConfiguration {
+      #   modules = homeImports."ypuf";
+      #   inherit pkgs;
+      # };
     };
   };
 }

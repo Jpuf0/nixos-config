@@ -58,22 +58,22 @@ in {
         ];
     };
 
-    azalea = nixosSystem {
-      inherit specialArgs;
-
-      modules =
-        [
-          ./azalea
-        ]
-        ++ commonModules
-        ++ [
-          {
-            home-manager = {
-              users.ypuf.imports = homeImports."ypuf";
-              extraSpecialArgs = specialArgs;
-            };
-          }
-        ];
-    };
+    # azalea = nixosSystem {
+    #   inherit specialArgs;
+    #
+    #   modules =
+    #     [
+    #       ./azalea
+    #     ]
+    #     ++ commonModules
+    #     ++ [
+    #       {
+    #         home-manager = {
+    #           users.ypuf.imports = homeImports."ypuf";
+    #           extraSpecialArgs = specialArgs;
+    #         };
+    #       }
+    #     ];
+    # };
   };
 }

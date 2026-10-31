@@ -12,7 +12,7 @@
       nixfmt
       bash-language-server
       prettier
-      typescript-language-server
+      # typescript-language-server # Re-enable when its dependencies dont error out
       omnisharp-roslyn
       rust-analyzer
       shellcheck

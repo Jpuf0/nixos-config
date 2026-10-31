@@ -14,22 +14,23 @@
       "plugdev"
       "vboxusers"
       "llm"
+      "dialout"
     ];
   };
 
-  users.users.ypuf = {
-    isNormalUser = true;
-    description = "ypuf";
-    initialPassword = "nixos";
-    shell = pkgs.fish;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-      "input"
-      "video"
-      "adbusers"
-      "plugdev"
-    ];
-  };
+  # users.users.ypuf = {
+  #   isNormalUser = true;
+  #   description = "ypuf";
+  #   initialPassword = "nixos";
+  #   shell = pkgs.fish;
+  #   extraGroups = [
+  #     "networkmanager"
+  #     "wheel"
+  #     "docker"
+  #     "input"
+  #     "video"
+  #     "adbusers"
+  #     "plugdev"
+  #   ];
+  # };
 }

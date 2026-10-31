@@ -14,3 +14,12 @@ hl.config({
   -- NVIDIA
   cursor = { no_hardware_cursors = true },
 })
+
+hl.bind("CTRL + SUPER + V", hl.dsp.exec_cmd("wayvncctl output-cycle"))
+
+-- local vnc_state = 0
+-- hl.bind("CTRL + SUPER + V", function()
+--   if vnc_state == 0 then
+--     hl.dsp.exec_cmd("wayvncctl output-set --desktop")
+--   end
+-- end)
