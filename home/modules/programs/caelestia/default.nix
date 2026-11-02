@@ -18,9 +18,11 @@
     inherit id;
   };
 
-  vpnProvider = displayName: interface: enabled: connectCmd: disconnectCmd: {
-    inherit displayName interface enabled connectCmd disconnectCmd;
+  vpnProvider = displayName: interface: connectCmd: disconnectCmd: {
+    inherit displayName interface;
     name = strings.toLower displayName;
+    connectCmd = [connectCmd];
+    disconnectCmd = [disconnectCmd];
   };
 in {
   imports = [inputs.caelestia-shell.homeManagerModules.default];
@@ -143,8 +145,8 @@ in {
         vpn = {
           enabled = true;
           provider = [
-            (vpnProvider "Tailscale" "tailscale0" true "tailscale up --accept-routes" "tailscale down")
-            (vpnProvider "Mullvad" "wg0-mullvad" true "mullvad connect" "mullvad disconnect")
+            (vpnProvider "Tailscale" "tailscale0" "tailscale up --accept-routes" "tailscale down")
+            (vpnProvider "Mullvad" "wg0-mullvad" "mullvad connect" "mullvad disconnect")
           ];
         };
       };
