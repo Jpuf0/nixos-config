@@ -1,12 +1,12 @@
 {
   inputs,
-  config,
+  osConfig,
   lib,
   ...
 }: let
-  inherit (lib) mkIf;
+  inherit (lib) optional;
 
-  hostname = config.networking.hostName;
+  isLaptop = osConfig.networking.hostName == "ghost";
 
   # { enabled; id } entries used by bar.entries, bar.statusIcons, utilities.quickToggles
   on = id: {
@@ -50,11 +50,10 @@ in {
           (off "kbLayout")
           (on "network")
           (on "bluetooth")
-          (
-            if hostname == "ghost"
-            then (on "battery")
-            else (off "battery")
-          )
+          {
+            enabled = isLaptop;
+            id = "battery";
+          }
         ];
         workspaces = {
           activeTrail = false;
@@ -77,21 +76,22 @@ in {
         };
 
         idle = {
-          timeouts = [
-            {
-              timeout = 180;
-              idleAction = "lock";
-            }
-            {
-              timeout = 300;
-              idleAction = "dpms off";
-              returnAction = "dpms on";
-            }
-            (mkIf (hostname == "ghost") {
+          timeouts =
+            [
+              {
+                timeout = 180;
+                idleAction = "lock";
+              }
+              {
+                timeout = 300;
+                idleAction = "dpms off";
+                returnAction = "dpms on";
+              }
+            ]
+            ++ optional isLaptop {
               timeout = 600;
               idleAction = ["suspendThenHibernate"];
-            })
-          ];
+            };
         };
       };
 
@@ -105,14 +105,8 @@ in {
       };
 
       osd = {
-        enableBrightness =
-          if hostname == "ghost"
-          then true
-          else false;
-        enableMicrophone =
-          if hostname == "ghost"
-          then false
-          else true;
+        enableBrightness = isLaptop;
+        enableMicrophone = !isLaptop;
       };
 
       services = {
