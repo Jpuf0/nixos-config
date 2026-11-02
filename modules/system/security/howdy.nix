@@ -1,7 +1,7 @@
 {config, lib, ...}: {
   config = lib.mkIf (config.networking.hostName == "ghost") {
     services.howdy = {
-      enable = true;
+      enable = false;
       settings.video.device_path = "/dev/video2";
     };
 
