@@ -2,6 +2,7 @@
   nix.settings = {
     trusted-users = ["jpuf" "ypuf"];
     substituters = [
+      "https://attic.jpuf.xyz/main"
       "https://cache.nixos.org/"
       "https://cache.nixos-cuda.org"
       "https://ezkea.cachix.org"
@@ -12,6 +13,7 @@
     ];
 
     trusted-public-keys = [
+      "main:0Esgq/kSgH4/K/jvlTQUH/Jer37OJBhWyAe3+n/4qp4="
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
       "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
