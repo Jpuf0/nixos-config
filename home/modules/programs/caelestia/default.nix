@@ -1,5 +1,12 @@
-{inputs, ...}: let
-  font = "CaskaydiaCove NF";
+{
+  inputs,
+  config,
+  lib,
+  ...
+}: let
+  inherit (lib) mkIf;
+
+  hostname = config.networking.hostName;
 
   # { enabled; id } entries used by bar.entries, bar.statusIcons, utilities.quickToggles
   on = id: {
@@ -43,7 +50,11 @@ in {
           (off "kbLayout")
           (on "network")
           (on "bluetooth")
-          (off "battery")
+          (
+            if hostname == "ghost"
+            then (on "battery")
+            else (off "battery")
+          )
         ];
         workspaces = {
           activeTrail = false;
@@ -76,6 +87,10 @@ in {
               idleAction = "dpms off";
               returnAction = "dpms on";
             }
+            (mkIf (hostname == "ghost") {
+              timeout = 600;
+              idleAction = ["suspendThenHibernate"];
+            })
           ];
         };
       };
@@ -90,8 +105,14 @@ in {
       };
 
       osd = {
-        enableBrightness = false;
-        enableMicrophone = true;
+        enableBrightness =
+          if hostname == "ghost"
+          then true
+          else false;
+        enableMicrophone =
+          if hostname == "ghost"
+          then false
+          else true;
       };
 
       services = {
