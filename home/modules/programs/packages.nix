@@ -127,11 +127,11 @@ in {
     sunshine
     moonlight-qt
     firefox
+
+    # Zed.dev Editor & Gram fork.
     zed-editor
-    # zed
-    # vdhcoapp
-    # spotify # now provided by spicetify
-    # heroic
+    gram
+
     cmake
     jetbrains-toolbox
     pnpm
