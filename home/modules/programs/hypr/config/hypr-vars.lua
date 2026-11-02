@@ -3,7 +3,6 @@ return {
   browser = "zen-beta",
   editor = "zeditor",
   fileExplorer = "nemo",
-  audioSettings = "pavucontrol",
   cursorTheme = "Nordzy-cursors",
   cursorSize = 22,
 

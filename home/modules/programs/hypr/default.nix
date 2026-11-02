@@ -30,30 +30,10 @@
     name = "hypr/${f}";
     value =
       if builtins.pathExists (overrides + "/${f}")
-      then { source = overrides + "/${f}"; }
+      then {source = overrides + "/${f}";}
       else if f == "hyprland/execs.lua"
-      then { text = execs; }
-      else { source = "${upstream}/${f}"; };
-  };
-
-  # Written to ~/.config/caelestia/hypr-vars.lua; upstream's hyprland.lua merges
-  # this table over hypr/variables.lua. Any key from variables.lua can go here.
-  vars = {
-    terminal = "kitty";
-    browser = "zen-beta";
-    editor = "zeditor";
-    fileExplorer = "nemo";
-    audioSettings = "pavucontrol";
-    cursorTheme = "Nordzy-cursors";
-    cursorSize = 22;
-
-    kbLauncher = "SUPER + D";
-    kbCommunicationWs = "SUPER + SHIFT + D"; # was on SUPER + D
-    kbCloseWindow = "SUPER + C";
-    kbEditor = "SUPER + SHIFT + C";           # was on SUPER + C
-    kbColorPicker = "SUPER + CTRL + C";       # was on SUPER + SHIFT + C
-    kbTerminal = ["SUPER + T" "SUPER + Return"];
-    kbMoveWinToWs = "SUPER + SHIFT";          # SUPER + SHIFT + 1…0, but see below
+      then {text = execs;}
+      else {source = "${upstream}/${f}";};
   };
 in {
   home.packages = with pkgs; [

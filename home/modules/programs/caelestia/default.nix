@@ -2,13 +2,13 @@
   inputs,
   osConfig,
   lib,
+  pkgs,
   ...
 }: let
-  inherit (lib) optional;
+  inherit (lib) optional strings;
 
   isLaptop = osConfig.networking.hostName == "ghost";
 
-  # { enabled; id } entries used by bar.entries, bar.statusIcons, utilities.quickToggles
   on = id: {
     enabled = true;
     inherit id;
@@ -18,13 +18,16 @@
     inherit id;
   };
 
-  vpnProvider = id: name: displayName: interface: {
-    inherit id name displayName interface;
-    connectCmd = [];
-    disconnectCmd = [];
+  vpnProvider = displayName: interface: enabled: connectCmd: disconnectCmd: {
+    inherit displayName interface enabled connectCmd disconnectCmd;
+    name = strings.toLower displayName;
   };
 in {
   imports = [inputs.caelestia-shell.homeManagerModules.default];
+
+  home.packages = with pkgs; [
+    pwvucontrol
+  ];
 
   programs.caelestia = {
     enable = true;
@@ -38,11 +41,16 @@ in {
           enabled = true;
           background.enabled = true;
         };
-        visualizer.enabled = true;
+        visualiser.enabled = true;
       };
 
       bar = {
-        scrollActions.brightness = false;
+        scrollActions = {
+          brightness = false;
+        };
+        tray = {
+          hiddenIcons = ["gammastep" "nm-applet" "blueman"];
+        };
         statusIcons = [
           (off "lockStatus")
           (on "audio")
@@ -55,23 +63,23 @@ in {
             id = "battery";
           }
         ];
-        workspaces = {
-          activeTrail = false;
-          maxWindowIcons = 3;
-          label = " "; # default has two trailing spaces
-          specialWorkspaceIcons = [
-            {
-              name = "steam";
-              icon = "sports_esports";
-            }
-          ];
-        };
+        entries = [
+          (on "logo")
+          (on "workspaces")
+          (on "spacer")
+          (on "activeWindow")
+          (on "spacer")
+          (on "tray")
+          (on "clock")
+          (on "statusIcons")
+          (on "power")
+        ];
       };
 
       general = {
         apps = {
           terminal = ["kitty"];
-          audio = ["pavucontrol"];
+          audio = ["pwvucontrol"];
           explorer = ["nemo"];
         };
 
@@ -127,26 +135,16 @@ in {
           (on "vpn")
         ];
         toasts = {
-          audioInputChanged = true;
-          audioOutputChanged = true;
-          capsLockChanged = true;
-          chargingChanged = true;
-          configLoaded = true;
-          dndChanged = true;
           fullscreen = "important";
-          gameModeChanged = true;
           kbLayoutChanged = false;
           kbLimit = false;
           nowPlaying = true;
-          numLockChanged = true;
-          vpnChanged = true;
         };
         vpn = {
           enabled = true;
-          selectedProvider = "";
           provider = [
-            # (vpnProvider "tailscale" "tailscale" "Tailscale" "tailscale0")
-            (vpnProvider "mullvad" "mullvad" "Mullvad" "wg0-mullvad")
+            (vpnProvider "Tailscale" "tailscale0" true "tailscale up --accept-routes" "tailscale down")
+            (vpnProvider "Mullvad" "wg0-mullvad" true "mullvad connect" "mullvad disconnect")
           ];
         };
       };

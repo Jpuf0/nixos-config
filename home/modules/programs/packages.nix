@@ -74,7 +74,6 @@ in {
     ncdu # disk space
     # openssl
     pamixer # pulseaudio command line mixer
-    pavucontrol # pulseaudio volume controle (GUI)
     playerctl # controller for media players
     unzip
     wget
