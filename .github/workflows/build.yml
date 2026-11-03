@@ -12,6 +12,6 @@ jobs:
         host: [ghost, noctis]
     steps:
       - uses: actions/checkout@v4
-      - run: attic login home https://attic.jpuf.xyz ${{ secrets.ATTIC_TOKEN }}
+      - run: attic login local http://127.0.0.1:8080 ${{ secrets.ATTIC_TOKEN }}
       - run: nix build -L .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel --out-link result-${{ matrix.host }}
-      - run: attic push home:main result-${{ matrix.host }}
+      - run: attic push local:main result-${{ matrix.host }}

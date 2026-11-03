@@ -145,7 +145,7 @@ in {
         vpn = {
           enabled = true;
           provider = [
-            (vpnProvider "Tailscale" "tailscale0" "tailscale up --accept-routes" "tailscale down")
+            # (vpnProvider "Tailscale" "tailscale0" "tailscale up --accept-routes" "tailscale down")
             (vpnProvider "Mullvad" "wg0-mullvad" "mullvad connect" "mullvad disconnect")
           ];
         };
