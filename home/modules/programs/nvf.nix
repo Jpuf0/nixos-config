@@ -13,6 +13,7 @@ in {
     settings = {
       vim = {
         options = {
+          expandtab = false;
           tabstop = 2;
           shiftwidth = 2;
         };
@@ -94,13 +95,14 @@ in {
           bash.enable = true;
           clang.enable = false;
           css.enable = true;
+          fish.enable = true;
           html.enable = true;
           json.enable = true;
           lua.enable = true;
           markdown.enable = true;
           python.enable = true;
           rust.enable = true;
-          typescript.enable = false; # Re-enable when typescript-language-server doesnt error.
+          typescript.enable = true; # Re-enable when typescript-language-server doesnt error.
           typst.enable = true;
           yaml.enable = true;
         };
@@ -191,6 +193,7 @@ in {
           motion.leap.enable = true;
           multicursors.enable = true;
           direnv.enable = true;
+          sleuth.enable = true;
         };
 
         terminal = {
