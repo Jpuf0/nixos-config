@@ -7,11 +7,25 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    strategy:
-      matrix:
-        host: [ghost, noctis]
     steps:
       - uses: actions/checkout@v4
+      - run: echo /nix/var/nix/profiles/attic/bin >> "$GITHUB_PATH"
       - run: attic login local http://127.0.0.1:8080 ${{ secrets.ATTIC_TOKEN }}
-      - run: nix build -L .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel --out-link result-${{ matrix.host }}
-      - run: attic push local:main result-${{ matrix.host }}
+
+      - name: Build
+        run: |
+          attic watch-store local:main &
+          watch_pid=$!
+          trap 'kill $watch_pid' EXIT
+          nix build -L --keep-going \
+            .#nixosConfigurations.ghost.config.system.build.toplevel \
+            .#nixosConfigurations.noctis.config.system.build.toplevel
+
+      - name: Final push
+        if: always()
+        run: |
+          shopt -s nullglob
+          links=(result*)
+          if [ ${#links[@]} -gt 0 ]; then
+              attic push local:main "${links[@]}"
+          fi
