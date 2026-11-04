@@ -25,7 +25,6 @@
   inputs = {
     catppuccin = {
       url = "github:catppuccin/nix";
-      follows = "nixpkgs";
     };
 
     catppuccin-starship = {
