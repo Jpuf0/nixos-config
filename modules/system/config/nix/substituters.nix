@@ -1,6 +1,8 @@
 {
   nix.settings = {
-    trusted-users = ["jpuf" "ypuf"];
+    trusted-users = ["jpuf"];
+    connect-timeout = 5;
+    fallback = true;
     substituters = [
       "https://cache.home.jpuf.xyz/main"
       "https://cache.nixos.org/"

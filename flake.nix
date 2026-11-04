@@ -25,6 +25,7 @@
   inputs = {
     catppuccin = {
       url = "github:catppuccin/nix";
+      follows = "nixpkgs";
     };
 
     catppuccin-starship = {
@@ -52,13 +53,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # hyprland = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/Hyprland";
-    #   # inputs.nixpkgs.follows = "nixpkgs";
-    #   submodules = true;
-    # };
-
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -68,14 +62,6 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
-    # nixpkgs-unstable = {
-    #   url = "github:nixos/nixpkgs/nixos-unstable";
-    # };
-
-    # nixpkgs-master = {
-    #   url = "github:nixos/nixpkgs/master";
-    # };
-
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -84,6 +70,7 @@
 
     nix-alien = {
       url = "github:thiagokokada/nix-alien";
+      follows = "nixpkgs";
     };
 
     zen-browser = {
@@ -128,6 +115,7 @@
 
     millennium = {
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+      follows = "nixpkgs";
     };
 
     tailray = {
@@ -142,6 +130,7 @@
 
     claude-desktop = {
       url = "github:aaddrick/claude-desktop-debian?ref=refs/pull/921/head";
+      follows = "nixpkgs";
     };
 
     llm-agents = {
