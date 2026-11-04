@@ -69,7 +69,6 @@
 
     nix-alien = {
       url = "github:thiagokokada/nix-alien";
-      follows = "nixpkgs";
     };
 
     zen-browser = {
@@ -114,7 +113,6 @@
 
     millennium = {
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-      follows = "nixpkgs";
     };
 
     tailray = {
@@ -129,7 +127,6 @@
 
     claude-desktop = {
       url = "github:aaddrick/claude-desktop-debian?ref=refs/pull/921/head";
-      follows = "nixpkgs";
     };
 
     llm-agents = {
