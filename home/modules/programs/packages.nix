@@ -135,7 +135,7 @@ in {
     jetbrains-toolbox
     pnpm
     dmenu
-    # nix-alien
+    nix-alien
     hyprpicker
     gifski
     mangohud
