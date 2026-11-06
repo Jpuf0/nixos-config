@@ -147,7 +147,7 @@ in {
     unityhub
     vrc-get
 
-    opencode
+    # opencode
     grc
     runelite
     obsidian
