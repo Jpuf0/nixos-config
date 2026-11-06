@@ -203,7 +203,7 @@ in {
     # gollama
     # lmstudio
 
-    nur.repos.lonerOrz.fluxer
+    # nur.repos.lonerOrz.fluxer
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat
