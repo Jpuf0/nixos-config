@@ -1,6 +1,6 @@
 {
   nix.settings = {
-    trusted-users = ["jpuf"];
+    trusted-users = ["root" "jpuf"];
     connect-timeout = 5;
     fallback = true;
     substituters = [
@@ -12,6 +12,7 @@
       "https://nix-community.cachix.org"
       "https://nix-gaming.cachix.org"
       "https://cache.numtide.com"
+      "https://noctalia.cachix.org"
     ];
 
     trusted-public-keys = [
@@ -23,6 +24,7 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
       "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+      "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
     ];
   };
 }

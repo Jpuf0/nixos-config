@@ -6,8 +6,8 @@
   system = pkgs.stdenv.hostPlatform.system;
 
   self_pkgs = inputs.self.packages.${system};
-  aagl = inputs.aagl.packages.${system};
   llm-agents = inputs.llm-agents.packages.${system};
+  amethyst = inputs.amethyst.packages.${system}.default;
 in {
   home.packages = with pkgs; [
     bitwise # cli tool for bit / hex manipulation
@@ -144,8 +144,8 @@ in {
     piper
     # lutris
 
-    unityhub
-    vrc-get
+    # unityhub
+    # vrc-get
 
     # opencode
     grc
@@ -161,7 +161,7 @@ in {
     # clamav
     qFlipper
 
-    self_pkgs.amethyst-mod-manager
+    amethyst
 
     gpauth
     gpclient
@@ -169,8 +169,8 @@ in {
     distrobox
     distrobox-tui
 
-    deskflow
-    lan-mouse
+    # deskflow
+    # lan-mouse
 
     # LLM/AI Stuff
     claude-desktop-fhs # https://github.com/aaddrick/claude-desktop-debian, FHS-compatible sandboxed version of the desktop app.

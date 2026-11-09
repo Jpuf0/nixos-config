@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "amethyst": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794077682,
+        "narHash": "sha256-jd99jkUj4aAxsqw9aAnEt1v3h4XKsL8QtmLDeF6bGpg=",
+        "owner": "ChrisDKN",
+        "repo": "Amethyst-Mod-Manager",
+        "rev": "788a71262ca479b6cbccc53ff3a0083250e3833c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ChrisDKN",
+        "repo": "Amethyst-Mod-Manager",
+        "type": "github"
+      }
+    },
     "bun2nix": {
       "inputs": {
         "flake-parts": [
@@ -867,6 +887,7 @@
     },
     "root": {
       "inputs": {
+        "amethyst": "amethyst",
         "caelestia-cli": "caelestia-cli",
         "caelestia-dots": "caelestia-dots",
         "caelestia-greeter": "caelestia-greeter",

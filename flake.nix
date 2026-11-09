@@ -141,6 +141,11 @@
     llm-agents = {
       url = "github:numtide/llm-agents.nix";
     };
+
+    amethyst = {
+      url = "github:ChrisDKN/Amethyst-Mod-Manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} {imports = [./flake];};
