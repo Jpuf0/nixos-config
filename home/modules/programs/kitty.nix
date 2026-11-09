@@ -54,5 +54,18 @@
 
       ## Unbind
     };
+
+    # While Neovim is focused (it sets the `in_editor` user var, see nvf.nix),
+    # let these Ctrl+Shift shortcuts through so the Zed-style keybinds work.
+    # Outside Neovim they keep their normal kitty behaviour.
+    extraConfig = ''
+      map --when-focus-on var:in_editor kitty_mod+p
+      map --when-focus-on var:in_editor kitty_mod+f
+      map --when-focus-on var:in_editor kitty_mod+e
+      map --when-focus-on var:in_editor kitty_mod+o
+      map --when-focus-on var:in_editor kitty_mod+b
+      map --when-focus-on var:in_editor kitty_mod+h
+      map --when-focus-on var:in_editor ctrl+tab
+    '';
   };
 }

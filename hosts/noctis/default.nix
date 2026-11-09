@@ -42,7 +42,7 @@
     hardware.bolt.enable = true;
 
     upower = {
-      enable = false;
+      enable = true;
       percentageLow = 30;
       percentageCritical = 20;
       percentageAction = 10;
