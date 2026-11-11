@@ -19,7 +19,11 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = ["quiet"];
+    resumeDevice = "/dev/disk/by-uuid/2572398f-7cc3-4128-812f-c97c1bcaa13e";
+    kernelParams = [
+      "quiet"
+      "resume_offset=9269248"
+    ];
     consoleLogLevel = 0;
     loader = {
       efi.canTouchEfiVariables = true;
@@ -44,6 +48,10 @@
     };
   };
 
+  systemd.sleep.settings.Sleep = {
+    HibernateDelaySec = "30m";
+  };
+
   services = {
     fstrim.enable = true;
     thermald.enable = true;
@@ -63,7 +71,7 @@
           # HandleSuspendKeyLongPress= ""; # default "hibernate"
           # HandleHibernateKey= ""; # default "hibernate"
           # HandleHibernateKeyLongPress= ""; # default "ignore"
-          HandleLidSwitch = "suspend"; # default "suspend"
+          HandleLidSwitch = "suspend-then-hibernate"; # default "suspend"
           # HandleLidSwitchExternalPower = "lock"; # completely ignored by default (for backwards compatibility) — an explicit value must be set before it will be used to determine behaviour.
           # HandleLidSwitchDocked= ""; # default "ignore"
           # HandleSecureAttentionKey= ""; # default "secure-attention-key"
