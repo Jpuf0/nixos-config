@@ -5,7 +5,7 @@
 }: let
   system = pkgs.stdenv.hostPlatform.system;
 
-  self_pkgs = inputs.self.packages.${system};
+  # self_pkgs = inputs.self.packages.${system};
   llm-agents = inputs.llm-agents.packages.${system};
   amethyst = inputs.amethyst.packages.${system}.default;
 in {
@@ -41,6 +41,7 @@ in {
     ouch
     sox
     exiftool
+    chafa
 
     yt-dlp
     zenity
@@ -204,6 +205,7 @@ in {
     # lmstudio
 
     # nur.repos.lonerOrz.fluxer
+    waypipe
   ];
   home.sessionVariables = {
     # Because dotnet is a fucking rat

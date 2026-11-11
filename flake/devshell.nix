@@ -4,12 +4,16 @@
   perSystem = {pkgs, ...}: {
     devShells.default = pkgs.mkShell {
       packages = with pkgs; [
-        alejandra
-        deadnix
+        # Nix tooling
+        nil # LSP
+        statix # static checker
+        deadnix # dead code finder
+
         git
-        prettier
         nix-prefetch
-        nixd
+
+        # Formatters
+        alejandra
       ];
 
       name = "Sakura";

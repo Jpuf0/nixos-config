@@ -8,7 +8,7 @@
   inherit (lib.strings) toUpper;
 
   # Keymap helpers so the Zed-style bindings below stay readable.
-  map = mode: key: action: desc: {inherit mode key action desc;};
+  kbmap = mode: key: action: desc: {inherit mode key action desc;};
   luaMap = mode: key: action: desc: {
     inherit mode key action desc;
     lua = true;
@@ -22,8 +22,8 @@
   # With the kitty keyboard protocol Ctrl+Shift+<letter> can arrive as either
   # case, so bind both spellings.
   ctrlShift = mode: letter: action: desc: [
-    (map mode "<C-S-${letter}>" action desc)
-    (map mode "<C-S-${toUpper letter}>" action desc)
+    (kbmap mode "<C-S-${letter}>" action desc)
+    (kbmap mode "<C-S-${toUpper letter}>" action desc)
   ];
 
   telescope = picker: "<cmd>Telescope ${picker}<CR>";
@@ -198,33 +198,33 @@ in {
         # Vim's own keys are kept; these are layered on top.
         keymaps = lib.flatten [
           # Files, search and pickers
-          (map "n" "<C-p>" (telescope "find_files") "Find file (Zed: file_finder)")
-          (map "n" "<C-e>" (telescope "find_files") "Find file (Zed: file_finder)")
+          (kbmap "n" "<C-p>" (telescope "find_files") "Find file (Zed: file_finder)")
+          (kbmap "n" "<C-e>" (telescope "find_files") "Find file (Zed: file_finder)")
           (ctrlShift "n" "p" (telescope "commands") "Command palette")
-          (map "n" "<F1>" (telescope "commands") "Command palette")
+          (kbmap "n" "<F1>" (telescope "commands") "Command palette")
           (ctrlShift "n" "f" (telescope "live_grep") "Search project")
           (ctrlShift "v" "f" (telescope "grep_string") "Search project for selection")
           (ctrlShift "n" "h" "<cmd>GrugFar<CR>" "Search & replace in project")
-          (map "n" "<C-t>" (telescope "lsp_dynamic_workspace_symbols") "Project symbols")
+          (kbmap "n" "<C-t>" (telescope "lsp_dynamic_workspace_symbols") "Project symbols")
           (ctrlShift "n" "o" (telescope "lsp_document_symbols") "Outline (symbols in file)")
-          (map "n" "<C-Tab>" (telescope "buffers sort_mru=true ignore_current_buffer=true") "Tab switcher")
-          (map "n" "<C-A-o>" "<cmd>SessionManager load_session<CR>" "Open recent project")
+          (kbmap "n" "<C-Tab>" (telescope "buffers sort_mru=true ignore_current_buffer=true") "Tab switcher")
+          (kbmap "n" "<C-A-o>" "<cmd>SessionManager load_session<CR>" "Open recent project")
 
           # Panels / docks
-          (map "n" "<C-b>" "<cmd>Neotree toggle left<CR>" "Toggle project panel")
+          (kbmap "n" "<C-b>" "<cmd>Neotree toggle left<CR>" "Toggle project panel")
           (ctrlShift "n" "e" "<cmd>Neotree focus reveal left<CR>" "Focus project panel")
           (ctrlShift "n" "b" "<cmd>AerialToggle<CR>" "Toggle outline panel")
           (ctrlShift "n" "m" "<cmd>Trouble diagnostics toggle<CR>" "Project diagnostics")
-          (map "n" "<C-j>" "<cmd>ToggleTerm<CR>" "Toggle bottom dock (terminal)")
+          (kbmap "n" "<C-j>" "<cmd>ToggleTerm<CR>" "Toggle bottom dock (terminal)")
 
           # Files & panes
-          (map ["n" "i" "v"] "<C-s>" "<cmd>write<CR>" "Save")
-          (map "n" "<C-n>" "<cmd>enew<CR>" "New file")
-          (map "n" "<C-\\>" "<cmd>vsplit<CR>" "Split right")
-          (map "n" "<C-k><C-Left>" "<cmd>wincmd h<CR>" "Pane left")
-          (map "n" "<C-k><C-Right>" "<cmd>wincmd l<CR>" "Pane right")
-          (map "n" "<C-k><C-Up>" "<cmd>wincmd k<CR>" "Pane up")
-          (map "n" "<C-k><C-Down>" "<cmd>wincmd j<CR>" "Pane down")
+          (kbmap ["n" "i" "v"] "<C-s>" "<cmd>write<CR>" "Save")
+          (kbmap "n" "<C-n>" "<cmd>enew<CR>" "New file")
+          (kbmap "n" "<C-\\>" "<cmd>vsplit<CR>" "Split right")
+          (kbmap "n" "<C-k><C-Left>" "<cmd>wincmd h<CR>" "Pane left")
+          (kbmap "n" "<C-k><C-Right>" "<cmd>wincmd l<CR>" "Pane right")
+          (kbmap "n" "<C-k><C-Up>" "<cmd>wincmd k<CR>" "Pane up")
+          (kbmap "n" "<C-k><C-Down>" "<cmd>wincmd j<CR>" "Pane down")
           (luaMap "n" "<C-g>" ''
             function()
               vim.ui.input({ prompt = "Go to line: " }, function(input)
@@ -239,23 +239,23 @@ in {
           (remap "n" "<C-_>" "gcc" "Toggle comment")
           (remap "v" "<C-/>" "gc" "Toggle comment")
           (remap "v" "<C-_>" "gc" "Toggle comment")
-          (map "n" "<A-Up>" "<cmd>move .-2<CR>==" "Move line up")
-          (map "n" "<A-Down>" "<cmd>move .+1<CR>==" "Move line down")
-          (map "i" "<A-Up>" "<Esc><cmd>move .-2<CR>==gi" "Move line up")
-          (map "i" "<A-Down>" "<Esc><cmd>move .+1<CR>==gi" "Move line down")
-          (map "v" "<A-Up>" ":move '<-2<CR>gv=gv" "Move selection up")
-          (map "v" "<A-Down>" ":move '>+1<CR>gv=gv" "Move selection down")
-          (map "n" "<C-A-S-Up>" "<cmd>t.<CR>k" "Duplicate line up")
-          (map "n" "<C-A-S-Down>" "<cmd>t.<CR>" "Duplicate line down")
+          (kbmap "n" "<A-Up>" "<cmd>move .-2<CR>==" "Move line up")
+          (kbmap "n" "<A-Down>" "<cmd>move .+1<CR>==" "Move line down")
+          (kbmap "i" "<A-Up>" "<Esc><cmd>move .-2<CR>==gi" "Move line up")
+          (kbmap "i" "<A-Down>" "<Esc><cmd>move .+1<CR>==gi" "Move line down")
+          (kbmap "v" "<A-Up>" ":move '<-2<CR>gv=gv" "Move selection up")
+          (kbmap "v" "<A-Down>" ":move '>+1<CR>gv=gv" "Move selection down")
+          (kbmap "n" "<C-A-S-Up>" "<cmd>t.<CR>k" "Duplicate line up")
+          (kbmap "n" "<C-A-S-Down>" "<cmd>t.<CR>" "Duplicate line down")
 
           # LSP (Zed's F-key bindings)
           (luaMap ["n" "v"] "<C-.>" "vim.lsp.buf.code_action" "Code actions")
           (luaMap "n" "<F2>" "vim.lsp.buf.rename" "Rename symbol")
           (luaMap "n" "<F12>" "vim.lsp.buf.definition" "Go to definition")
-          (map "n" "<A-F12>" "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>" "Go to definition (split)")
+          (kbmap "n" "<A-F12>" "<cmd>vsplit | lua vim.lsp.buf.definition()<CR>" "Go to definition (split)")
           (luaMap "n" "<C-F12>" "vim.lsp.buf.type_definition" "Go to type definition")
-          (map "n" "<S-F12>" (telescope "lsp_implementations") "Go to implementation")
-          (map "n" "<A-S-F12>" (telescope "lsp_references") "Find all references")
+          (kbmap "n" "<S-F12>" (telescope "lsp_implementations") "Go to implementation")
+          (kbmap "n" "<A-S-F12>" (telescope "lsp_references") "Find all references")
           (luaMap "n" "<C-k><C-i>" "vim.lsp.buf.hover" "Hover")
           (luaMap "n" "<F8>" "function() vim.diagnostic.jump({ count = 1, float = true }) end" "Next diagnostic")
           (luaMap "n" "<S-F8>" "function() vim.diagnostic.jump({ count = -1, float = true }) end" "Previous diagnostic")
@@ -307,10 +307,6 @@ in {
           enableExtraDiagnostics = true;
           enableDAP = true;
 
-          nix = {
-            enable = true;
-            lsp.servers = ["nixd"];
-          };
           bash.enable = true;
           clang.enable = false;
           css.enable = true;
@@ -319,8 +315,20 @@ in {
           json.enable = true;
           lua.enable = true;
           markdown.enable = true;
-          python.enable = true;
+          nix.enable = true;
+          python = {
+            enable = true;
+            lsp = {
+              enable = true;
+              servers = [
+                # "pyrefly"
+                "ruff"
+                "ty"
+              ];
+            };
+          };
           rust.enable = true;
+          toml.enable = true;
           typescript.enable = true;
           typst.enable = true;
           yaml.enable = true;
