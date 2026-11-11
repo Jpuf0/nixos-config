@@ -7,7 +7,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     audio.enable = true;
-    jack.enable = true;
+    jack.enable = false;
     pulse.enable = true;
   };
 }

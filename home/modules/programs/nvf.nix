@@ -80,6 +80,18 @@ in {
         undoFile.enable = true;
         enableLuaLoader = true;
 
+        diagnostics = {
+          enable = false;
+          config = {
+            virtual_text = false;
+            virtual_lines = {
+              current_line = true;
+            };
+            underline = true;
+            update_in_insert = true;
+          };
+        };
+
         clipboard = {
           enable = true;
           providers.wl-copy.enable = true;
@@ -90,34 +102,6 @@ in {
         vimAlias = true;
 
         autocmds = [
-          # {
-          #   enable    = true;  # bool
-          #   event     = null;  # nullOr (listOf str)   [ "BufWritePre" ]
-          #   pattern   = null;  # nullOr (listOf str)   [ "*.lua", "*.nix" ]
-          #   callback  = null;  # nullOr luaInline      lib.generators.mkLuaInline "function() print('File saved!) end"
-          #   command   = null;  # nullOr str            "echo 'File saved!'"
-          #   group     = null;  # nullOr str            "MyCustomAuGroup"
-          #   desc      = null;  # nullOr str            "Format buffer on save"
-          #   once      = false; # bool
-          #   nested    = false; # bool
-          # }
-          {
-            enable = true;
-            event = ["CursorHold"];
-            callback = mkLuaInline ''
-              function()
-                vim.diagnostic.open_float(nil, {
-                  focusable = false,
-                  close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-                  border = "rounded",
-                  source = true,
-                  scope = "cursor",
-                })
-              end
-            '';
-            desc = "Show diagnostics under the cursor";
-          }
-
           # Zed: "languages": { "Nix": { "tab_size": 2 } }
           {
             enable = true;
@@ -247,6 +231,8 @@ in {
           (kbmap "v" "<A-Down>" ":move '>+1<CR>gv=gv" "Move selection down")
           (kbmap "n" "<C-A-S-Up>" "<cmd>t.<CR>k" "Duplicate line up")
           (kbmap "n" "<C-A-S-Down>" "<cmd>t.<CR>" "Duplicate line down")
+          # (remap "n" "<C-S-Down>" "<cmd>MCunderCursor<CR>j" "Add cursor below")
+          # (remap "n" "<C-S-Up>" "<cmd>MCunderCursor<CR>k" "Add cursor above")
 
           # LSP (Zed's F-key bindings)
           (luaMap ["n" "v"] "<C-.>" "vim.lsp.buf.code_action" "Code actions")
@@ -283,9 +269,30 @@ in {
         lsp = {
           enable = true;
           formatOnSave = true;
+          inlayHints.enable = true;
           trouble.enable = true;
           lspSignature.enable = true;
           lightbulb.enable = true;
+
+          servers = {
+            nil = {
+              settings = {
+                nil = {
+                  formatting = {
+                    command = ["alejandra"];
+                  };
+                  nix = {
+                    flake = {
+                      autoArchive = true;
+                      autoEvalInputs = true;
+                      nixpkgsInputName = "nixpkgs";
+                    };
+                    maxMemoryMB = 4096;
+                  };
+                };
+              };
+            };
+          };
         };
 
         treesitter = {
@@ -327,7 +334,27 @@ in {
               ];
             };
           };
-          rust.enable = true;
+          rust = {
+            enable = true;
+            extensions.crates-nvim.enable = true;
+            extensions.rustaceanvim = {
+              enable = true;
+              setupOpts = {
+                server = {
+                  default_settings = {
+                    rust-analyzer = {
+                      cargo = {
+                        features = "all";
+                      };
+                    };
+                  };
+                };
+              };
+            };
+
+            lsp.enable = false; # Disabled due to rustaceanvim managing it.
+            dap.enable = false; # Disabled due to rustaceanvim managing it.
+          };
           toml.enable = true;
           typescript.enable = true;
           typst.enable = true;
@@ -549,7 +576,7 @@ in {
           diffview-nvim.enable = true;
           icon-picker.enable = true;
           motion.leap.enable = true;
-          multicursors.enable = true;
+          multicursors.enable = false;
           direnv.enable = true;
           sleuth.enable = true;
           # Zed: project-wide search & replace (ctrl-shift-h).
@@ -600,6 +627,85 @@ in {
 
         presence = {
           neocord.enable = false;
+        };
+
+        lazy.plugins = {
+          "multicursor.nvim" = {
+            package = pkgs.vimPlugins.multicursor-nvim;
+            setupModule = "multicursor-nvim";
+            setupOpts = {};
+
+            after = ''
+              local mc = require("multicursor-nvim")
+
+              mc.addKeymapLayer(function(layerSet)
+                layerSet({"n", "x"}, "<Esc>", function()
+                  if not mc.cursorsEnabled() then
+                    mc.enableCursors()
+                  else
+                    mc.clearCursors()
+                  end
+                end)
+              end)
+            '';
+
+            keys = [
+              {
+                mode = ["n" "v"];
+                key = "<C-S-Up>";
+                action = ''function() require("multicursor-nvim").lineAddCursor(-1) end'';
+                lua = true;
+                desc = "Add cursor above";
+              }
+              {
+                mode = ["n" "v"];
+                key = "<C-S-Down>";
+                action = ''function() require("multicursor-nvim").lineAddCursor(1) end'';
+                lua = true;
+                desc = "Add cursor below";
+              }
+              {
+                mode = ["n" "v"];
+                key = "<C-d>";
+                action = ''function() require("multicursor-nvim").matchAddCursor(1) end'';
+                lua = true;
+                desc = "Add cursor on next match";
+              }
+              {
+                mode = ["n" "v"];
+                key = "<C-S-d>";
+                action = ''function() require("multicursor-nvim").matchAddCursor(-1) end'';
+                lua = true;
+                desc = "Add cursor on previous match";
+              }
+              {
+                mode = "n";
+                key = "<C-LeftMouse>";
+                action = ''function() require("multicursor-nvim").handleMouse() end'';
+                lua = true;
+                desc = "Toggle cursor under mouse";
+              }
+            ];
+          };
+          "tiny-inline-diagnostic.nvim" = {
+            package = pkgs.vimPlugins.tiny-inline-diagnostic-nvim;
+            setupModule = "tiny-inline-diagnostic";
+            setupOpts = {
+              options = {
+                multilines = {
+                  enabled = true;
+                  always_show = true;
+                  severity = [(mkLuaInline "vim.diagnostic.severity.ERROR")];
+                };
+                show_source = {
+                  enabled = true;
+                  if_many = true;
+                };
+                enable_on_insert = true;
+              };
+            };
+            event = ["LspAttach"];
+          };
         };
       };
     };

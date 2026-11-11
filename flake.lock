@@ -115,27 +115,6 @@
         "type": "github"
       }
     },
-    "caelestia-greeter": {
-      "inputs": {
-        "m3shapes": "m3shapes_2",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1794186286,
-        "narHash": "sha256-JvlYv2C7D0B6xxqwKYii2Q6n03RMwpnTL9tfgGSJlek=",
-        "owner": "dim-ghub",
-        "repo": "caelestia-greeter",
-        "rev": "03f48e97baf05f926ed993ddb0c06e9b05d46a2a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "dim-ghub",
-        "repo": "caelestia-greeter",
-        "type": "github"
-      }
-    },
     "caelestia-shell": {
       "inputs": {
         "caelestia-cli": [
@@ -165,7 +144,7 @@
     "caelestia-shell_2": {
       "inputs": {
         "caelestia-cli": "caelestia-cli_2",
-        "m3shapes": "m3shapes_3",
+        "m3shapes": "m3shapes_2",
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -491,23 +470,6 @@
       }
     },
     "m3shapes_2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1781017666,
-        "narHash": "sha256-kfHyzZaPHgqZML48OA+5JwBOsLdQJ2ci/aGPShvUB4Y=",
-        "owner": "soramanew",
-        "repo": "m3shapes",
-        "rev": "bdc327b29f95394a732baf3c9b19658ba23755b6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "soramanew",
-        "repo": "m3shapes",
-        "rev": "bdc327b29f95394a732baf3c9b19658ba23755b6",
-        "type": "github"
-      }
-    },
-    "m3shapes_3": {
       "inputs": {
         "nixpkgs": [
           "caelestia-shell",
@@ -779,19 +741,6 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
       }
     },
-    "nixpkgs_8": {
-      "locked": {
-        "lastModified": 1794042290,
-        "narHash": "sha256-VZ8WvA9m3XN36juXyg/GwbDRU2OezOHJlXpJCXkccv0=",
-        "rev": "f4a03c008967841f2a0b3cb7c436fc6fc31671f6",
-        "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1113206.f4a03c008967/nixexprs.tar.xz?lastModified=1794042290&rev=f4a03c008967841f2a0b3cb7c436fc6fc31671f6"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
-      }
-    },
     "noctalia": {
       "inputs": {
         "nixpkgs": "nixpkgs_7"
@@ -837,7 +786,9 @@
       "inputs": {
         "flake-compat": "flake-compat_2",
         "mnw": "mnw",
-        "nixpkgs": "nixpkgs_8"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1794159704,
@@ -901,7 +852,6 @@
         "amethyst": "amethyst",
         "caelestia-cli": "caelestia-cli",
         "caelestia-dots": "caelestia-dots",
-        "caelestia-greeter": "caelestia-greeter",
         "caelestia-shell": "caelestia-shell_2",
         "catppuccin": "catppuccin",
         "catppuccin-atuin": "catppuccin-atuin",
