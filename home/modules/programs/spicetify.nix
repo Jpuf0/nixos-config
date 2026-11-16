@@ -5,7 +5,7 @@
   ...
 }: {
   # Import spicetify-nix
-  imports = [inputs.spicetify-nix.homeModules.default];
+  imports = [inputs.spicetify-nix.homeManagerModules.default];
 
   # Configure Spicetify
   programs.spicetify = let
