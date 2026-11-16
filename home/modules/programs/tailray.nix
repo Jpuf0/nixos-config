@@ -2,7 +2,7 @@
   inputs,
   ...
 }: {
-  imports = [inputs.tailray.homeManagerModules.default];
+  imports = [inputs.tailray.homeModules.default];
 
   services.tailray = {
     enable = true;

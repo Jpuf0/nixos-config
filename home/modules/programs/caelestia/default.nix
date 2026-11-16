@@ -25,7 +25,7 @@
     disconnectCmd = [disconnectCmd];
   };
 in {
-  imports = [inputs.caelestia-shell.homeManagerModules.default];
+  imports = [inputs.caelestia-shell.homeModules.default];
 
   home.packages = with pkgs; [
     pwvucontrol

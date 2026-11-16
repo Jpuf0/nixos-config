@@ -28,7 +28,7 @@
 
   telescope = picker: "<cmd>Telescope ${picker}<CR>";
 in {
-  imports = [inputs.nvf.homeManagerModules.default];
+  imports = [inputs.nvf.homeModules.default];
 
   programs.nvf = {
     enable = true;
