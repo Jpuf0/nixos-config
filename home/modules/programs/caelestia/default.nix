@@ -51,7 +51,7 @@ in {
           brightness = false;
         };
         tray = {
-          hiddenIcons = ["gammastep" "nm-applet" "blueman"];
+          hiddenIcons = ["gammastep" "blueman"];
         };
         statusIcons = [
           (off "lockStatus")
