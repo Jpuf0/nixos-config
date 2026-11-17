@@ -5,12 +5,15 @@
 }: let
   system = pkgs.stdenv.hostPlatform.system;
   eventsfx = inputs.eventsfx.packages."${system}".default;
-in
-{
+in {
   systemd.user.services.eventsfx = {
     description = "eventsfx daemon";
     after = ["sound.target"];
     wantedBy = ["default.target"];
-    serviceConfig.ExecStart = "${eventsfx}/bin/eventsfx";
+    serviceConfig = {
+      ExecStart = "${eventsfx}/bin/eventsfx";
+      Restart = "on-failure";
+      RestartSec = "5s";
+    };
   };
 }
