@@ -315,7 +315,7 @@ in {
           enableDAP = true;
 
           bash.enable = true;
-          clang.enable = false;
+          clang.enable = true;
           css.enable = true;
           fish.enable = true;
           html.enable = true;

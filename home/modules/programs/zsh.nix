@@ -84,31 +84,6 @@
       piv = "python -m venv .venv";
       psv = "source .venv/bin/activate";
     };
-
-    /*
-       plugins = with pkgs; [
-      {
-        name = "zsh-forgit";
-        src = zsh-forgit;
-        file = "share/zsh/zsh-forgit/forgit.plugin.zsh";
-      }
-      {
-        name = "zsh-fzf-tab";
-        src = zsh-fzf-tab;
-        file = "share/fzf-tab/fzf-tab.plugin.zsh";
-      }
-      {
-        name = "zsh-you-should-use";
-        src = zsh-you-should-use;
-        file = "share/zsh/plugins/you-should-use/you-should-use.plugin.zsh";
-      }
-      {
-        name = "zsh-nix-shell";
-        src = zsh-nix-shell;
-        file = "share/zsh-nix-shell/nix-shell.plugin.zsh";
-      }
-    ]
-    */
   };
 
   programs.starship = {
@@ -127,8 +102,8 @@
 
         character = {
           success_symbol = "[ ](bold #89b4fa)[ ➜](bold green)";
-          error_symbol = "[ ](bold #89b4fa)[ ➜](bold red)";
-          # error_symbol = "[ ](bold #89dceb)[ ✗](bold red)";
+          # error_symbol = "[ ](bold #89b4fa)[ ➜](bold red)";
+          error_symbol = "[ ](bold #89dceb)[ ✗](bold red)";
         };
 
         cmd_duration = {

@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   lib,
   inputs,
@@ -38,7 +37,6 @@
         src = grc.src;
       }
     ];
-    # // import ./plugins.nix {inherit pkgs lib;};
 
     shellInit = ''
       # Disable fish greeting

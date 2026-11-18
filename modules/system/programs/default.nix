@@ -1,10 +1,9 @@
-{lib, ...}: {
+{...}: {
   imports = [
     # ./zsh.nix
     ./fish.nix
     ./home-manager.nix
     ./steam.nix
-    ./streamdeck.nix
     ./regreet.nix
     ./nix-ld.nix
   ];
