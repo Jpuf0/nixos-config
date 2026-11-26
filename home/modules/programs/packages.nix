@@ -141,7 +141,7 @@ in {
     gifski
     mangohud
     # mangojuice
-    # gale
+    gale
     piper
     # lutris
 
